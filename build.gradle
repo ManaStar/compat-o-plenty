@@ -1,0 +1,109 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+    }
+}
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'maven-publish'
+
+version = project.version
+group = 'mitebemana.compatoplenty'
+archivesBaseName = 'Compat-O-Plenty'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
+minecraft {
+    mappings channel: 'official', version: '1.16.5'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
+            mods {
+                compatoplenty {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
+            mods {
+                compatoplenty {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            args '--mod', 'compatoplenty', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            mods {
+                compatoplenty {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.16.5-36.2.9'
+    implementation fg.deobf("com.minecraftabnormals:abnormals-core:1.16.5-3.3.0")
+    implementation fg.deobf("curse.maven:bop-220318:3360574")
+    implementation fg.deobf("curse.maven:farmersdelight-398521:3503844")
+
+    runtimeOnly fg.deobf("curse.maven:buzzierbees-355458:3226433")
+    runtimeOnly fg.deobf("curse.maven:quark-243121:3490981")
+    runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3326041")
+
+    runtimeOnly fg.deobf("curse.maven:jei-238222:3514175")
+
+
+
+}
+
+repositories {
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url "https://maven.jaackson.me"
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+            "Specification-Title": "Compat O' Plenty",
+            "Specification-Vendor": "Not sure what to write here atm",
+            "Specification-Version": "1",
+            "Implementation-Title": "Compat O' Plenty",
+            "Implementation-Version": project.version,
+            "Implementation-Vendor" :"Not sure what to write here atm",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
