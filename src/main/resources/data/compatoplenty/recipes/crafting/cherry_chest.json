@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "biomesoplenty:cherry_planks"
+        }
+    },
+    "result": {
+        "item": "compatoplenty:cherry_chest",
+        "count": 1
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "neapolitan"
+        },
+        {
+            "type": "quark:flag",
+            "flag": "variant_chests"
+        }
+    ]
+}

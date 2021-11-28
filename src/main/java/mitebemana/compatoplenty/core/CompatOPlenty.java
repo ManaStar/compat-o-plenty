@@ -12,6 +12,9 @@ import org.apache.logging.log4j.Logger;
 public class CompatOPlenty
 {
     public static final String MOD_ID = "compatoplenty";
+    public static final String QUARK_ID = "quark";
+    public static final String BUZZIER_ID = "buzzier_bees";
+
     private static final Logger LOGGER = LogManager.getLogger();
     public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MOD_ID);
 
