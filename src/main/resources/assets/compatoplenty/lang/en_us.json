@@ -13,5 +13,19 @@
   "block.compatoplenty.cherry_chest": "Cherry Chest",
   "block.compatoplenty.cherry_trapped_chest": "Cherry Trapped Chest",
   "block.compatoplenty.cherry_beehive": "Cherry Beehive",
-  "block.compatoplenty.cherry_pantry": "Cherry Pantry"
+  "block.compatoplenty.cherry_pantry": "Cherry Pantry",
+
+  "block.compatoplenty.vertical_jacaranda_planks": "Vertical Jacaranda Chest",
+  "block.compatoplenty.jacaranda_vertical_slab": "Jacaranda Vertical Slab",
+  "block.compatoplenty.jacaranda_ladder": "Jacaranda Ladder",
+  "block.compatoplenty.jacaranda_bookshelf": "Jacaranda Bookshelf",
+  "block.compatoplenty.jacaranda_post": "Jacaranda Post",
+  "block.compatoplenty.stripped_jacaranda_post": "Stripped Jacaranda Post",
+  "block.compatoplenty.jacaranda_hedge": "Jacaranda Hedge",
+  "block.compatoplenty.jacaranda_sign": "Jacaranda Sign",
+  "block.compatoplenty.jacaranda_leaf_carpet": "Jacaranda Leaf Carpet",
+  "block.compatoplenty.jacaranda_chest": "Jacaranda Chest",
+  "block.compatoplenty.jacaranda_trapped_chest": "Jacaranda Trapped Chest",
+  "block.compatoplenty.jacaranda_beehive": "Jacaranda Beehive",
+  "block.compatoplenty.jacaranda_pantry": "Jacaranda Pantry"
 }

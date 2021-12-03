@@ -1,0 +1,6 @@
+{
+  "parent": "abnormals_core:block/post",
+  "textures": {
+    "texture": "biomesoplenty:block/stripped_jacaranda_log"
+  }
+}

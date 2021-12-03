@@ -24,5 +24,11 @@ public class ClientRegister {
         RenderTypeLookup.setRenderLayer(CompatBlocks.PINK_CHERRY_HEDGE.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(CompatBlocks.WHITE_CHERRY_LEAF_CARPET.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(CompatBlocks.PINK_CHERRY_LEAF_CARPET.get(), RenderType.cutout());
+
+        RenderTypeLookup.setRenderLayer(CompatBlocks.JACARANDA_LADDER.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.JACARANDA_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.STRIPPED_JACARANDA_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.JACARANDA_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.JACARANDA_LEAF_CARPET.get(), RenderType.cutout());
     }
 }
