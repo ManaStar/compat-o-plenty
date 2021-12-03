@@ -27,5 +27,19 @@
   "block.compatoplenty.jacaranda_chest": "Jacaranda Chest",
   "block.compatoplenty.jacaranda_trapped_chest": "Jacaranda Trapped Chest",
   "block.compatoplenty.jacaranda_beehive": "Jacaranda Beehive",
-  "block.compatoplenty.jacaranda_pantry": "Jacaranda Pantry"
+  "block.compatoplenty.jacaranda_pantry": "Jacaranda Pantry",
+
+  "block.compatoplenty.vertical_fir_planks": "Vertical Fir Chest",
+  "block.compatoplenty.fir_vertical_slab": "Fir Vertical Slab",
+  "block.compatoplenty.fir_ladder": "Fir Ladder",
+  "block.compatoplenty.fir_bookshelf": "Fir Bookshelf",
+  "block.compatoplenty.fir_post": "Fir Post",
+  "block.compatoplenty.stripped_fir_post": "Stripped Fir Post",
+  "block.compatoplenty.fir_hedge": "Fir Hedge",
+  "block.compatoplenty.fir_sign": "Fir Sign",
+  "block.compatoplenty.fir_leaf_carpet": "Fir Leaf Carpet",
+  "block.compatoplenty.fir_chest": "Fir Chest",
+  "block.compatoplenty.fir_trapped_chest": "Fir Trapped Chest",
+  "block.compatoplenty.fir_beehive": "Fir Beehive",
+  "block.compatoplenty.fir_pantry": "Fir Pantry"
 }

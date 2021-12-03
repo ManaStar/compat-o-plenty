@@ -55,4 +55,18 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> JACARANDA_SIGNS = HELPER.createSignBlock("jacaranda", MaterialColor.TERRACOTTA_PINK);
     public static final RegistryObject<Block> JACARANDA_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "jacaranda_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
     public static final RegistryObject<Block> JACARANDA_PANTRY = HELPER.createBlock("jacaranda_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //fir
+    public static final RegistryObject<Block> FIR_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_vertical_slab",() -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.fir_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_FIR_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_fir_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.fir_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> FIR_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_bookshelf", () -> new BookshelfBlock(CompatProperties.FIR_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> FIR_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_ladder", () -> new AbnormalsLadderBlock(CompatProperties.FIR_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_FIR_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_fir_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.fir_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> FIR_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_post", () -> new WoodPostBlock(STRIPPED_FIR_POST,  AbstractBlock.Properties.copy(BOPBlocks.fir_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> FIR_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.fir_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> FIR_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "fir_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> FIR_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "fir", MaterialColor.TERRACOTTA_PINK);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> FIR_SIGNS = HELPER.createSignBlock("fir", MaterialColor.TERRACOTTA_PINK);
+    public static final RegistryObject<Block> FIR_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "fir_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> FIR_PANTRY = HELPER.createBlock("fir_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
 }
