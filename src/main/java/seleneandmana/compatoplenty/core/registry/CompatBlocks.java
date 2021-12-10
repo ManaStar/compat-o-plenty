@@ -1,4 +1,4 @@
-package mitebemana.compatoplenty.core.registry;
+package seleneandmana.compatoplenty.core.registry;
 
 import biomesoplenty.api.block.BOPBlocks;
 import com.minecraftabnormals.abnormals_core.common.blocks.*;
@@ -9,9 +9,9 @@ import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSig
 import com.minecraftabnormals.abnormals_core.common.blocks.wood.WoodPostBlock;
 import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
 import com.mojang.datafixers.util.Pair;
-import mitebemana.compatoplenty.common.blocks.CompatPantryBlock;
-import mitebemana.compatoplenty.core.CompatOPlenty;
-import mitebemana.compatoplenty.core.other.CompatProperties;
+import seleneandmana.compatoplenty.common.blocks.CompatPantryBlock;
+import seleneandmana.compatoplenty.core.CompatOPlenty;
+import seleneandmana.compatoplenty.core.other.CompatProperties;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.ItemGroup;

@@ -1,13 +1,12 @@
-package mitebemana.compatoplenty.client;
+package seleneandmana.compatoplenty.client;
 
 import biomesoplenty.core.ClientProxy;
-import mitebemana.compatoplenty.core.CompatOPlenty;
-import mitebemana.compatoplenty.core.registry.CompatBlocks;
+import seleneandmana.compatoplenty.core.CompatOPlenty;
+import seleneandmana.compatoplenty.core.registry.CompatBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.item.BlockItem;
-import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.FoliageColors;
 import net.minecraft.world.IBlockDisplayReader;

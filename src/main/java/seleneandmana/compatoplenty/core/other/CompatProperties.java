@@ -1,4 +1,4 @@
-package mitebemana.compatoplenty.core.other;
+package seleneandmana.compatoplenty.core.other;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.SoundType;

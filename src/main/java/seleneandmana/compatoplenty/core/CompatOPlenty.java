@@ -1,4 +1,4 @@
-package mitebemana.compatoplenty.core;
+package seleneandmana.compatoplenty.core;
 
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import net.minecraftforge.common.MinecraftForge;

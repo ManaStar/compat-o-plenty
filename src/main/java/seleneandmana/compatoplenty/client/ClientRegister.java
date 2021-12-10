@@ -1,7 +1,7 @@
-package mitebemana.compatoplenty.client;
+package seleneandmana.compatoplenty.client;
 
-import mitebemana.compatoplenty.core.CompatOPlenty;
-import mitebemana.compatoplenty.core.registry.CompatBlocks;
+import seleneandmana.compatoplenty.core.CompatOPlenty;
+import seleneandmana.compatoplenty.core.registry.CompatBlocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

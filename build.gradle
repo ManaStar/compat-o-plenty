@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 
 version = project.version
-group = 'mitebemana.compatoplenty'
+group = 'seleneandmana.compatoplenty'
 archivesBaseName = 'Compat-O-Plenty'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
@@ -98,11 +98,11 @@ jar {
     manifest {
         attributes([
             "Specification-Title": "Compat O' Plenty",
-            "Specification-Vendor": "Not sure what to write here atm",
+            "Specification-Vendor": "Selene and Mana",
             "Specification-Version": "1",
             "Implementation-Title": "Compat O' Plenty",
             "Implementation-Version": project.version,
-            "Implementation-Vendor" :"Not sure what to write here atm",
+            "Implementation-Vendor" :"Selene and Mana",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
