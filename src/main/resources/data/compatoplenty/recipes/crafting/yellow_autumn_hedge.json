@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "C"
+  ],
+  "key": {
+    "#": {
+      "item": "biomesoplenty:yellow_autumn_leaves"
+    },
+    "C": {
+      "tag": "minecraft:birch_logs"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:yellow_autumn_hedge",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    },
+    {
+      "type": "quark:flag",
+      "flag": "hedges"
+    }
+  ]
+}

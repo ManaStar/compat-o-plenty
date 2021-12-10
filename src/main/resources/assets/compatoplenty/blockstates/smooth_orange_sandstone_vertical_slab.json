@@ -1,0 +1,9 @@
+{
+    "variants": {
+ 	"type=north": { "model": "compatoplenty:block/smooth_orange_sandstone_vertical_slab", "y": 0, "uvlock": true },
+ 	"type=south": { "model": "compatoplenty:block/smooth_orange_sandstone_vertical_slab", "y": 180, "uvlock": true },
+  	"type=east": { "model": "compatoplenty:block/smooth_orange_sandstone_vertical_slab", "y": 90, "uvlock": true },
+ 	"type=west": { "model": "compatoplenty:block/smooth_orange_sandstone_vertical_slab", "y": 270, "uvlock": true },
+        "type=double": { "model": "biomesoplenty:block/smooth_orange_sandstone" }
+    }
+}

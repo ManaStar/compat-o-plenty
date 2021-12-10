@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "C"
+  ],
+  "key": {
+    "#": {
+      "item": "biomesoplenty:orange_autumn_leaves"
+    },
+    "C": {
+      "tag": "minecraft:dark_oak_logs"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:orange_autumn_hedge",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    },
+    {
+      "type": "quark:flag",
+      "flag": "hedges"
+    }
+  ]
+}

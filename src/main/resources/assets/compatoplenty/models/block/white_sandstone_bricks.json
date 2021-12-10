@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "compatoplenty:block/white_sandstone_bricks"
+  }
+}

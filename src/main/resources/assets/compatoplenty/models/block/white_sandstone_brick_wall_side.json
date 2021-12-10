@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "compatoplenty:block/white_sandstone_bricks"
+  }
+}

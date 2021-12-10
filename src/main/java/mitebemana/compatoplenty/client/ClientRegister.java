@@ -36,5 +36,24 @@ public class ClientRegister {
         RenderTypeLookup.setRenderLayer(CompatBlocks.STRIPPED_FIR_POST.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(CompatBlocks.FIR_HEDGE.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(CompatBlocks.FIR_LEAF_CARPET.get(), RenderType.cutout());
+
+        RenderTypeLookup.setRenderLayer(CompatBlocks.REDWOOD_LADDER.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.REDWOOD_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.STRIPPED_REDWOOD_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.REDWOOD_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.REDWOOD_LEAF_CARPET.get(), RenderType.cutout());
+
+        RenderTypeLookup.setRenderLayer(CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.FLOWERING_OAK_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.RAINBOW_BIRCH_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.ORIGIN_LEAF_CARPET.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.ORIGIN_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.MAPLE_LEAF_CARPET.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.MAPLE_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.ORANGE_AUTUMN_LEAF_CARPET.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.ORANGE_AUTUMN_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.YELLOW_AUTUMN_LEAF_CARPET.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.YELLOW_AUTUMN_HEDGE.get(), RenderType.cutout());
     }
 }

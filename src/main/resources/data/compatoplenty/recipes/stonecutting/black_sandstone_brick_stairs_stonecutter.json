@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "compatoplenty:black_sandstone_bricks"
+  },
+  "result": "compatoplenty:black_sandstone_brick_stairs",
+  "count":1,
+  "conditions": [
+    {
+      "type": "quark:flag",
+      "flag": "sandstone_bricks"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

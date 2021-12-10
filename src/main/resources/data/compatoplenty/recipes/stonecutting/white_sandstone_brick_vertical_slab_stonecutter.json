@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "compatoplenty:white_sandstone_bricks"
+  },
+  "result": "compatoplenty:white_sandstone_brick_vertical_slab",
+  "count": 2,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    },
+    {
+      "type": "quark:flag",
+      "flag": "vertical_slabs"
+    }
+  ]
+}
