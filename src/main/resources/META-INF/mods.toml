@@ -8,7 +8,7 @@ version="${file.jarVersion}"
 displayName="Compat O' Plenty"
 logoFile="compatoplenty.png"
 description='''
-WIP
+A mod designed to fill the gap in content between Biomes O' Plenty and Quark, Farmer's Delight, and Buzzier Bees.
 '''
 
 [[dependencies.compatoplenty]]
