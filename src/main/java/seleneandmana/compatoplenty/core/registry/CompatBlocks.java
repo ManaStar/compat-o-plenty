@@ -1,6 +1,7 @@
 package seleneandmana.compatoplenty.core.registry;
 
 import biomesoplenty.api.block.BOPBlocks;
+import biomesoplenty.init.ModBlocks;
 import com.minecraftabnormals.abnormals_core.common.blocks.*;
 import com.minecraftabnormals.abnormals_core.common.blocks.chest.AbnormalsChestBlock;
 import com.minecraftabnormals.abnormals_core.common.blocks.chest.AbnormalsTrappedChestBlock;
@@ -79,6 +80,34 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> REDWOOD_SIGNS = HELPER.createSignBlock("redwood", MaterialColor.TERRACOTTA_ORANGE);
     public static final RegistryObject<Block> REDWOOD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "redwood_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
     public static final RegistryObject<Block> REDWOOD_PANTRY = HELPER.createBlock("redwood_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //Mahogany
+    public static final RegistryObject<Block> MAHOGANY_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.mahogany_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_MAHOGANY_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_mahogany_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.mahogany_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAHOGANY_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_bookshelf", () -> new BookshelfBlock(CompatProperties.MAHOGANY_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAHOGANY_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_ladder", () -> new AbnormalsLadderBlock(CompatProperties.MAHOGANY_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_MAHOGANY_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_mahogany_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.mahogany_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAHOGANY_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_post", () -> new WoodPostBlock(STRIPPED_MAHOGANY_POST,  AbstractBlock.Properties.copy(BOPBlocks.mahogany_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAHOGANY_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.mahogany_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> MAHOGANY_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "mahogany_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MAHOGANY_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "mahogany", MaterialColor.TERRACOTTA_PINK);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> MAHOGANY_SIGNS = HELPER.createSignBlock("mahogany", MaterialColor.TERRACOTTA_PINK);
+    public static final RegistryObject<Block> MAHOGANY_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "mahogany_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> MAHOGANY_PANTRY = HELPER.createBlock("mahogany_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //Willow
+    public static final RegistryObject<Block> WILLOW_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.willow_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_WILLOW_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_willow_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.willow_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WILLOW_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_bookshelf", () -> new BookshelfBlock(CompatProperties.WILLOW_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WILLOW_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_ladder", () -> new AbnormalsLadderBlock(CompatProperties.WILLOW_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_WILLOW_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_willow_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.willow_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WILLOW_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_post", () -> new WoodPostBlock(STRIPPED_WILLOW_POST,  AbstractBlock.Properties.copy(BOPBlocks.willow_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WILLOW_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.willow_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WILLOW_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "willow_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> WILLOW_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> WILLOW_SIGNS = HELPER.createSignBlock("willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
+    public static final RegistryObject<Block> WILLOW_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "willow_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WILLOW_PANTRY = HELPER.createBlock("willow_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
     
     //Sandstone Blocks
     public static final RegistryObject<Block> WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.white_sandstone)), ItemGroup.TAB_BUILDING_BLOCKS);

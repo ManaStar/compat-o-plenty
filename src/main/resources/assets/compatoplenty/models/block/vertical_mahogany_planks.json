@@ -1,0 +1,6 @@
+{
+    "parent": "abnormals_core:block/vertical_planks",
+    "textures": {
+        "all": "biomesoplenty:block/mahogany_planks"
+    }
+}

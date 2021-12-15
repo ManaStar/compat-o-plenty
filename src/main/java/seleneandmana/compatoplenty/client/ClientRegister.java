@@ -43,6 +43,18 @@ public class ClientRegister {
         RenderTypeLookup.setRenderLayer(CompatBlocks.REDWOOD_HEDGE.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(CompatBlocks.REDWOOD_LEAF_CARPET.get(), RenderType.cutout());
 
+        RenderTypeLookup.setRenderLayer(CompatBlocks.MAHOGANY_LADDER.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.MAHOGANY_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.STRIPPED_MAHOGANY_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.MAHOGANY_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.MAHOGANY_LEAF_CARPET.get(), RenderType.cutout());
+
+        RenderTypeLookup.setRenderLayer(CompatBlocks.WILLOW_LADDER.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.WILLOW_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.STRIPPED_WILLOW_POST.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.WILLOW_HEDGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(CompatBlocks.WILLOW_LEAF_CARPET.get(), RenderType.cutout());
+
         RenderTypeLookup.setRenderLayer(CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(CompatBlocks.FLOWERING_OAK_HEDGE.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), RenderType.cutout());

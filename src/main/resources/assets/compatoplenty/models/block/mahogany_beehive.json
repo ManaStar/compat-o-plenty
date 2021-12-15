@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "compatoplenty:block/mahogany_beehive_end",
+    "bottom": "compatoplenty:block/mahogany_beehive_end",
+    "side": "compatoplenty:block/mahogany_beehive_side",
+    "front": "compatoplenty:block/mahogany_beehive_front",
+    "particle": "compatoplenty:block/mahogany_beehive_side"
+  }
+}
