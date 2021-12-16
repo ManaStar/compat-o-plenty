@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "compatoplenty:cherry_trapped_chest"
+    "compatoplenty:cherry_trapped_chest",
+    "compatoplenty:jacaranda_trapped_chest",
+    "compatoplenty:fir_trapped_chest",
+    "compatoplenty:redwood_trapped_chest",
+    "compatoplenty:mahogany_trapped_chest",
+    "compatoplenty:willow_trapped_chest"
   ]
 }

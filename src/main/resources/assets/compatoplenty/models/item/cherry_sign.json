@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "biomesoplenty:item/cherry_sign"
+        "layer0": "compatoplenty:item/cherry_sign"
     }
 }

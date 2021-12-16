@@ -4,11 +4,12 @@ license="Apache-2.0"
 
 [[mods]]
 modId="compatoplenty"
+authors = "Selene and Mana"
 version="${file.jarVersion}"
 displayName="Compat O' Plenty"
 logoFile="compatoplenty.png"
 description='''
-WIP
+A mod designed to fill the gap in content between Biomes O' Plenty and Quark, Farmer's Delight, and Buzzier Bees.
 '''
 
 [[dependencies.compatoplenty]]
@@ -18,33 +19,15 @@ WIP
     ordering="NONE"
     side="BOTH"
 [[dependencies.compatoplenty]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.16.5,1.17)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.compatoplenty]]
     modId="abnormals_core"
     mandatory=true
     versionRange="[1.16.5-3.3.0,)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.compatoplenty]]
-    modId="quark"
-    mandatory=true
-    versionRange="[r2.4-319,)"
-    ordering="AFTER"
-    side="BOTH"
-[[dependencies.compatoplenty]]
     modId="biomesoplenty"
     mandatory=true
     versionRange="[1.16.5-13.1.0.477,)"
-    ordering="AFTER"
-    side="BOTH"
-[[dependencies.compatoplenty]]
-    modId="buzzier_bees"
-    mandatory=true
-    versionRange="[1.16.5-3.0.1,)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.compatoplenty]]

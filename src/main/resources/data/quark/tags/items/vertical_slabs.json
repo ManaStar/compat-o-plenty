@@ -1,6 +1,18 @@
 {
   "replace": false,
   "values": [
-    "compatoplenty:cherry_vertical_slab"
+    "compatoplenty:cherry_vertical_slab",
+    "compatoplenty:jacaranda_vertical_slab",
+    "compatoplenty:fir_vertical_slab",
+    "compatoplenty:redwood_vertical_slab",
+    "compatoplenty:mud_brick_vertical_slab",
+    "compatoplenty:black_sandstone_brick_vertical_slab",
+    "compatoplenty:smooth_black_sandstone_vertical_slab",
+    "compatoplenty:orange_sandstone_brick_vertical_slab",
+    "compatoplenty:smooth_orange_sandstone_vertical_slab",
+    "compatoplenty:white_sandstone_brick_vertical_slab",
+    "compatoplenty:smooth_white_sandstone_vertical_slab",
+    "compatoplenty:mahogany_vertical_slab",
+    "compatoplenty:willow_vertical_slab"
   ]
 }

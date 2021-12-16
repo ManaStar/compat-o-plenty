@@ -1,0 +1,9 @@
+{
+    "variants": {
+ 	"type=north": { "model": "compatoplenty:block/black_sandstone_brick_vertical_slab", "y": 0, "uvlock": true },
+ 	"type=south": { "model": "compatoplenty:block/black_sandstone_brick_vertical_slab", "y": 180, "uvlock": true },
+  	"type=east": { "model": "compatoplenty:block/black_sandstone_brick_vertical_slab", "y": 90, "uvlock": true },
+ 	"type=west": { "model": "compatoplenty:block/black_sandstone_brick_vertical_slab", "y": 270, "uvlock": true },
+        "type=double": { "model": "compatoplenty:block/black_sandstone_bricks" }
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "C"
+  ],
+  "key": {
+    "#": {
+      "item": "biomesoplenty:rainbow_birch_leaves"
+    },
+    "C": {
+      "tag": "minecraft:birch_logs"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:rainbow_birch_hedge",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    },
+    {
+      "type": "quark:flag",
+      "flag": "hedges"
+    }
+  ]
+}

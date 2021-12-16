@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "biomesoplenty:orange_sandstone"
+  },
+  "result": "compatoplenty:orange_sandstone_bricks",
+  "count": 1,
+  "conditions": [
+    {
+      "type": "quark:flag",
+      "flag": "sandstone_bricks"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "C"
+  ],
+  "key": {
+    "#": {
+      "item": "biomesoplenty:origin_leaves"
+    },
+    "C": {
+      "tag": "minecraft:oak_logs"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:origin_hedge",
+    "count": 2
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    },
+    {
+      "type": "quark:flag",
+      "flag": "hedges"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "compatoplenty:block/white_sandstone_brick_slab" },
+        "type=top": { "model": "compatoplenty:block/white_sandstone_brick_slab_top" },
+        "type=double": { "model": "compatoplenty:block/white_sandstone_bricks" }
+    }
+}

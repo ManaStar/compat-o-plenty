@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "biomesoplenty:redwood_planks"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "compatoplenty:redwood_sign",
+        "count": 3
+    }
+}
