@@ -21,7 +21,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_LEAF_CARPET.get(), 30, 60);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_LEAF_CARPET.get(), 30, 60);
         DataUtil.registerFlammable(CompatBlocks.PALM_LEAF_CARPET.get(), 30, 60);
-        DataUtil.registerFlammable(CompatBlocks.HELLBARK_LEAF_CARPET.get(), 30, 60);
         DataUtil.registerFlammable(CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), 30, 60);
         DataUtil.registerFlammable(CompatBlocks.ORANGE_AUTUMN_LEAF_CARPET.get(), 30, 60);
         DataUtil.registerFlammable(CompatBlocks.YELLOW_AUTUMN_LEAF_CARPET.get(), 30, 60);
@@ -40,7 +39,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_HEDGE.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.HELLBARK_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.RAINBOW_BIRCH_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.ORANGE_AUTUMN_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.YELLOW_AUTUMN_HEDGE.get(), 5, 20);
@@ -58,7 +56,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.VERTICAL_DEAD_PLANKS.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.VERTICAL_UMBRAN_PLANKS.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.VERTICAL_PALM_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_HELLBARK_PLANKS.get(), 5, 20);
 
         DataUtil.registerFlammable(CompatBlocks.CHERRY_POST.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.FIR_POST.get(), 5, 20);
@@ -70,7 +67,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_POST.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_POST.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_POST.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.HELLBARK_POST.get(), 5, 20);
 
         DataUtil.registerFlammable(CompatBlocks.STRIPPED_CHERRY_POST.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.STRIPPED_FIR_POST.get(), 5, 20);
@@ -82,7 +78,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.STRIPPED_DEAD_POST.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.STRIPPED_UMBRAN_POST.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.STRIPPED_PALM_POST.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.STRIPPED_HELLBARK_POST.get(), 5, 20);
 
         DataUtil.registerFlammable(CompatBlocks.CHERRY_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.FIR_VERTICAL_SLAB.get(), 5, 20);
@@ -94,7 +89,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_VERTICAL_SLAB.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.HELLBARK_VERTICAL_SLAB.get(), 5, 20);
 
         DataUtil.registerFlammable(CompatBlocks.CHERRY_BEEHIVE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.FIR_BEEHIVE.get(), 5, 20);
@@ -106,7 +100,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_BEEHIVE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_BEEHIVE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_BEEHIVE.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.HELLBARK_BEEHIVE.get(), 5, 20);
 
         DataUtil.registerFlammable(CompatBlocks.CHERRY_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(CompatBlocks.FIR_BOOKSHELF.get(), 30, 20);
@@ -118,7 +111,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_BOOKSHELF.get(), 30, 20);
-        DataUtil.registerFlammable(CompatBlocks.HELLBARK_BOOKSHELF.get(), 30, 20);
     }
 
     public static void compostablility() {
