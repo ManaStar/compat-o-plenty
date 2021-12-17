@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "___",
+        "B B",
+        "___"
+    ],
+    "key": {
+        "_": {
+            "item": "biomesoplenty:palm_slab"
+        },
+        "B": {
+            "item": "biomesoplenty:palm_trapdoor"
+        }
+    },
+    "result": {
+        "item": "compatoplenty:palm_pantry",
+        "count": 1
+    }
+}

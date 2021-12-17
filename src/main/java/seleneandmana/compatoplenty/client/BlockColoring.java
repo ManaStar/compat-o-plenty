@@ -23,7 +23,7 @@ public class BlockColoring {
     public static void onBiomeColoring(ColorHandlerEvent.Block event) {
         final BlockColors blockColors = event.getBlockColors();
         //Normal
-        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColors.getDefaultColor(), CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get());
+        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColors.getDefaultColor(), CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get(), CompatBlocks.PALM_LEAF_CARPET.get(), CompatBlocks.PALM_HEDGE.get());
         //Rainbow
         blockColors.register((state, world, pos, tint) -> world != null && pos != null ? ClientProxy.getRainbowBirchColor(world, pos) : FoliageColors.getDefaultColor(), CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), CompatBlocks.RAINBOW_BIRCH_HEDGE.get());
     }

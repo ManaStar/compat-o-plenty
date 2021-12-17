@@ -6,6 +6,11 @@
     "compatoplenty:fir_ladder",
     "compatoplenty:redwood_ladder",
     "compatoplenty:mahogany_ladder",
-    "compatoplenty:willow_ladder"
+    "compatoplenty:willow_ladder",
+    "compatoplenty:magic_ladder",
+    "compatoplenty:dead_ladder",
+    "compatoplenty:umbran_ladder",
+    "compatoplenty:palm_ladder",
+    "compatoplenty:hellbark_ladder"
   ]
 }

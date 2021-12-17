@@ -6,6 +6,11 @@
     "compatoplenty:fir_wall_sign",
     "compatoplenty:redwood_wall_sign",
     "compatoplenty:mahogany_wall_sign",
-    "compatoplenty:willow_wall_sign"
+    "compatoplenty:willow_wall_sign",
+    "compatoplenty:magic_wall_sign",
+    "compatoplenty:dead_wall_sign",
+    "compatoplenty:umbran_wall_sign",
+    "compatoplenty:palm_wall_sign",
+    "compatoplenty:hellbark_wall_sign"
   ]
 }

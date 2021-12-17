@@ -108,6 +108,76 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> WILLOW_SIGNS = HELPER.createSignBlock("willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
     public static final RegistryObject<Block> WILLOW_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "willow_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
     public static final RegistryObject<Block> WILLOW_PANTRY = HELPER.createBlock("willow_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //Magic
+    public static final RegistryObject<Block> MAGIC_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.magic_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_MAGIC_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_magic_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.magic_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAGIC_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_bookshelf", () -> new BookshelfBlock(CompatProperties.MAGIC_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAGIC_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_ladder", () -> new AbnormalsLadderBlock(CompatProperties.MAGIC_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_MAGIC_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_magic_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.magic_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAGIC_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_post", () -> new WoodPostBlock(STRIPPED_MAGIC_POST,  AbstractBlock.Properties.copy(BOPBlocks.magic_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> MAGIC_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.magic_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> MAGIC_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "magic_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MAGIC_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "magic", MaterialColor.COLOR_BLUE);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> MAGIC_SIGNS = HELPER.createSignBlock("magic", MaterialColor.COLOR_BLUE);
+    public static final RegistryObject<Block> MAGIC_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "magic_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> MAGIC_PANTRY = HELPER.createBlock("magic_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //Dead
+    public static final RegistryObject<Block> DEAD_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.dead_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_DEAD_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_dead_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.dead_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DEAD_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_bookshelf", () -> new BookshelfBlock(CompatProperties.DEAD_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DEAD_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_ladder", () -> new AbnormalsLadderBlock(CompatProperties.DEAD_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_DEAD_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_dead_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.dead_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DEAD_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_post", () -> new WoodPostBlock(STRIPPED_DEAD_POST,  AbstractBlock.Properties.copy(BOPBlocks.dead_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> DEAD_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.dead_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DEAD_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "dead_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> DEAD_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "dead", MaterialColor.STONE);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> DEAD_SIGNS = HELPER.createSignBlock("dead", MaterialColor.STONE);
+    public static final RegistryObject<Block> DEAD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "dead_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DEAD_PANTRY = HELPER.createBlock("dead_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //Umbran
+    public static final RegistryObject<Block> UMBRAN_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.umbran_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_UMBRAN_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_umbran_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.umbran_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> UMBRAN_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_bookshelf", () -> new BookshelfBlock(CompatProperties.UMBRAN_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> UMBRAN_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_ladder", () -> new AbnormalsLadderBlock(CompatProperties.UMBRAN_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_UMBRAN_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_umbran_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.umbran_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> UMBRAN_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_post", () -> new WoodPostBlock(STRIPPED_UMBRAN_POST,  AbstractBlock.Properties.copy(BOPBlocks.umbran_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> UMBRAN_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.umbran_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> UMBRAN_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "umbran_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> UMBRAN_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "umbran", MaterialColor.TERRACOTTA_BLUE);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> UMBRAN_SIGNS = HELPER.createSignBlock("umbran", MaterialColor.TERRACOTTA_BLUE);
+    public static final RegistryObject<Block> UMBRAN_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "umbran_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> UMBRAN_PANTRY = HELPER.createBlock("umbran_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //Palm
+    public static final RegistryObject<Block> PALM_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.palm_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_PALM_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_palm_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.palm_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PALM_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_bookshelf", () -> new BookshelfBlock(CompatProperties.PALM_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PALM_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_ladder", () -> new AbnormalsLadderBlock(CompatProperties.PALM_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_PALM_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_palm_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.palm_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PALM_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_post", () -> new WoodPostBlock(STRIPPED_PALM_POST,  AbstractBlock.Properties.copy(BOPBlocks.palm_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PALM_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.palm_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PALM_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "palm_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> PALM_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "palm", MaterialColor.TERRACOTTA_YELLOW);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> PALM_SIGNS = HELPER.createSignBlock("palm", MaterialColor.TERRACOTTA_YELLOW);
+    public static final RegistryObject<Block> PALM_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "palm_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PALM_PANTRY = HELPER.createBlock("palm_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+
+    //Hellbark
+    public static final RegistryObject<Block> HELLBARK_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "hellbark_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.hellbark_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_HELLBARK_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_hellbark_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.hellbark_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> HELLBARK_BOOKSHELF = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "hellbark_bookshelf", () -> new BookshelfBlock(CompatProperties.HELLBARK_BOOKSHELF), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> HELLBARK_LADDER = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "hellbark_ladder", () -> new AbnormalsLadderBlock(CompatProperties.HELLBARK_LADDER), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> STRIPPED_HELLBARK_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_hellbark_post", () -> new WoodPostBlock(AbstractBlock.Properties.copy(BOPBlocks.hellbark_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> HELLBARK_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "hellbark_post", () -> new WoodPostBlock(STRIPPED_HELLBARK_POST,  AbstractBlock.Properties.copy(BOPBlocks.hellbark_planks)), 300, ItemGroup.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> HELLBARK_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "hellbark_hedge", () -> new HedgeBlock(AbstractBlock.Properties.copy(BOPBlocks.hellbark_planks)), 300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> HELLBARK_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), ItemGroup.TAB_DECORATIONS);
+    public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> HELLBARK_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "hellbark", MaterialColor.TERRACOTTA_GRAY);
+    public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> HELLBARK_SIGNS = HELPER.createSignBlock("hellbark", MaterialColor.TERRACOTTA_GRAY);
+    public static final RegistryObject<Block> HELLBARK_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "hellbark_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> HELLBARK_PANTRY = HELPER.createBlock("hellbark_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
     
     //Sandstone Blocks
     public static final RegistryObject<Block> WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.white_sandstone)), ItemGroup.TAB_BUILDING_BLOCKS);

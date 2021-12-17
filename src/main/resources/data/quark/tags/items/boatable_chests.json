@@ -6,6 +6,12 @@
     "compatoplenty:fir_chest",
     "compatoplenty:redwood_chest",
     "compatoplenty:mahogany_chest",
-    "compatoplenty:willow_chest"
+    "compatoplenty:willow_chest",
+    "compatoplenty:magic_chest",
+    "compatoplenty:dead_chest",
+    "compatoplenty:umbran_chest",
+    "compatoplenty:palm_chest",
+    "compatoplenty:hellbark_chest"
+
   ]
 }

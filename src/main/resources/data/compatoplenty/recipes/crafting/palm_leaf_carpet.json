@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "biomesoplenty:palm_leaves"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:palm_leaf_carpet",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    },
+    {
+      "type": "quark:flag",
+      "flag": "leaf_carpet"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "abnormals_core:block/hedge_post",
+  "textures": {
+    "log": "biomesoplenty:block/palm_log",
+    "leaf": "biomesoplenty:block/palm_leaves"
+  }
+}

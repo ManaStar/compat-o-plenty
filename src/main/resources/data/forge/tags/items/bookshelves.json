@@ -6,6 +6,11 @@
     "compatoplenty:fir_bookshelf",
     "compatoplenty:redwood_bookshelf",
     "compatoplenty:mahogany_bookshelf",
-    "compatoplenty:willow_bookshelf"
+    "compatoplenty:willow_bookshelf",
+    "compatoplenty:magic_bookshelf",
+    "compatoplenty:dead_bookshelf",
+    "compatoplenty:umbran_bookshelf",
+    "compatoplenty:palm_bookshelf",
+    "compatoplenty:hellbark_bookshelf"
   ]
 }
