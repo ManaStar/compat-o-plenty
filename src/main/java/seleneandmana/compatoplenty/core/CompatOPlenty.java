@@ -25,7 +25,9 @@ public class CompatOPlenty
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         REGISTRY_HELPER.register(bus);
         MinecraftForge.EVENT_BUS.register(this);
+        bus.addListener(this::compatSetup);
     }
+
     private void compatSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(CompatCompat::compatList);
     }
