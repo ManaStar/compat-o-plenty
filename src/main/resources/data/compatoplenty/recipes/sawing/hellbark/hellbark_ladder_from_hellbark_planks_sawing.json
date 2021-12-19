@@ -1,0 +1,23 @@
+{
+  "type": "environmental:sawing",
+  "ingredient": {
+    "item": "biomesoplenty:hellbark_planks"
+  },
+  "result": "compatoplenty:hellbark_ladder",
+  "count": 2,
+  "conditions":[
+    {
+      "type":"forge:and",
+      "values": [
+        {
+          "type":"forge:mod_loaded",
+          "modid":"environmental"
+        },
+        {
+          "type":"abnormals_core:quark_flag",
+          "flag":"variant_ladders"
+        }
+      ]
+    }
+  ]
+}

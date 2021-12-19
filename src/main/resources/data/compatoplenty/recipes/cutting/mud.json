@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:mud"
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:tool",
+    "tool": "shovel"
+  },
+  "result": [
+    {
+      "item": "biomesoplenty:mud_ball",
+      "count": 4
+    }
+  ]
+}

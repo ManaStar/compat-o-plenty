@@ -1,0 +1,23 @@
+{
+  "type": "environmental:sawing",
+  "ingredient": {
+    "item": "compatoplenty:vertical_palm_planks"
+  },
+  "result": "biomesoplenty:palm_planks",
+  "count": 1,
+  "conditions":[
+    {
+      "type":"forge:and",
+      "values": [
+        {
+          "type":"forge:mod_loaded",
+          "modid":"environmental"
+        },
+        {
+          "type":"abnormals_core:quark_flag",
+          "flag":"vertical_planks"
+        }
+      ]
+    }
+  ]
+}
