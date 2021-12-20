@@ -36,6 +36,6 @@ public class BlockColoring {
         itemColors.register((stack, tint) -> {
             BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
             return blockColors.getColor(state, (IBlockDisplayReader) null, (BlockPos) null, tint);
-        }, CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get());
+        }, CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get(), CompatBlocks.PALM_LEAF_CARPET.get(), CompatBlocks.PALM_HEDGE.get());
     }
 }

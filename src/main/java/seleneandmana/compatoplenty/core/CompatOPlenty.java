@@ -6,9 +6,11 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import seleneandmana.compatoplenty.core.other.CompatCompat;
+import seleneandmana.compatoplenty.core.registry.util.CompatBlockSubRegistryHelper;
 
 @Mod("compatoplenty")
 @Mod.EventBusSubscriber(modid = CompatOPlenty.MOD_ID)
@@ -19,7 +21,9 @@ public class CompatOPlenty
     public static final String BUZZIER_ID = "buzzier_bees";
 
     private static final Logger LOGGER = LogManager.getLogger();
-    public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MOD_ID);
+    public static final RegistryHelper REGISTRY_HELPER = RegistryHelper.create(MOD_ID, helper -> {
+        helper.putSubHelper(ForgeRegistries.BLOCKS, new CompatBlockSubRegistryHelper(helper));
+    });
 
     public CompatOPlenty() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
