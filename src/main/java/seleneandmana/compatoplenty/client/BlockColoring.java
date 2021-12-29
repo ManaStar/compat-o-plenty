@@ -1,20 +1,20 @@
 package seleneandmana.compatoplenty.client;
 
 import biomesoplenty.core.ClientProxy;
-import seleneandmana.compatoplenty.core.CompatOPlenty;
-import seleneandmana.compatoplenty.core.registry.CompatBlocks;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.renderer.color.BlockColors;
-import net.minecraft.client.renderer.color.ItemColors;
-import net.minecraft.item.BlockItem;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.FoliageColors;
-import net.minecraft.world.IBlockDisplayReader;
-import net.minecraft.world.biome.BiomeColors;
+import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.color.item.ItemColors;
+import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import seleneandmana.compatoplenty.core.CompatOPlenty;
+import seleneandmana.compatoplenty.core.registry.CompatBlocks;
 
 @Mod.EventBusSubscriber(modid = CompatOPlenty.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class BlockColoring {
@@ -23,9 +23,9 @@ public class BlockColoring {
     public static void onBiomeColoring(ColorHandlerEvent.Block event) {
         final BlockColors blockColors = event.getBlockColors();
         //Normal
-        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColors.getDefaultColor(), CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get(), CompatBlocks.PALM_LEAF_CARPET.get(), CompatBlocks.PALM_HEDGE.get());
+        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(), CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get(), CompatBlocks.PALM_LEAF_CARPET.get(), CompatBlocks.PALM_HEDGE.get());
         //Rainbow
-        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? ClientProxy.getRainbowBirchColor(world, pos) : FoliageColors.getDefaultColor(), CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), CompatBlocks.RAINBOW_BIRCH_HEDGE.get());
+        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? ClientProxy.getRainbowBirchColor(world, pos) : FoliageColor.getDefaultColor(), CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), CompatBlocks.RAINBOW_BIRCH_HEDGE.get());
     }
 
     @SubscribeEvent
@@ -35,7 +35,7 @@ public class BlockColoring {
 
         itemColors.register((stack, tint) -> {
             BlockState state = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
-            return blockColors.getColor(state, (IBlockDisplayReader) null, (BlockPos) null, tint);
+            return blockColors.getColor(state, (Level) null, (BlockPos) null, tint);
         }, CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get(), CompatBlocks.PALM_LEAF_CARPET.get(), CompatBlocks.PALM_HEDGE.get());
     }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "abnormals_core:block/vertical_slab",
+  "parent": "blueprint:block/vertical_slab",
   "textures": {
     "side": "biomesoplenty:block/cherry_planks",
     "top": "biomesoplenty:block/cherry_planks",

@@ -1,0 +1,7 @@
+{
+  "parent": "blueprint:block/hedge_post",
+  "textures": {
+    "log": "biomesoplenty:block/willow_log",
+    "leaf": "biomesoplenty:block/willow_leaves"
+  }
+}

@@ -1,6 +1,6 @@
 package seleneandmana.compatoplenty.core.other;
 
-import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
+import com.teamabnormals.blueprint.core.util.DataUtil;
 import seleneandmana.compatoplenty.core.registry.CompatBlocks;
 
 public class CompatCompat {
@@ -45,17 +45,6 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.MAPLE_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.ORIGIN_HEDGE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.FLOWERING_OAK_HEDGE.get(), 5, 20);
-
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_CHERRY_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_FIR_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_JACARANDA_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_REDWOOD_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_MAHOGANY_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_WILLOW_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_MAGIC_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_DEAD_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_UMBRAN_PLANKS.get(), 5, 20);
-        DataUtil.registerFlammable(CompatBlocks.VERTICAL_PALM_PLANKS.get(), 5, 20);
 
         DataUtil.registerFlammable(CompatBlocks.CHERRY_POST.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.FIR_POST.get(), 5, 20);

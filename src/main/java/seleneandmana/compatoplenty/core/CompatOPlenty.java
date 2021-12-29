@@ -1,6 +1,6 @@
 package seleneandmana.compatoplenty.core;
 
-import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
+import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;

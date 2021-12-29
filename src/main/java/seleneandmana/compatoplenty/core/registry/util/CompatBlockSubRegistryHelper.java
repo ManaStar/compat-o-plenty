@@ -1,54 +1,55 @@
 package seleneandmana.compatoplenty.core.registry.util;
 
-import com.minecraftabnormals.abnormals_core.client.ChestManager;
-import com.minecraftabnormals.abnormals_core.client.renderer.ChestItemRenderer;
-import com.minecraftabnormals.abnormals_core.common.blocks.chest.AbnormalsChestBlock;
-import com.minecraftabnormals.abnormals_core.common.blocks.chest.AbnormalsTrappedChestBlock;
-import com.minecraftabnormals.abnormals_core.common.tileentity.AbnormalsChestTileEntity;
-import com.minecraftabnormals.abnormals_core.common.tileentity.AbnormalsTrappedChestTileEntity;
-import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
-import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.tileentity.TileEntity;
+import com.teamabnormals.blueprint.client.ChestManager;
+import com.teamabnormals.blueprint.client.renderer.block.ChestBlockEntityWithoutLevelRenderer;
+import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
+import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
+import com.teamabnormals.blueprint.common.block.entity.BlueprintChestBlockEntity;
+import com.teamabnormals.blueprint.common.block.entity.BlueprintTrappedChestBlockEntity;
+import com.teamabnormals.blueprint.common.item.BEWLRBlockItem;
+import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
+import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.RegistryObject;
-
-import java.util.concurrent.Callable;
+import net.minecraftforge.registries.RegistryObject;
 
 public class CompatBlockSubRegistryHelper extends BlockSubRegistryHelper {
     public CompatBlockSubRegistryHelper(RegistryHelper parent) {
         super(parent);
     }
 
-    public Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> createUnburnableCompatChestBlocks(String compatModId, String name, MaterialColor color) {
+    public Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> createUnburnableCompatChestBlocks(String compatModId, String name, MaterialColor color) {
         boolean isModLoaded = ModList.get().isLoaded(compatModId) || compatModId == "indev";
-        ItemGroup chestGroup = isModLoaded ? ItemGroup.TAB_DECORATIONS : null;
-        ItemGroup trappedChestGroup = isModLoaded ? ItemGroup.TAB_REDSTONE : null;
+        CreativeModeTab chestGroup = isModLoaded ? CreativeModeTab.TAB_DECORATIONS : null;
+        CreativeModeTab trappedChestGroup = isModLoaded ? CreativeModeTab.TAB_REDSTONE : null;
         String modId = this.parent.getModId();
         String chestName = name + "_chest";
         String trappedChestName = name + "_trapped_chest";
-        RegistryObject<AbnormalsChestBlock> chest = this.deferredRegister.register(chestName, () -> new AbnormalsChestBlock(modId + ":" + name, Block.Properties.of(Material.WOOD, color).strength(2.5F).sound(SoundType.WOOD)));
-        RegistryObject<AbnormalsTrappedChestBlock> trappedChest = this.deferredRegister.register(trappedChestName, () -> new AbnormalsTrappedChestBlock(modId + ":" + name + "_trapped", Block.Properties.of(Material.WOOD, color).strength(2.5F).sound(SoundType.WOOD)));
-        this.itemRegister.register(chestName, () -> new BlockItem(chest.get(), new Item.Properties().tab(chestGroup).setISTER(() -> chestISTER(false))));
-        this.itemRegister.register(trappedChestName, () -> new BlockItem(trappedChest.get(), new Item.Properties().tab(trappedChestGroup).setISTER(() -> chestISTER(true))));
+        RegistryObject<BlueprintChestBlock> chest = this.deferredRegister.register(chestName, () -> new BlueprintChestBlock(modId + ":" + name, Block.Properties.of(Material.WOOD, color).strength(2.5F).sound(SoundType.WOOD)));
+        RegistryObject<BlueprintTrappedChestBlock> trappedChest = this.deferredRegister.register(trappedChestName, () -> new BlueprintTrappedChestBlock(modId + ":" + name + "_trapped", Block.Properties.of(Material.WOOD, color).strength(2.5F).sound(SoundType.WOOD)));
+        this.itemRegister.register(chestName, () -> new BEWLRBlockItem(chest.get(), new Item.Properties().tab(chestGroup), () -> () -> chestBEWLR(false)));
+        this.itemRegister.register(trappedChestName, () -> new BEWLRBlockItem(trappedChest.get(), new Item.Properties().tab(trappedChestGroup), () -> () -> chestBEWLR(true)));
         ChestManager.putChestInfo(modId, name, false);
         ChestManager.putChestInfo(modId, name, true);
         return Pair.of(chest, trappedChest);
     }
 
     @OnlyIn(Dist.CLIENT)
-    private static Callable<ItemStackTileEntityRenderer> chestISTER(boolean trapped) {
-        return () -> new ChestItemRenderer<TileEntity>(trapped ? AbnormalsTrappedChestTileEntity::new : AbnormalsChestTileEntity::new);
+    private static BEWLRBlockItem.LazyBEWLR chestBEWLR(boolean trapped) {
+        return trapped ? new BEWLRBlockItem.LazyBEWLR((dispatcher, entityModelSet) -> {
+            return new ChestBlockEntityWithoutLevelRenderer<>(dispatcher, entityModelSet, new BlueprintTrappedChestBlockEntity(BlockPos.ZERO, Blocks.TRAPPED_CHEST.defaultBlockState()));
+        }) : new BEWLRBlockItem.LazyBEWLR((dispatcher, entityModelSet) -> {
+            return new ChestBlockEntityWithoutLevelRenderer<>(dispatcher, entityModelSet, new BlueprintChestBlockEntity(BlockPos.ZERO, Blocks.CHEST.defaultBlockState()));
+        });
     }
 }

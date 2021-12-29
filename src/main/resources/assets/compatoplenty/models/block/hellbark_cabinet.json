@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "compatoplenty:block/hellbark_cabinet_top",
+    "front": "compatoplenty:block/hellbark_cabinet_front",
+    "side": "compatoplenty:block/hellbark_cabinet_side"
+  }
+}

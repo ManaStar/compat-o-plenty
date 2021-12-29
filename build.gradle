@@ -14,11 +14,11 @@ version = project.version
 group = 'seleneandmana.compatoplenty'
 archivesBaseName = 'Compat-O-Plenty'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: '1.18.1'
 
     runs {
         client {
@@ -67,16 +67,16 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.9'
-    implementation fg.deobf("com.minecraftabnormals:abnormals-core:1.16.5-3.3.0")
-    implementation fg.deobf("curse.maven:bop-220318:3360574")
-    implementation fg.deobf("curse.maven:farmersdelight-398521:3503844")
+    minecraft 'net.minecraftforge:forge:1.18.1-39.0.9'
+    implementation fg.deobf("com.teamabnormals:blueprint:1.18.1-5.0.0")
+    implementation fg.deobf("curse.maven:bop-220318:3582881")
+    implementation fg.deobf("curse.maven:farmersdelight-398521:3575116")
 
-    runtimeOnly fg.deobf("curse.maven:buzzierbees-355458:3226433")
-    runtimeOnly fg.deobf("curse.maven:quark-243121:3490981")
-    runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3326041")
+    //runtimeOnly fg.deobf("curse.maven:buzzierbees-355458:3226433")
+    runtimeOnly fg.deobf("curse.maven:quark-243121:3578106")
+    runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3575622")
 
-    runtimeOnly fg.deobf("curse.maven:jei-238222:3514175")
+    runtimeOnly fg.deobf("curse.maven:jei-238222:3574041")
 
 
 

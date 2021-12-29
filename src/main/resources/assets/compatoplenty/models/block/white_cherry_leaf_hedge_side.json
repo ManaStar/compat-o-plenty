@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/hedge_side",
+  "textures": {
+    "leaf": "biomesoplenty:block/white_cherry_leaves"
+  }
+}

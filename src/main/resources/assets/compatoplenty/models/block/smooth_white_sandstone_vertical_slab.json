@@ -1,5 +1,5 @@
 {
-  "parent": "abnormals_core:block/vertical_slab",
+  "parent": "blueprint:block/vertical_slab",
   "textures": {
     "side": "biomesoplenty:block/white_sandstone_top",
     "top": "biomesoplenty:block/white_sandstone_top",

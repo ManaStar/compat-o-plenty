@@ -1,8 +1,0 @@
-{
-  "parent": "block/orientable",
-  "textures": {
-    "top": "compatoplenty:block/mahogany_pantry_top",
-    "front": "compatoplenty:block/mahogany_pantry_front",
-    "side": "compatoplenty:block/mahogany_pantry_side"
-  }
-}

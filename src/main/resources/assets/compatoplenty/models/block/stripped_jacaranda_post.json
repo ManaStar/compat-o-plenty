@@ -1,5 +1,5 @@
 {
-  "parent": "abnormals_core:block/post",
+  "parent": "blueprint:block/post",
   "textures": {
     "texture": "biomesoplenty:block/stripped_jacaranda_log"
   }
