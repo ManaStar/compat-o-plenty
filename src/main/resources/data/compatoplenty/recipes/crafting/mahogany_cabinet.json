@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "___",
+        "B B",
+        "___"
+    ],
+    "key": {
+        "_": {
+            "item": "biomesoplenty:mahogany_slab"
+        },
+        "B": {
+            "item": "biomesoplenty:mahogany_trapdoor"
+        }
+    },
+    "result": {
+        "item": "compatoplenty:mahogany_cabinet",
+        "count": 1
+    }
+}

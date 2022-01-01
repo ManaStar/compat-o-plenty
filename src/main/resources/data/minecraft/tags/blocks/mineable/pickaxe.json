@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "compatoplenty:black_sandstone_vertical_slab",
+    "compatoplenty:orange_sandstone_vertical_slab",
+    "compatoplenty:white_sandstone_vertical_slab",
+
+    "compatoplenty:smooth_black_sandstone_vertical_slab",
+    "compatoplenty:smooth_orange_sandstone_vertical_slab",
+    "compatoplenty:smooth_white_sandstone_vertical_slab",
+
+    "compatoplenty:black_sandstone_bricks",
+    "compatoplenty:black_sandstone_brick_stairs",
+    "compatoplenty:black_sandstone_brick_slab",
+    "compatoplenty:black_sandstone_brick_wall",
+    "compatoplenty:black_sandstone_brick_vertical_slab",
+
+    "compatoplenty:orange_sandstone_bricks",
+    "compatoplenty:orange_sandstone_brick_stairs",
+    "compatoplenty:orange_sandstone_brick_slab",
+    "compatoplenty:orange_sandstone_brick_wall",
+    "compatoplenty:orange_sandstone_brick_vertical_slab",
+
+    "compatoplenty:white_sandstone_bricks",
+    "compatoplenty:white_sandstone_brick_stairs",
+    "compatoplenty:white_sandstone_brick_slab",
+    "compatoplenty:white_sandstone_brick_wall",
+    "compatoplenty:white_sandstone_brick_vertical_slab",
+
+    "compatoplenty:mud_brick_vertical_slab"
+  ]
+}

@@ -153,7 +153,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> PALM_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "palm", MaterialColor.TERRACOTTA_YELLOW);
     public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> PALM_SIGNS = HELPER.createSignBlock("palm", MaterialColor.TERRACOTTA_YELLOW);
     public static final RegistryObject<Block> PALM_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "palm_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PALM_CABINET = HELPER.createFuelBlock("palm_palm", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PALM_CABINET = HELPER.createFuelBlock("palm_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
     //Hellbark
     public static final RegistryObject<Block> HELLBARK_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> HELLBARK_BOOKSHELF = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_bookshelf", () -> new BookshelfBlock(CompatProperties.HELLBARK_BOOKSHELF), CreativeModeTab.TAB_BUILDING_BLOCKS);
