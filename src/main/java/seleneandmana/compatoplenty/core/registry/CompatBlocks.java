@@ -11,6 +11,7 @@ import com.teamabnormals.blueprint.common.block.wood.WoodPostBlock;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
@@ -190,6 +191,12 @@ public class CompatBlocks {
     public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_WALL = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLACK_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_brick_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BLACK_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    //Galanos Blocks
+    public static final RegistryObject<Block> GALANOS_BLOCK = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DIAMOND).requiresCorrectToolForDrops().strength(1.5f, 6f).lightLevel(state -> 6).sound(SoundType.STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GALANOS_PILLAR = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GALANOS_STAIRS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_stairs", () -> new StairBlock(GALANOS_BLOCK.get().defaultBlockState() ,BlockBehaviour.Properties.copy(CompatBlocks.GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GALANOS_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GALANOS_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     //Misc
     public static final RegistryObject<Block> FLOWERING_OAK_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "flowering_oak_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);

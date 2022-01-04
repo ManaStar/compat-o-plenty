@@ -27,6 +27,12 @@
     "compatoplenty:white_sandstone_brick_wall",
     "compatoplenty:white_sandstone_brick_vertical_slab",
 
+    "compatoplenty:galanos_block",
+    "compatoplenty:galanos_pillar",
+    "compatoplenty:galanos_stairs",
+    "compatoplenty:galanos_slab",
+    "compatoplenty:galanos_vertical_slab",
+
     "compatoplenty:mud_brick_vertical_slab"
   ]
 }

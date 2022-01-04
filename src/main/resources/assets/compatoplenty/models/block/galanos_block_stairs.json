@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "compatoplenty:block/galanos_block",
+        "top": "compatoplenty:block/galanos_block",
+        "side": "compatoplenty:block/galanos_block"
+    }
+}

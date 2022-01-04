@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "compatoplenty:galanos_block"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:galanos_slab",
+    "count": 6
+  },
+  "conditions": [
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "midori"
+    }
+  ]
+} 

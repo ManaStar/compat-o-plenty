@@ -101,6 +101,18 @@
     "compatoplenty:redwood_ladder",
     "compatoplenty:willow_ladder",
     "compatoplenty:palm_ladder",
-    "compatoplenty:mahogany_ladder"
+    "compatoplenty:mahogany_ladder",
+
+    "compatoplenty:cherry_sign",
+    "compatoplenty:dead_sign",
+    "compatoplenty:fir_sign",
+    "compatoplenty:hellbark_sign",
+    "compatoplenty:jacaranda_sign",
+    "compatoplenty:magic_sign",
+    "compatoplenty:umbran_sign",
+    "compatoplenty:redwood_sign",
+    "compatoplenty:willow_sign",
+    "compatoplenty:palm_sign",
+    "compatoplenty:mahogany_sign"
   ]
 }
