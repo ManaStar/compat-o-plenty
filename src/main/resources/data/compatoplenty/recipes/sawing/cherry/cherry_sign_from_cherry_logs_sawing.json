@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:cherry_logs"
   },
-  "result": "compatoplenty:cherry_sign",
+  "result": "biomesoplenty:cherry_sign",
   "count": 2,
   "conditions":[
     {

@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "compatoplenty:jacaranda_sign"
+      "item": "biomesoplenty:jacaranda_sign"
     }
   ],
   "tool": {

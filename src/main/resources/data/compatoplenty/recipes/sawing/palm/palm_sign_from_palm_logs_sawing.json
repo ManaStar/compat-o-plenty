@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:palm_logs"
   },
-  "result": "compatoplenty:palm_sign",
+  "result": "biomesoplenty:palm_sign",
   "count": 2,
   "conditions":[
     {

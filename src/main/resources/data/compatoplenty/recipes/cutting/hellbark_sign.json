@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "compatoplenty:hellbark_sign"
+      "item": "biomesoplenty:hellbark_sign"
     }
   ],
   "tool": {

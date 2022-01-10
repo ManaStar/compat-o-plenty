@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:jacaranda_logs"
   },
-  "result": "compatoplenty:jacaranda_sign",
+  "result": "biomesoplenty:jacaranda_sign",
   "count": 2,
   "conditions":[
     {

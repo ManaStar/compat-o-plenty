@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "compatoplenty:cherry_sign"
+      "item": "biomesoplenty:cherry_sign"
     }
   ],
   "tool": {

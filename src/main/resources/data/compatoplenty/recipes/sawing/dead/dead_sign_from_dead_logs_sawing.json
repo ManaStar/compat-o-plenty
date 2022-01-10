@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:dead_logs"
   },
-  "result": "compatoplenty:dead_sign",
+  "result": "biomesoplenty:dead_sign",
   "count": 2,
   "conditions":[
     {

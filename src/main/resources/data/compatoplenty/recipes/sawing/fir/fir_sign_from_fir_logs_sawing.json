@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:fir_logs"
   },
-  "result": "compatoplenty:fir_sign",
+  "result": "biomesoplenty:fir_sign",
   "count": 2,
   "conditions":[
     {

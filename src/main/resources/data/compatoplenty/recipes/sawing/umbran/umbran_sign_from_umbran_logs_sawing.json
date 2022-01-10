@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:umbran_logs"
   },
-  "result": "compatoplenty:umbran_sign",
+  "result": "biomesoplenty:umbran_sign",
   "count": 2,
   "conditions":[
     {

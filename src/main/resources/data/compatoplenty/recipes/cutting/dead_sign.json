@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "compatoplenty:dead_sign"
+      "item": "biomesoplenty:dead_sign"
     }
   ],
   "tool": {

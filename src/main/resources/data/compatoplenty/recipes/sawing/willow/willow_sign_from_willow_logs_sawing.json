@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:willow_logs"
   },
-  "result": "compatoplenty:willow_sign",
+  "result": "biomesoplenty:willow_sign",
   "count": 2,
   "conditions":[
     {

@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:mahogany_logs"
   },
-  "result": "compatoplenty:mahogany_sign",
+  "result": "biomesoplenty:mahogany_sign",
   "count": 2,
   "conditions":[
     {

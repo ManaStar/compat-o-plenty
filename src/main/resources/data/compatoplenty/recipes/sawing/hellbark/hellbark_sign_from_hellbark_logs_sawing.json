@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:hellbark_logs"
   },
-  "result": "compatoplenty:hellbark_sign",
+  "result": "biomesoplenty:hellbark_sign",
   "count": 2,
   "conditions":[
     {

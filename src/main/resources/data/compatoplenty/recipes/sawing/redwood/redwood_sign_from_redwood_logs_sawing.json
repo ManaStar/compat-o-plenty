@@ -3,7 +3,7 @@
   "ingredient": {
     "tag": "biomesoplenty:redwood_logs"
   },
-  "result": "compatoplenty:redwood_sign",
+  "result": "biomesoplenty:redwood_sign",
   "count": 2,
   "conditions":[
     {

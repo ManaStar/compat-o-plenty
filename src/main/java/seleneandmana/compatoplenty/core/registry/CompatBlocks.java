@@ -35,7 +35,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> WHITE_CHERRY_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_cherry_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> PINK_CHERRY_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "pink_cherry_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> CHERRY_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "cherry", MaterialColor.COLOR_RED);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> CHERRY_SIGNS = HELPER.createSignBlock("cherry", MaterialColor.COLOR_RED);
     public static final RegistryObject<Block> CHERRY_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "cherry_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> CHERRY_CABINET = HELPER.createFuelBlock("cherry_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -48,7 +47,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> JACARANDA_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "jacaranda_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> JACARANDA_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "jacaranda_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> JACARANDA_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "jacaranda", MaterialColor.TERRACOTTA_PINK);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> JACARANDA_SIGNS = HELPER.createSignBlock("jacaranda", MaterialColor.TERRACOTTA_PINK);
     public static final RegistryObject<Block> JACARANDA_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "jacaranda_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> JACARANDA_CABINET = HELPER.createFuelBlock("jacaranda_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -61,7 +59,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> FIR_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FIR_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "fir_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> FIR_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "fir", MaterialColor.TERRACOTTA_WHITE);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> FIR_SIGNS = HELPER.createSignBlock("fir", MaterialColor.TERRACOTTA_WHITE);
     public static final RegistryObject<Block> FIR_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "fir_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> FIR_CABINET = HELPER.createFuelBlock("fir_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -74,7 +71,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> REDWOOD_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "redwood_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> REDWOOD_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "redwood_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> REDWOOD_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "redwood", MaterialColor.TERRACOTTA_ORANGE);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> REDWOOD_SIGNS = HELPER.createSignBlock("redwood", MaterialColor.TERRACOTTA_ORANGE);
     public static final RegistryObject<Block> REDWOOD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "redwood_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> REDWOOD_CABINET = HELPER.createFuelBlock("redwood_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -87,7 +83,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> MAHOGANY_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> MAHOGANY_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "mahogany_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> MAHOGANY_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "mahogany", MaterialColor.TERRACOTTA_PINK);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> MAHOGANY_SIGNS = HELPER.createSignBlock("mahogany", MaterialColor.TERRACOTTA_PINK);
     public static final RegistryObject<Block> MAHOGANY_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "mahogany_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> MAHOGANY_CABINET = HELPER.createFuelBlock("mahogany_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -100,7 +95,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> WILLOW_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> WILLOW_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "willow_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> WILLOW_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> WILLOW_SIGNS = HELPER.createSignBlock("willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
     public static final RegistryObject<Block> WILLOW_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "willow_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> WILLOW_CABINET = HELPER.createFuelBlock("willow_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -113,7 +107,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> MAGIC_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> MAGIC_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "magic_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> MAGIC_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "magic", MaterialColor.COLOR_BLUE);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> MAGIC_SIGNS = HELPER.createSignBlock("magic", MaterialColor.COLOR_BLUE);
     public static final RegistryObject<Block> MAGIC_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "magic_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> MAGIC_CABINET = HELPER.createFuelBlock("magic_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -126,7 +119,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> DEAD_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> DEAD_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "dead_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> DEAD_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "dead", MaterialColor.STONE);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> DEAD_SIGNS = HELPER.createSignBlock("dead", MaterialColor.STONE);
     public static final RegistryObject<Block> DEAD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "dead_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> DEAD_CABINET = HELPER.createFuelBlock("dead_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -139,7 +131,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> UMBRAN_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> UMBRAN_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "umbran_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> UMBRAN_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "umbran", MaterialColor.TERRACOTTA_BLUE);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> UMBRAN_SIGNS = HELPER.createSignBlock("umbran", MaterialColor.TERRACOTTA_BLUE);
     public static final RegistryObject<Block> UMBRAN_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "umbran_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> UMBRAN_CABINET = HELPER.createFuelBlock("umbran_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
 
@@ -152,7 +143,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> PALM_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> PALM_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "palm_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> PALM_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "palm", MaterialColor.TERRACOTTA_YELLOW);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> PALM_SIGNS = HELPER.createSignBlock("palm", MaterialColor.TERRACOTTA_YELLOW);
     public static final RegistryObject<Block> PALM_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "palm_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> PALM_CABINET = HELPER.createFuelBlock("palm_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
     //Hellbark
@@ -164,7 +154,6 @@ public class CompatBlocks {
     public static final RegistryObject<Block> HELLBARK_HEDGE = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> HELLBARK_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
     public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> HELLBARK_CHEST = HELPER.createUnburnableCompatChestBlocks(CompatOPlenty.QUARK_ID,"hellbark", MaterialColor.TERRACOTTA_GRAY);
-    public static final Pair<RegistryObject<BlueprintStandingSignBlock>,RegistryObject <BlueprintWallSignBlock>> HELLBARK_SIGNS = HELPER.createSignBlock("hellbark", MaterialColor.TERRACOTTA_GRAY);
     public static final RegistryObject<Block> HELLBARK_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "hellbark_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> HELLBARK_CABINET = HELPER.createBlock("hellbark_cabinet", () -> new CompatCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), CreativeModeTab.TAB_DECORATIONS);
     

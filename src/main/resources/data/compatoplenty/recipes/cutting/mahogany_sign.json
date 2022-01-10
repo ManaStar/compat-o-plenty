@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "compatoplenty:mahogany_sign"
+      "item": "biomesoplenty:mahogany_sign"
     }
   ],
   "tool": {
