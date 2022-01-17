@@ -76,6 +76,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:terrablender-563928:3598130")
     runtimeOnly fg.deobf("curse.maven:quark-243121:3578106")
     runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3575622")
+    runtimeOnly fg.deobf("curse.maven:twigs-496913:3598149")
 
     runtimeOnly fg.deobf("curse.maven:jei-238222:3574041")
 
