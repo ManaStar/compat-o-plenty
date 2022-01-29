@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "O O",
+    "O O"
+  ],
+  "key": {
+    "_": {
+      "item": "biomesoplenty:hellbark_slab"
+    },
+    "O": {
+      "item": "biomesoplenty:hellbark_fence"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:hellbark_table",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twigs"
+    }
+  ]
+}

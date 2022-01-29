@@ -33,6 +33,18 @@
     "compatoplenty:galanos_slab",
     "compatoplenty:galanos_vertical_slab",
 
+    "compatoplenty:polished_rose_quartz",
+    "compatoplenty:polished_rose_quartz_stairs",
+    "compatoplenty:polished_rose_quartz_slab",
+    "compatoplenty:polished_rose_quartz_vertical_slab",
+    "compatoplenty:chiseled_polished_rose_quartz",
+    "compatoplenty:polished_rose_quartz_bricks",
+    "compatoplenty:polished_rose_quartz_brick_stairs",
+    "compatoplenty:polished_rose_quartz_brick_slab",
+    "compatoplenty:polished_rose_quartz_brick_vertical_slab",
+    "compatoplenty:polished_rose_quartz_brick_wall",
+    "compatoplenty:cracked_polished_rose_quartz_bricks",
+
     "compatoplenty:mud_brick_vertical_slab"
   ]
 }

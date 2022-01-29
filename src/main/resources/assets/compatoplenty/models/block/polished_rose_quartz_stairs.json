@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/stairs",
+    "textures": {
+        "bottom": "compatoplenty:block/polished_rose_quartz",
+        "top": "compatoplenty:block/polished_rose_quartz",
+        "side": "compatoplenty:block/polished_rose_quartz"
+    }
+}

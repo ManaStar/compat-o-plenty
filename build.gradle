@@ -78,7 +78,11 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3575622")
     runtimeOnly fg.deobf("curse.maven:twigs-496913:3598149")
 
-    runtimeOnly fg.deobf("curse.maven:jei-238222:3574041")
+    runtimeOnly fg.deobf("curse.maven:rei-392060:3607431")
+    runtimeOnly fg.deobf("curse.maven:architectury-419699:3587338")
+    runtimeOnly fg.deobf("curse.maven:cloth_config-348521:3608026")
+
+
 
 
 

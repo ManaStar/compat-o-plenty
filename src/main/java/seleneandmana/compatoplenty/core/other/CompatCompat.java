@@ -100,6 +100,17 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_BOOKSHELF.get(), 30, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_BOOKSHELF.get(), 30, 20);
+
+        DataUtil.registerFlammable(CompatBlocks.CHERRY_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.FIR_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.JACARANDA_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.REDWOOD_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.MAHOGANY_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.WILLOW_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.MAGIC_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.DEAD_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.UMBRAN_TABLE.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.PALM_TABLE.get(), 5, 20);
     }
 
     public static void compostablility() {

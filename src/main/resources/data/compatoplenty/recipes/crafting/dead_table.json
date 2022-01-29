@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "___",
+    "O O",
+    "O O"
+  ],
+  "key": {
+    "_": {
+      "item": "biomesoplenty:dead_slab"
+    },
+    "O": {
+      "item": "biomesoplenty:dead_fence"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:dead_table",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twigs"
+    }
+  ]
+}

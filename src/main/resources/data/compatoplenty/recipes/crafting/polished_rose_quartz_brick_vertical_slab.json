@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "compatoplenty:polished_rose_quartz_brick_slab"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:polished_rose_quartz_brick_vertical_slab",
+    "count": 3
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twigs"
+    },
+    {
+      "type": "blueprint:quark_flag",
+      "flag": "vertical_slabs"
+    }
+  ]
+}

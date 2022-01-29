@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "biomesoplenty:rose_quartz_block"
+    }
+  },
+  "result": {
+    "item": "compatoplenty:polished_rose_quartz",
+    "count": 4
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twigs"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "compatoplenty:block/polished_rose_quartz_slab"
+        },
+        "type=double": {
+            "model": "compatoplenty:block/polished_rose_quartz"
+        },
+        "type=top": {
+            "model": "compatoplenty:block/polished_rose_quartz_slab_top"
+        }
+    }
+}

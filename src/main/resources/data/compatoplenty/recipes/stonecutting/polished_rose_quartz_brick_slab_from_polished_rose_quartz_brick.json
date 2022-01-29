@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "compatoplenty:polished_rose_quartz_bricks"
+  },
+  "result": "compatoplenty:polished_rose_quartz_brick_slab",
+  "count": 2,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "twigs"
+    }
+  ]
+}

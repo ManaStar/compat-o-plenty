@@ -16,8 +16,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
-import seleneandmana.compatoplenty.common.blocks.CompatCabinetBlock;
-import seleneandmana.compatoplenty.common.blocks.CompatTableBlock;
+import seleneandmana.compatoplenty.common.blocks.*;
 import seleneandmana.compatoplenty.core.CompatOPlenty;
 import seleneandmana.compatoplenty.core.other.CompatProperties;
 import seleneandmana.compatoplenty.core.registry.util.CompatBlockSubRegistryHelper;
@@ -204,6 +203,19 @@ public class CompatBlocks {
     public static final RegistryObject<Block> GALANOS_STAIRS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_stairs", () -> new StairBlock(GALANOS_BLOCK.get().defaultBlockState() ,BlockBehaviour.Properties.copy(CompatBlocks.GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GALANOS_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> GALANOS_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    //Polished Rose Quartz Blocks
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz", () -> new AmethystBlock(BlockBehaviour.Properties.copy(BOPBlocks.ROSE_QUARTZ_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_SLAB = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_slab", () -> new RoseQuartzSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_STAIRS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_stairs", () -> new RoseQuartzStairBlock(POLISHED_ROSE_QUARTZ.get().defaultBlockState(), BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_VERTICAL_SLAB = HELPER.createCompatBlock("polished_rose_quartz_vertical_slab", () -> new RoseQuartzVerticalSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS, CompatOPlenty.QUARK_ID, CompatOPlenty.TWIGS_ID);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICKS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_bricks", () -> new AmethystBlock(BlockBehaviour.Properties.copy(BOPBlocks.ROSE_QUARTZ_BLOCK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_SLAB = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_brick_slab", () -> new RoseQuartzSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_STAIRS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_brick_stairs", () -> new RoseQuartzStairBlock(POLISHED_ROSE_QUARTZ_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("polished_rose_quartz_brick_vertical_slab", () -> new RoseQuartzVerticalSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS, CompatOPlenty.QUARK_ID, CompatOPlenty.TWIGS_ID);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_WALL = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_brick_wall", () -> new RoseQuartzWallBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CRACKED_POLISHED_ROSE_QUARTZ_BRICKS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "cracked_polished_rose_quartz_bricks", () -> new AmethystBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> CHISELED_POLISHED_ROSE_QUARTZ = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "chiseled_polished_rose_quartz", () -> new AmethystBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     //Misc
     public static final RegistryObject<Block> FLOWERING_OAK_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "flowering_oak_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);

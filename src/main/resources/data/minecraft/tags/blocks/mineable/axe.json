@@ -125,6 +125,18 @@
     "compatoplenty:redwood_trapped_chest",
     "compatoplenty:willow_trapped_chest",
     "compatoplenty:palm_trapped_chest",
-    "compatoplenty:mahogany_trapped_chest"
+    "compatoplenty:mahogany_trapped_chest",
+
+    "compatoplenty:cherry_table",
+    "compatoplenty:dead_table",
+    "compatoplenty:fir_table",
+    "compatoplenty:hellbark_table",
+    "compatoplenty:jacaranda_table",
+    "compatoplenty:magic_table",
+    "compatoplenty:umbran_table",
+    "compatoplenty:redwood_table",
+    "compatoplenty:willow_table",
+    "compatoplenty:palm_table",
+    "compatoplenty:mahogany_table"
   ]
 }

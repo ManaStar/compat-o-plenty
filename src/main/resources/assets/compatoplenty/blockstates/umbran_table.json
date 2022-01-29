@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "compatoplenty:block/umbran_table",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "compatoplenty:block/umbran_table"
+    },
+    "facing=south": {
+      "model": "compatoplenty:block/umbran_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "compatoplenty:block/umbran_table",
+      "y": 270
+    }
+  }
+}
