@@ -16,5 +16,11 @@
     "result": {
         "item": "compatoplenty:hellbark_cabinet",
         "count": 1
-    }
+    },
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "farmersdelight"
+        }
+    ]
 }
