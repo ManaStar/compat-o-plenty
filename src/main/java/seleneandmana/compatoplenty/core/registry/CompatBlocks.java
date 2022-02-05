@@ -9,8 +9,9 @@ import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSig
 import com.minecraftabnormals.abnormals_core.common.blocks.wood.WoodPostBlock;
 import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.block.material.Material;
-import seleneandmana.compatoplenty.common.blocks.CompatPantryBlock;
+import seleneandmana.compatoplenty.common.integration.farmersdelight.CompatPantryBlock;
+import seleneandmana.compatoplenty.common.integration.farmersdelight.CompatPantrySuppliers;
+import seleneandmana.compatoplenty.common.integration.farmersdelight.ReplacementPantryBlock;
 import seleneandmana.compatoplenty.core.CompatOPlenty;
 import seleneandmana.compatoplenty.core.other.CompatProperties;
 import net.minecraft.block.*;
@@ -19,7 +20,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import seleneandmana.compatoplenty.core.registry.util.CompatBlockSubRegistryHelper;
-import vectorwing.farmersdelight.registry.ModBlocks;
 
 @Mod.EventBusSubscriber(modid = CompatOPlenty.MOD_ID)
 public class CompatBlocks {
@@ -39,7 +39,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> CHERRY_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "cherry", MaterialColor.COLOR_RED);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> CHERRY_SIGNS = HELPER.createSignBlock("cherry", MaterialColor.COLOR_RED);
     public static final RegistryObject<Block> CHERRY_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "cherry_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> CHERRY_PANTRY = HELPER.createFuelBlock("cherry_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> CHERRY_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"cherry_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Jacaranda
     public static final RegistryObject<Block> JACARANDA_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "jacaranda_vertical_slab",() -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.jacaranda_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -53,7 +53,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> JACARANDA_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "jacaranda", MaterialColor.TERRACOTTA_PINK);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> JACARANDA_SIGNS = HELPER.createSignBlock("jacaranda", MaterialColor.TERRACOTTA_PINK);
     public static final RegistryObject<Block> JACARANDA_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "jacaranda_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> JACARANDA_PANTRY = HELPER.createFuelBlock("jacaranda_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> JACARANDA_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"jacaranda_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Fir
     public static final RegistryObject<Block> FIR_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_vertical_slab",() -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.fir_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -67,7 +67,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> FIR_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "fir", MaterialColor.TERRACOTTA_WHITE);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> FIR_SIGNS = HELPER.createSignBlock("fir", MaterialColor.TERRACOTTA_WHITE);
     public static final RegistryObject<Block> FIR_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "fir_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FIR_PANTRY = HELPER.createFuelBlock("fir_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> FIR_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"fir_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Redwood
     public static final RegistryObject<Block> REDWOOD_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "redwood_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.redwood_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -81,7 +81,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> REDWOOD_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "redwood", MaterialColor.TERRACOTTA_ORANGE);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> REDWOOD_SIGNS = HELPER.createSignBlock("redwood", MaterialColor.TERRACOTTA_ORANGE);
     public static final RegistryObject<Block> REDWOOD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "redwood_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> REDWOOD_PANTRY = HELPER.createFuelBlock("redwood_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> REDWOOD_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"redwood_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Mahogany
     public static final RegistryObject<Block> MAHOGANY_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.mahogany_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -95,7 +95,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MAHOGANY_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "mahogany", MaterialColor.TERRACOTTA_PINK);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> MAHOGANY_SIGNS = HELPER.createSignBlock("mahogany", MaterialColor.TERRACOTTA_PINK);
     public static final RegistryObject<Block> MAHOGANY_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "mahogany_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAHOGANY_PANTRY = HELPER.createFuelBlock("mahogany_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> MAHOGANY_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"mahogany_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Willow
     public static final RegistryObject<Block> WILLOW_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.willow_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -109,7 +109,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> WILLOW_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> WILLOW_SIGNS = HELPER.createSignBlock("willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
     public static final RegistryObject<Block> WILLOW_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "willow_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WILLOW_PANTRY = HELPER.createFuelBlock("willow_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> WILLOW_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"willow_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Magic
     public static final RegistryObject<Block> MAGIC_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.magic_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -123,7 +123,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> MAGIC_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "magic", MaterialColor.COLOR_BLUE);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> MAGIC_SIGNS = HELPER.createSignBlock("magic", MaterialColor.COLOR_BLUE);
     public static final RegistryObject<Block> MAGIC_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "magic_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAGIC_PANTRY = HELPER.createFuelBlock("magic_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> MAGIC_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"magic_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Dead
     public static final RegistryObject<Block> DEAD_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.dead_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -137,7 +137,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> DEAD_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "dead", MaterialColor.STONE);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> DEAD_SIGNS = HELPER.createSignBlock("dead", MaterialColor.STONE);
     public static final RegistryObject<Block> DEAD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "dead_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DEAD_PANTRY = HELPER.createFuelBlock("dead_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> DEAD_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"dead_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Umbran
     public static final RegistryObject<Block> UMBRAN_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.umbran_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -151,7 +151,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> UMBRAN_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "umbran", MaterialColor.TERRACOTTA_BLUE);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> UMBRAN_SIGNS = HELPER.createSignBlock("umbran", MaterialColor.TERRACOTTA_BLUE);
     public static final RegistryObject<Block> UMBRAN_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "umbran_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> UMBRAN_PANTRY = HELPER.createFuelBlock("umbran_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> UMBRAN_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"umbran_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
 
     //Palm
     public static final RegistryObject<Block> PALM_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.palm_planks)), 150, ItemGroup.TAB_BUILDING_BLOCKS);
@@ -165,7 +165,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> PALM_CHESTS = HELPER.createCompatChestBlocks(CompatOPlenty.QUARK_ID, "palm", MaterialColor.TERRACOTTA_YELLOW);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> PALM_SIGNS = HELPER.createSignBlock("palm", MaterialColor.TERRACOTTA_YELLOW);
     public static final RegistryObject<Block> PALM_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "palm_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PALM_PANTRY = HELPER.createFuelBlock("palm_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PALM_PANTRY = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"palm_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)),300, ItemGroup.TAB_DECORATIONS);
     //Hellbark
     public static final RegistryObject<Block> HELLBARK_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.hellbark_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> VERTICAL_HELLBARK_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_hellbark_planks", () -> new Block(AbstractBlock.Properties.copy(BOPBlocks.hellbark_planks)), ItemGroup.TAB_BUILDING_BLOCKS);
@@ -178,7 +178,7 @@ public class CompatBlocks {
     public static final Pair<RegistryObject<AbnormalsChestBlock>, RegistryObject<AbnormalsTrappedChestBlock>> HELLBARK_CHEST = HELPER.createUnburnableCompatChestBlocks(CompatOPlenty.QUARK_ID,"hellbark", MaterialColor.TERRACOTTA_GRAY);
     public static final Pair<RegistryObject<AbnormalsStandingSignBlock>,RegistryObject <AbnormalsWallSignBlock>> HELLBARK_SIGNS = HELPER.createSignBlock("hellbark", MaterialColor.TERRACOTTA_GRAY);
     public static final RegistryObject<Block> HELLBARK_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.BUZZIER_ID, "hellbark_beehive", () -> new AbnormalsBeehiveBlock(AbstractBlock.Properties.copy(Blocks.BEEHIVE)), ItemGroup.TAB_DECORATIONS);
-    public static final RegistryObject<Block> HELLBARK_PANTRY = HELPER.createBlock("hellbark_pantry", () -> new CompatPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
+    public static final RegistryObject<Block> HELLBARK_PANTRY = HELPER.createCompatBlock(CompatOPlenty.FARMERS_ID,"hellbark_pantry", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatPantrySuppliers.PANTRY : () -> new ReplacementPantryBlock(AbstractBlock.Properties.copy(Blocks.BARREL)), ItemGroup.TAB_DECORATIONS);
     
     //Sandstone Blocks
     public static final RegistryObject<Block> WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_vertical_slab", () -> new VerticalSlabBlock(AbstractBlock.Properties.copy(BOPBlocks.white_sandstone)), ItemGroup.TAB_BUILDING_BLOCKS);

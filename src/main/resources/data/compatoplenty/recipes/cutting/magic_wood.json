@@ -17,5 +17,11 @@
       "item": "farmersdelight:tree_bark"
     }
   ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
   "sound": "minecraft:item.axe.strip"
 }

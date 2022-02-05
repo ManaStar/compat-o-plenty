@@ -1,4 +1,4 @@
-package seleneandmana.compatoplenty.common.blocks;
+package seleneandmana.compatoplenty.common.integration.farmersdelight;
 
 import com.minecraftabnormals.abnormals_core.core.util.item.filling.TargetedItemGroupFiller;
 import net.minecraft.item.ItemGroup;
