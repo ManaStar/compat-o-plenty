@@ -20,6 +20,7 @@ public class CompatOPlenty
     public static final String QUARK_ID = "quark";
     public static final String BUZZIER_ID = "buzzier_bees";
     public static final String TWIGS_ID = "twigs";
+    public static final String FARMERS_ID = "farmersdelight";
 
 
     private static final Logger LOGGER = LogManager.getLogger();

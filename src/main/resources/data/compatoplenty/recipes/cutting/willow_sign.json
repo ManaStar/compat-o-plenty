@@ -13,5 +13,11 @@
     {
       "item": "biomesoplenty:willow_planks"
     }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "farmersdelight"
+    }
   ]
 }

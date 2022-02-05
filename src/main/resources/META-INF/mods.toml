@@ -30,9 +30,3 @@ A mod designed to fill the gap in content between Biomes O' Plenty and Quark, Fa
     versionRange="[1.18.1-15.0.0.94,)"
     ordering="AFTER"
     side="BOTH"
-[[dependencies.compatoplenty]]
-    modId="farmersdelight"
-    mandatory=true
-    versionRange="[1.18.1-1.0.0,)"
-    ordering="AFTER"
-    side="BOTH"
