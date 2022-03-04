@@ -18,6 +18,9 @@
     "compatoplenty:dead_vertical_slab",
     "compatoplenty:umbran_vertical_slab",
     "compatoplenty:palm_vertical_slab",
-    "compatoplenty:hellbark_vertical_slab"
+    "compatoplenty:hellbark_vertical_slab",
+    "compatoplenty:cut_black_sandstone_vertical_slab",
+    "compatoplenty:cut_orange_sandstone_vertical_slab",
+    "compatoplenty:cut_white_sandstone_vertical_slab"
   ]
 }
