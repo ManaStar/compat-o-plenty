@@ -2,7 +2,7 @@
   "parent": "blueprint:block/vertical_slab",
   "textures": {
     "side": "biomesoplenty:block/cut_black_sandstone",
-    "top": "compatoplenty:block/black_sandstone_top",
-    "bottom": "compatoplenty:block/black_sandstone_top"
+    "top": "biomesoplenty:block/black_sandstone_top",
+    "bottom": "biomesoplenty:block/black_sandstone_top"
   }
 }
