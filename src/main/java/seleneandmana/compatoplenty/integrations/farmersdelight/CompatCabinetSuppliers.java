@@ -1,4 +1,4 @@
-package seleneandmana.compatoplenty.common.integrations.farmersdelight;
+package seleneandmana.compatoplenty.integrations.farmersdelight;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;

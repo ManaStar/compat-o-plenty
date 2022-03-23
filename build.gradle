@@ -67,20 +67,20 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.9'
-    implementation fg.deobf("com.teamabnormals:blueprint:1.18.1-5.0.0")
-    implementation fg.deobf("curse.maven:bop-220318:3599398")
-    implementation fg.deobf("curse.maven:farmersdelight-398521:3575116")
+    minecraft 'net.minecraftforge:forge:1.18.2-40.0.24'
+    implementation fg.deobf("com.teamabnormals:blueprint:1.18.2-5.2.1")
+    implementation fg.deobf("curse.maven:bop-220318:3683452")
+    compileOnly fg.deobf("curse.maven:farmersdelight-398521:3575116")
 
     //runtimeOnly fg.deobf("curse.maven:buzzierbees-355458:3226433")
-    runtimeOnly fg.deobf("curse.maven:terrablender-563928:3598130")
-    runtimeOnly fg.deobf("curse.maven:quark-243121:3578106")
-    runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3575622")
-    runtimeOnly fg.deobf("curse.maven:twigs-496913:3598149")
+    runtimeOnly fg.deobf("curse.maven:terrablender-563928:3704222")
+    runtimeOnly fg.deobf("curse.maven:quark-243121:3708587")
+    runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3642382")
+    runtimeOnly fg.deobf("curse.maven:twigs-496913:3696629")
 
-    runtimeOnly fg.deobf("curse.maven:rei-392060:3607431")
-    runtimeOnly fg.deobf("curse.maven:architectury-419699:3587338")
-    runtimeOnly fg.deobf("curse.maven:cloth_config-348521:3608026")
+    runtimeOnly fg.deobf("curse.maven:rei-392060:3670485")
+    runtimeOnly fg.deobf("curse.maven:architectury-419699:3705895")
+    runtimeOnly fg.deobf("curse.maven:cloth_config-348521:3641133")
 
 
 

@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[39,)"
+loaderVersion="[40,)"
 license="Apache-2.0"
 
 [[mods]]
@@ -15,18 +15,18 @@ A mod designed to fill the gap in content between Biomes O' Plenty and Quark, Fa
 [[dependencies.compatoplenty]]
     modId="forge"
     mandatory=true
-    versionRange="[39,)"
+    versionRange="[40,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.compatoplenty]]
     modId="blueprint"
     mandatory=true
-    versionRange="[1.18.1-5.0.0,)"
+    versionRange="[1.18.2-5.2.1,)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.compatoplenty]]
     modId="biomesoplenty"
     mandatory=true
-    versionRange="[1.18.1-15.0.0.94,)"
+    versionRange="[1.18.2-16.0.0.107,)"
     ordering="AFTER"
     side="BOTH"

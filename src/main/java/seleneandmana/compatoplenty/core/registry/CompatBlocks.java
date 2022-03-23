@@ -15,7 +15,7 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import seleneandmana.compatoplenty.common.blocks.*;
-import seleneandmana.compatoplenty.common.integrations.farmersdelight.CompatCabinetSuppliers;
+import seleneandmana.compatoplenty.integrations.farmersdelight.CompatCabinetSuppliers;
 import seleneandmana.compatoplenty.core.CompatOPlenty;
 import seleneandmana.compatoplenty.core.other.CompatProperties;
 import seleneandmana.compatoplenty.core.registry.util.CompatBlockSubRegistryHelper;

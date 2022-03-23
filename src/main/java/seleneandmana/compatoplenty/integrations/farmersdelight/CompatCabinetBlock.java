@@ -1,4 +1,4 @@
-package seleneandmana.compatoplenty.common.integrations.farmersdelight;
+package seleneandmana.compatoplenty.integrations.farmersdelight;
 
 import com.teamabnormals.blueprint.core.util.item.filling.TargetedItemCategoryFiller;
 import net.minecraft.core.NonNullList;
