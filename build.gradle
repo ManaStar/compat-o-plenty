@@ -4,14 +4,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath(group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true) { exclude group: 'org.apache.log4j' }
+        classpath 'org.apache.logging.log4j:log4j-api:2.11.2'
+        classpath 'org.apache.logging.log4j:log4j-core:2.11.2'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
 
 version = project.version
-group = 'seleneandmana.compatoplenty'
+group = 'com.seleneandmana.compatoplenty'
 archivesBaseName = 'Compat-O-Plenty'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -53,6 +55,9 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             args '--mod', 'compatoplenty', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
@@ -64,28 +69,23 @@ minecraft {
     }
 }
 
+
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.0.24'
-    implementation fg.deobf("com.teamabnormals:blueprint:1.18.2-5.2.1")
-    implementation fg.deobf("curse.maven:bop-220318:3683452")
-    compileOnly fg.deobf("curse.maven:farmersdelight-398521:3575116")
+    implementation fg.deobf("curse.maven:blueprint-382216:3756782")
+    implementation fg.deobf("curse.maven:bop-220318:3759236")
+    compileOnly fg.deobf("curse.maven:farmersdelight-398521:3765351")
 
-    //runtimeOnly fg.deobf("curse.maven:buzzierbees-355458:3226433")
-    runtimeOnly fg.deobf("curse.maven:terrablender-563928:3704222")
-    runtimeOnly fg.deobf("curse.maven:quark-243121:3708587")
+    runtimeOnly fg.deobf("curse.maven:terrablender-563928:3725996")
+    runtimeOnly fg.deobf("curse.maven:quark-243121:3756221")
     runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3642382")
-    runtimeOnly fg.deobf("curse.maven:twigs-496913:3696629")
+    runtimeOnly fg.deobf("curse.maven:twigs-496913:3756844")
 
-    runtimeOnly fg.deobf("curse.maven:rei-392060:3670485")
-    runtimeOnly fg.deobf("curse.maven:architectury-419699:3705895")
-    runtimeOnly fg.deobf("curse.maven:cloth_config-348521:3641133")
-
-
-
-
-
+    runtimeOnly fg.deobf("curse.maven:rei-392060:3752190")
+    runtimeOnly fg.deobf("curse.maven:architectury-419699:3758442")
+    runtimeOnly fg.deobf("curse.maven:cloth_config-348521:3761416")
 }
 
 repositories {
@@ -103,13 +103,13 @@ repositories {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "Compat O' Plenty",
-            "Specification-Vendor": "Selene and Mana",
-            "Specification-Version": "1",
-            "Implementation-Title": "Compat O' Plenty",
-            "Implementation-Version": project.version,
-            "Implementation-Vendor" :"Selene and Mana",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Specification-Title"     : "Compat O' Plenty",
+                "Specification-Vendor"    : "Selene and Mana",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : "Compat O' Plenty",
+                "Implementation-Version"  : project.version,
+                "Implementation-Vendor"   : "Selene and Mana",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
 }
