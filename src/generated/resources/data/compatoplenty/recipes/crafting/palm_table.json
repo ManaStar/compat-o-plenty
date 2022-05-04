@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "twigs",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "I I",
+          "I I"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:palm_slab"
+          },
+          "I": {
+            "item": "biomesoplenty:palm_fence"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:palm_table"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "twigs",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "I I",
+          "I I"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:hellbark_slab"
+          },
+          "I": {
+            "item": "biomesoplenty:hellbark_fence"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:hellbark_table"
+        }
+      }
+    }
+  ]
+}

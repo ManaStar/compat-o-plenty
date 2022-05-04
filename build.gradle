@@ -1,16 +1,20 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
     }
     dependencies {
         classpath(group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true) { exclude group: 'org.apache.log4j' }
         classpath 'org.apache.logging.log4j:log4j-api:2.11.2'
         classpath 'org.apache.logging.log4j:log4j-core:2.11.2'
+        classpath 'org.parchmentmc:librarian:1.+'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'maven-publish'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
+
 
 version = project.version
 group = 'com.seleneandmana.compatoplenty'
@@ -20,7 +24,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: 'parchment', version: '2022.05.02-1.18.2'
 
     runs {
         client {
@@ -73,19 +77,17 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.0.24'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
     implementation fg.deobf("curse.maven:blueprint-382216:3756782")
     implementation fg.deobf("curse.maven:bop-220318:3759236")
-    compileOnly fg.deobf("curse.maven:farmersdelight-398521:3765351")
+    implementation fg.deobf("curse.maven:farmersdelight-398521:3765351")
 
     runtimeOnly fg.deobf("curse.maven:terrablender-563928:3725996")
     runtimeOnly fg.deobf("curse.maven:quark-243121:3756221")
     runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3642382")
     runtimeOnly fg.deobf("curse.maven:twigs-496913:3756844")
 
-    runtimeOnly fg.deobf("curse.maven:rei-392060:3752190")
-    runtimeOnly fg.deobf("curse.maven:architectury-419699:3758442")
-    runtimeOnly fg.deobf("curse.maven:cloth_config-348521:3761416")
+    runtimeOnly fg.deobf("curse.maven:jei-238222:3758750")
 }
 
 repositories {

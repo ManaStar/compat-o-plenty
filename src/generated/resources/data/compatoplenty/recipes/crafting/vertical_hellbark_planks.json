@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "vertical_planks",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
+        "key": {
+          "S": {
+            "item": "biomesoplenty:hellbark_planks"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:vertical_hellbark_planks",
+          "count": 3
+        }
+      }
+    }
+  ]
+}

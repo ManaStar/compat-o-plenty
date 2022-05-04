@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "variant_ladders",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "# #",
+          "#P#",
+          "# #"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:stick"
+          },
+          "P": {
+            "item": "biomesoplenty:palm_planks"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:palm_ladder",
+          "count": 4
+        }
+      }
+    }
+  ]
+}

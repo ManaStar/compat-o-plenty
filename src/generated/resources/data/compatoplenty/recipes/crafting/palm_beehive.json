@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "indev",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "HHH",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:palm_planks"
+          },
+          "H": {
+            "item": "minecraft:honeycomb"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:palm_beehive"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "variant_chests",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "# #",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:jacaranda_planks"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:jacaranda_chest"
+        }
+      }
+    }
+  ]
+}

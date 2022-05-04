@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "flag": "wood_to_chest_recipes",
+              "type": "blueprint:quark_flag"
+            },
+            {
+              "flag": "variant_chests",
+              "type": "blueprint:quark_flag"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "# #",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "tag": "biomesoplenty:umbran_logs"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:umbran_chest",
+          "count": 4
+        }
+      }
+    }
+  ]
+}

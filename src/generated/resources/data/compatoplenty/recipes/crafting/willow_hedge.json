@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "hedges",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "L",
+          "#"
+        ],
+        "key": {
+          "#": {
+            "tag": "biomesoplenty:willow_logs"
+          },
+          "L": {
+            "item": "biomesoplenty:willow_leaves"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:willow_hedge",
+          "count": 2
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "farmersdelight",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "T T",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:magic_slab"
+          },
+          "T": {
+            "item": "biomesoplenty:magic_trapdoor"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:magic_cabinet"
+        }
+      }
+    }
+  ]
+}

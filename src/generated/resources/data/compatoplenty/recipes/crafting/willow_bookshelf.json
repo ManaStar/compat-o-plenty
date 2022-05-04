@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "variant_bookshelves",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "BBB",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:willow_planks"
+          },
+          "B": {
+            "item": "minecraft:book"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:willow_bookshelf"
+        }
+      }
+    }
+  ]
+}

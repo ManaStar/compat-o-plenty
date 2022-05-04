@@ -59,7 +59,8 @@ public class CompatBlocks {
     public static final RegistryObject<Block> JACARANDA_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "jacaranda_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> JACARANDA_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"jacaranda_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> JACARANDA_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "jacaranda_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_REDWOOD_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_redwood_planks", () -> new PlanksBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_JACARANDA_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_jacaranda_planks", () -> new PlanksBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
 
 
     //Fir
@@ -89,7 +90,7 @@ public class CompatBlocks {
     public static final RegistryObject<Block> REDWOOD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "redwood_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> REDWOOD_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"redwood_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> REDWOOD_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "redwood_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_JACARANDA_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_jacaranda_planks", () -> new PlanksBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> VERTICAL_REDWOOD_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_redwood_planks", () -> new PlanksBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     //Mahogany
     public static final RegistryObject<Block> MAHOGANY_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS)), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -183,7 +184,7 @@ public class CompatBlocks {
     public static final RegistryObject<Block> HELLBARK_POST = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_post", () -> new WoodPostBlock(STRIPPED_HELLBARK_POST,  BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> HELLBARK_HEDGE = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> HELLBARK_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.LEAF_CARPET), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> HELLBARK_CHEST = HELPER.createUnburnableCompatChestBlocks(CompatOPlenty.QUARK_ID,"hellbark", MaterialColor.TERRACOTTA_GRAY);
+    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> HELLBARK_CHESTS = HELPER.createUnburnableCompatChestBlocks(CompatOPlenty.QUARK_ID,"hellbark", MaterialColor.TERRACOTTA_GRAY);
     public static final RegistryObject<Block> HELLBARK_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "hellbark_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> HELLBARK_CABINET = HELPER.createCompatBlock(CompatOPlenty.FARMERS_ID, "hellbark_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> HELLBARK_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "hellbark_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);

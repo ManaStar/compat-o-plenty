@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "leaf_carpet",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "##"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:maple_leaves"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:maple_leaf_carpet",
+          "count": 3
+        }
+      }
+    }
+  ]
+}

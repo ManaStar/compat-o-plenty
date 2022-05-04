@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "variant_ladders",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "# #",
+          "#P#",
+          "# #"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:stick"
+          },
+          "P": {
+            "item": "biomesoplenty:hellbark_planks"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:hellbark_ladder",
+          "count": 4
+        }
+      }
+    }
+  ]
+}

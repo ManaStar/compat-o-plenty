@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "hedges",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "L",
+          "#"
+        ],
+        "key": {
+          "#": {
+            "tag": "minecraft:oak_logs"
+          },
+          "L": {
+            "item": "biomesoplenty:flowering_oak_leaves"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:flowering_oak_hedge",
+          "count": 2
+        }
+      }
+    }
+  ]
+}

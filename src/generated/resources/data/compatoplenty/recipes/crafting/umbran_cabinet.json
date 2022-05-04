@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "farmersdelight",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "T T",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:umbran_slab"
+          },
+          "T": {
+            "item": "biomesoplenty:umbran_trapdoor"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:umbran_cabinet"
+        }
+      }
+    }
+  ]
+}

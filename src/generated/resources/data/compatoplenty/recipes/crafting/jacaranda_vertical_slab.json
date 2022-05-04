@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "vertical_slabs",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
+        "key": {
+          "S": {
+            "item": "biomesoplenty:jacaranda_slab"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:jacaranda_vertical_slab",
+          "count": 3
+        }
+      }
+    }
+  ]
+}
