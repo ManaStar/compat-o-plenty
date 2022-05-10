@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "twigs",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "biomesoplenty:rose_quartz_block"
+        },
+        "result": "compatoplenty:polished_rose_quartz_slab",
+        "count": 2
+      }
+    }
+  ]
+}

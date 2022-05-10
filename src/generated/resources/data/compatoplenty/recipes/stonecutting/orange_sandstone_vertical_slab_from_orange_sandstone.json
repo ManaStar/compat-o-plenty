@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "vertical_slabs",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "biomesoplenty:orange_sandstone"
+        },
+        "result": "compatoplenty:orange_sandstone_vertical_slab",
+        "count": 2
+      }
+    }
+  ]
+}

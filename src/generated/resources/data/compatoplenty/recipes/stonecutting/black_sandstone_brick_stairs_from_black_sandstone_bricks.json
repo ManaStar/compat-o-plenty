@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "sandstone_bricks",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "compatoplenty:black_sandstone_bricks"
+        },
+        "result": "compatoplenty:black_sandstone_brick_stairs",
+        "count": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "twigs",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:smelting",
+        "ingredient": {
+          "item": "compatoplenty:polished_rose_quartz_bricks"
+        },
+        "result": "compatoplenty:cracked_polished_rose_quartz_bricks",
+        "experience": 0.1,
+        "cookingtime": 200
+      }
+    }
+  ]
+}

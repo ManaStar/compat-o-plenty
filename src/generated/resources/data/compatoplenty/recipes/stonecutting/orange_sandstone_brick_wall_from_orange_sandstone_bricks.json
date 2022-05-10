@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "flag": "sandstone_bricks",
+          "type": "blueprint:quark_flag"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+          "item": "compatoplenty:orange_sandstone_bricks"
+        },
+        "result": "compatoplenty:orange_sandstone_brick_wall",
+        "count": 1
+      }
+    }
+  ]
+}
