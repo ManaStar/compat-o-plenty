@@ -1,5 +1,6 @@
 package com.seleneandmana.compatoplenty.client;
 
+import biomesoplenty.client.handler.ColorHandler;
 import biomesoplenty.core.ClientProxy;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
@@ -25,7 +26,7 @@ public class BlockColoring {
         //Normal
         blockColors.register((state, world, pos, tint) -> world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(), CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), CompatBlocks.FLOWERING_OAK_HEDGE.get(), CompatBlocks.MAHOGANY_LEAF_CARPET.get(), CompatBlocks.MAHOGANY_HEDGE.get(), CompatBlocks.WILLOW_LEAF_CARPET.get(), CompatBlocks.WILLOW_HEDGE.get(), CompatBlocks.PALM_LEAF_CARPET.get(), CompatBlocks.PALM_HEDGE.get());
         //Rainbow
-        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? ClientProxy.getRainbowBirchColor(world, pos) : FoliageColor.getDefaultColor(), CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), CompatBlocks.RAINBOW_BIRCH_HEDGE.get());
+        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? ColorHandler.getRainbowBirchColor(world, pos) : FoliageColor.getDefaultColor(), CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), CompatBlocks.RAINBOW_BIRCH_HEDGE.get());
     }
 
     @SubscribeEvent

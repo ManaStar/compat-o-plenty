@@ -79,6 +79,17 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_VERTICAL_SLAB.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_VERTICAL_SLAB.get(), 5, 20);
 
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_CHERRY_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_FIR_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_JACARANDA_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_REDWOOD_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_MAHOGANY_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_WILLOW_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_MAGIC_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_DEAD_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_UMBRAN_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.VERTICAL_PALM_PLANKS.get(), 5, 20);
+
         DataUtil.registerFlammable(CompatBlocks.CHERRY_BEEHIVE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.FIR_BEEHIVE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.JACARANDA_BEEHIVE.get(), 5, 20);
