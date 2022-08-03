@@ -305,7 +305,7 @@ d140375823efc0726a3b06780a66b12b0f16f0e6 data/forge/tags/items/chests/wooden.jso
 2d543cc6dae05c5b30190bcf121733f398e70ab6 data/minecraft/tags/blocks/beehives.json
 82174afaa8f3290880dea991f93880cdfc22b9bf data/minecraft/tags/blocks/climbable.json
 d0c77d0ff0a4a311364e171355e81008337eb198 data/minecraft/tags/blocks/crystal_sound_blocks.json
-d233660f0255be3bc42c8a146e04a3b1afa8a1ce data/minecraft/tags/blocks/mineable/axe.json
+58982ee915289cb66a1de8e548b8b0cd624961b8 data/minecraft/tags/blocks/mineable/axe.json
 a11ced887257dcc1505f5459c05519aefc63fc69 data/minecraft/tags/blocks/mineable/hoe.json
 bae8d2760257d2a7603213409dc8f97095f61e92 data/minecraft/tags/blocks/mineable/pickaxe.json
 1d546ddc5027572a900b07bcf8b643768487d63b data/minecraft/tags/blocks/planks.json

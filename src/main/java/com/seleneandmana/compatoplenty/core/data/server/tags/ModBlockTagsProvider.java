@@ -36,6 +36,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.CHERRY_CABINET.get(),
                 CompatBlocks.CHERRY_TABLE.get(),
                 CompatBlocks.VERTICAL_CHERRY_PLANKS.get(),
+                getNormalChest(CompatBlocks.CHERRY_CHESTS),
+                getTrappedChest(CompatBlocks.CHERRY_CHESTS),
 
                 CompatBlocks.JACARANDA_VERTICAL_SLAB.get(),
                 CompatBlocks.JACARANDA_BOOKSHELF.get(),
@@ -47,6 +49,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.JACARANDA_CABINET.get(),
                 CompatBlocks.JACARANDA_TABLE.get(),
                 CompatBlocks.VERTICAL_JACARANDA_PLANKS.get(),
+                getNormalChest(CompatBlocks.JACARANDA_CHESTS),
+                getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
 
                 CompatBlocks.FIR_VERTICAL_SLAB.get(),
                 CompatBlocks.FIR_BOOKSHELF.get(),
@@ -58,6 +62,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.FIR_CABINET.get(),
                 CompatBlocks.FIR_TABLE.get(),
                 CompatBlocks.VERTICAL_FIR_PLANKS.get(),
+                getNormalChest(CompatBlocks.FIR_CHESTS),
+                getTrappedChest(CompatBlocks.FIR_CHESTS),
+
 
                 CompatBlocks.REDWOOD_VERTICAL_SLAB.get(),
                 CompatBlocks.REDWOOD_BOOKSHELF.get(),
@@ -69,6 +76,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.REDWOOD_CABINET.get(),
                 CompatBlocks.REDWOOD_TABLE.get(),
                 CompatBlocks.VERTICAL_REDWOOD_PLANKS.get(),
+                getNormalChest(CompatBlocks.REDWOOD_CHESTS),
+                getTrappedChest(CompatBlocks.REDWOOD_CHESTS),
 
                 CompatBlocks.MAHOGANY_VERTICAL_SLAB.get(),
                 CompatBlocks.MAHOGANY_BOOKSHELF.get(),
@@ -80,6 +89,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.MAHOGANY_CABINET.get(),
                 CompatBlocks.MAHOGANY_TABLE.get(),
                 CompatBlocks.VERTICAL_MAHOGANY_PLANKS.get(),
+                getNormalChest(CompatBlocks.MAHOGANY_CHESTS),
+                getTrappedChest(CompatBlocks.MAHOGANY_CHESTS),
 
                 CompatBlocks.WILLOW_VERTICAL_SLAB.get(),
                 CompatBlocks.WILLOW_BOOKSHELF.get(),
@@ -91,6 +102,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.WILLOW_CABINET.get(),
                 CompatBlocks.WILLOW_TABLE.get(),
                 CompatBlocks.VERTICAL_WILLOW_PLANKS.get(),
+                getNormalChest(CompatBlocks.WILLOW_CHESTS),
+                getTrappedChest(CompatBlocks.WILLOW_CHESTS),
 
                 CompatBlocks.MAGIC_VERTICAL_SLAB.get(),
                 CompatBlocks.MAGIC_BOOKSHELF.get(),
@@ -102,6 +115,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.MAGIC_CABINET.get(),
                 CompatBlocks.MAGIC_TABLE.get(),
                 CompatBlocks.VERTICAL_MAGIC_PLANKS.get(),
+                getNormalChest(CompatBlocks.MAGIC_CHESTS),
+                getTrappedChest(CompatBlocks.MAGIC_CHESTS),
 
                 CompatBlocks.DEAD_VERTICAL_SLAB.get(),
                 CompatBlocks.DEAD_BOOKSHELF.get(),
@@ -113,6 +128,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.DEAD_CABINET.get(),
                 CompatBlocks.DEAD_TABLE.get(),
                 CompatBlocks.VERTICAL_DEAD_PLANKS.get(),
+                getNormalChest(CompatBlocks.DEAD_CHESTS),
+                getTrappedChest(CompatBlocks.DEAD_CHESTS),
 
                 CompatBlocks.UMBRAN_VERTICAL_SLAB.get(),
                 CompatBlocks.UMBRAN_BOOKSHELF.get(),
@@ -124,6 +141,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.UMBRAN_CABINET.get(),
                 CompatBlocks.UMBRAN_TABLE.get(),
                 CompatBlocks.VERTICAL_UMBRAN_PLANKS.get(),
+                getNormalChest(CompatBlocks.UMBRAN_CHESTS),
+                getTrappedChest(CompatBlocks.UMBRAN_CHESTS),
 
                 CompatBlocks.PALM_VERTICAL_SLAB.get(),
                 CompatBlocks.PALM_BOOKSHELF.get(),
@@ -135,6 +154,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.PALM_CABINET.get(),
                 CompatBlocks.PALM_TABLE.get(),
                 CompatBlocks.VERTICAL_PALM_PLANKS.get(),
+                getNormalChest(CompatBlocks.PALM_CHESTS),
+                getTrappedChest(CompatBlocks.PALM_CHESTS),
 
                 CompatBlocks.HELLBARK_VERTICAL_SLAB.get(),
                 CompatBlocks.HELLBARK_BOOKSHELF.get(),
@@ -146,6 +167,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.HELLBARK_CABINET.get(),
                 CompatBlocks.HELLBARK_TABLE.get(),
                 CompatBlocks.VERTICAL_HELLBARK_PLANKS.get(),
+                getNormalChest(CompatBlocks.HELLBARK_CHESTS),
+                getTrappedChest(CompatBlocks.HELLBARK_CHESTS),
 
                 CompatBlocks.FLOWERING_OAK_HEDGE.get(),
                 CompatBlocks.RAINBOW_BIRCH_HEDGE.get(),
