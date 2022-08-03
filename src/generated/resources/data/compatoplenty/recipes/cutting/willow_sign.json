@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "farmersdelight",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "biomesoplenty:willow_sign"
+          }
+        ],
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "axe_dig"
+        },
+        "result": [
+          {
+            "item": "biomesoplenty:willow_planks"
+          }
+        ],
+        "sound": "minecraft:block.wood.break"
+      }
+    }
+  ]
+}

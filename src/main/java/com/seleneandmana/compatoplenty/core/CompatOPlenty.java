@@ -1,13 +1,13 @@
 package com.seleneandmana.compatoplenty.core;
 
-import com.seleneandmana.compatoplenty.core.data.server.other.ModRecipeProvider;
+import com.seleneandmana.compatoplenty.core.data.server.ModLootTableProvider;
+import com.seleneandmana.compatoplenty.core.data.server.ModRecipeProvider;
 import com.seleneandmana.compatoplenty.core.data.server.tags.ModBlockTagsProvider;
 import com.seleneandmana.compatoplenty.core.data.server.tags.ModItemTagsProvider;
 import com.seleneandmana.compatoplenty.core.other.CompatCompat;
 import com.seleneandmana.compatoplenty.core.registry.util.CompatBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -53,6 +53,7 @@ public class CompatOPlenty
             ModBlockTagsProvider modBlockTagsProvider = new ModBlockTagsProvider(generator, fileHelper);
             generator.addProvider(modBlockTagsProvider);
             generator.addProvider(new ModItemTagsProvider(generator, modBlockTagsProvider, fileHelper));
+            generator.addProvider(new ModLootTableProvider(generator));
             generator.addProvider(new ModRecipeProvider(generator));
         }
     }

@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "farmersdelight",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "biomesoplenty:redwood_wood"
+          }
+        ],
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "axe_strip"
+        },
+        "result": [
+          {
+            "item": "biomesoplenty:stripped_redwood_wood"
+          },
+          {
+            "item": "farmersdelight:tree_bark"
+          }
+        ],
+        "sound": "minecraft:item.axe.strip"
+      }
+    }
+  ]
+}

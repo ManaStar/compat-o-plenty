@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "farmersdelight",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "biomesoplenty:goldenrod"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        },
+        "result": [
+          {
+            "item": "minecraft:yellow_dye",
+            "count": 2
+          }
+        ],
+        "sound": "farmersdelight:block.cutting_board.knife"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "farmersdelight",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "biomesoplenty:mud_bricks"
+          }
+        ],
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "pickaxe_dig"
+        },
+        "result": [
+          {
+            "item": "biomesoplenty:mud_brick",
+            "count": 4
+          }
+        ],
+        "sound": "minecraft:block.stone.break"
+      }
+    }
+  ]
+}
