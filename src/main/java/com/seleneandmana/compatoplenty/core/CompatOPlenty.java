@@ -26,7 +26,7 @@ public class CompatOPlenty
 {
     public static final String MOD_ID = "compatoplenty";
     public static final String QUARK_ID = "quark";
-    public static final String WOODWORKS_ID = "indev";
+    public static final String WOODWORKS_ID = "woodworks";
     public static final String TWIGS_ID = "twigs";
     public static final String FARMERS_ID = "farmersdelight";
 

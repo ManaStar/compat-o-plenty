@@ -179,6 +179,7 @@ public class ModRecipeProvider extends RecipeProvider {
         chestRecipes(BOPBlocks.PALM_PLANKS, logTag("palm"), CompatBlocks.PALM_CHESTS, consumer);
         chestRecipes(BOPBlocks.HELLBARK_PLANKS, logTag("hellbark"), CompatBlocks.HELLBARK_CHESTS, consumer);
 
+        /*
         //Beehives
         beehiveRecipe(BOPBlocks.CHERRY_PLANKS, CompatBlocks.CHERRY_BEEHIVE.get(), consumer);
         beehiveRecipe(BOPBlocks.JACARANDA_PLANKS, CompatBlocks.JACARANDA_BEEHIVE.get(), consumer);
@@ -191,6 +192,7 @@ public class ModRecipeProvider extends RecipeProvider {
         beehiveRecipe(BOPBlocks.UMBRAN_PLANKS, CompatBlocks.UMBRAN_BEEHIVE.get(), consumer);
         beehiveRecipe(BOPBlocks.PALM_PLANKS, CompatBlocks.PALM_BEEHIVE.get(), consumer);
         beehiveRecipe(BOPBlocks.HELLBARK_PLANKS, CompatBlocks.HELLBARK_BEEHIVE.get(), consumer);
+        */
 
         //Vertical Planks
         verticalPlankRecipe(BOPBlocks.CHERRY_PLANKS, CompatBlocks.VERTICAL_CHERRY_PLANKS.get(), consumer);
@@ -427,12 +429,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .build(consumer, new ResourceLocation(CompatOPlenty.MOD_ID, "crafting/" + getItemName(trapped)));
     }
 
+    /*
     public static void beehiveRecipe(ItemLike planks, ItemLike beehive, Consumer<FinishedRecipe> consumer) {
         ConditionalRecipe.builder()
                 .addCondition(new ModLoadedCondition(CompatOPlenty.WOODWORKS_ID))
                 .addRecipe(consumer1 -> ShapedRecipeBuilder.shaped(beehive).define('#', planks).define('H', Items.HONEYCOMB).pattern("###").pattern("HHH").pattern("###").unlockedBy(getHasName(planks), has(planks)).save(consumer1, new ResourceLocation(CompatOPlenty.MOD_ID)))
                 .build(consumer, new ResourceLocation(CompatOPlenty.MOD_ID, "crafting/" + getItemName(beehive)));
     }
+    */
 
     public static void cabinetRecipe(ItemLike slab, ItemLike trapdoor, ItemLike cabinet, Consumer<FinishedRecipe> consumer) {
         ConditionalRecipe.builder()
