@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import com.seleneandmana.compatoplenty.core.CompatOPlenty;
 
 import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
+import com.seleneandmana.compatoplenty.core.registry.CompatItems;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
@@ -73,7 +74,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 asItem(CompatBlocks.HELLBARK_LADDER),
                 asItem(CompatBlocks.HELLBARK_BEEHIVE),
                 CompatBlocks.HELLBARK_CHESTS.getFirst().get().asItem(),
-                CompatBlocks.HELLBARK_CHESTS.getSecond().get().asItem()
+                CompatBlocks.HELLBARK_CHESTS.getSecond().get().asItem(),
+                CompatItems.HELLBARK_CHEST_BOAT.get(),
+                CompatItems.HELLBARK_FURNACE_BOAT.get(),
+                CompatItems.LARGE_HELLBARK_BOAT.get()
         );
 
         //Forge Tags

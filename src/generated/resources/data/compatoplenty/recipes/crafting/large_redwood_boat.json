@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "boatload",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "large_boat",
+        "pattern": [
+          "PBP",
+          "PPP"
+        ],
+        "key": {
+          "B": {
+            "item": "biomesoplenty:redwood_boat"
+          },
+          "P": {
+            "item": "biomesoplenty:redwood_planks"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:large_redwood_boat"
+        }
+      }
+    }
+  ]
+}

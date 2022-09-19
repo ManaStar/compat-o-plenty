@@ -29,6 +29,7 @@ public class CompatOPlenty
     public static final String WOODWORKS_ID = "woodworks";
     public static final String TWIGS_ID = "twigs";
     public static final String FARMERS_ID = "farmersdelight";
+    public static final String BOATLOAD_ID = "boatload";
 
 
     public static final Logger LOGGER = LogManager.getLogger();

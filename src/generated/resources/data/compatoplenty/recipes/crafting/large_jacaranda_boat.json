@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "boatload",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "group": "large_boat",
+        "pattern": [
+          "PBP",
+          "PPP"
+        ],
+        "key": {
+          "B": {
+            "item": "biomesoplenty:jacaranda_boat"
+          },
+          "P": {
+            "item": "biomesoplenty:jacaranda_planks"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:large_jacaranda_boat"
+        }
+      }
+    }
+  ]
+}

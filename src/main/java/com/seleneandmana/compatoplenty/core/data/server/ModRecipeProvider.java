@@ -298,6 +298,31 @@ public class ModRecipeProvider extends RecipeProvider {
         boardsRecipe(BOPBlocks.PALM_PLANKS, CompatBlocks.PALM_BOARDS.get(), consumer);
         boardsRecipe(BOPBlocks.HELLBARK_PLANKS, CompatBlocks.HELLBARK_BOARDS.get(), consumer);
 
+        //Furnace Boats
+        furnaceBoatRecipe(BOPItems.CHERRY_BOAT, CompatItems.CHERRY_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.JACARANDA_BOAT, CompatItems.JACARANDA_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.FIR_BOAT, CompatItems.FIR_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.REDWOOD_BOAT, CompatItems.REDWOOD_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.MAHOGANY_BOAT, CompatItems.MAHOGANY_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.WILLOW_BOAT, CompatItems.WILLOW_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.MAGIC_BOAT, CompatItems.MAGIC_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.DEAD_BOAT, CompatItems.DEAD_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.UMBRAN_BOAT, CompatItems.UMBRAN_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.PALM_BOAT, CompatItems.PALM_FURNACE_BOAT.get(), consumer);
+        furnaceBoatRecipe(BOPItems.HELLBARK_BOAT, CompatItems.HELLBARK_FURNACE_BOAT.get(), consumer);
+
+        //Large Boats
+        largeBoatRecipe(BOPItems.CHERRY_BOAT, BOPBlocks.CHERRY_PLANKS, CompatItems.LARGE_CHERRY_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.JACARANDA_BOAT, BOPBlocks.JACARANDA_PLANKS, CompatItems.LARGE_JACARANDA_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.FIR_BOAT, BOPBlocks.FIR_PLANKS, CompatItems.LARGE_FIR_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.REDWOOD_BOAT, BOPBlocks.REDWOOD_PLANKS, CompatItems.LARGE_REDWOOD_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.MAHOGANY_BOAT, BOPBlocks.MAHOGANY_PLANKS, CompatItems.LARGE_MAHOGANY_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.WILLOW_BOAT, BOPBlocks.WILLOW_PLANKS, CompatItems.LARGE_WILLOW_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.MAGIC_BOAT, BOPBlocks.MAGIC_PLANKS, CompatItems.LARGE_MAGIC_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.DEAD_BOAT, BOPBlocks.DEAD_PLANKS, CompatItems.LARGE_DEAD_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.UMBRAN_BOAT, BOPBlocks.UMBRAN_PLANKS, CompatItems.LARGE_UMBRAN_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.PALM_BOAT, BOPBlocks.PALM_PLANKS, CompatItems.LARGE_PALM_BOAT.get(), consumer);
+        largeBoatRecipe(BOPItems.HELLBARK_BOAT, BOPBlocks.HELLBARK_PLANKS, CompatItems.LARGE_HELLBARK_BOAT.get(), consumer);
 
         /*
         Stonecutting
@@ -581,6 +606,20 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCondition(new ModLoadedCondition(CompatOPlenty.FARMERS_ID))
                 .addRecipe(consumer1 -> ShapedRecipeBuilder.shaped(cabinet).define('#', slab).define('T', trapdoor).pattern("###").pattern("T T").pattern("###").unlockedBy(getHasName(slab), has(slab)).save(consumer1, new ResourceLocation(CompatOPlenty.MOD_ID)))
                 .build(consumer, new ResourceLocation(CompatOPlenty.MOD_ID, "crafting/" + getItemName(cabinet)));
+    }
+
+    public static void furnaceBoatRecipe(ItemLike boat, ItemLike furnaceBoat, Consumer<FinishedRecipe> consumer) {
+        ConditionalRecipe.builder()
+                .addCondition(new ModLoadedCondition(CompatOPlenty.BOATLOAD_ID))
+                .addRecipe(consumer1 -> ShapedRecipeBuilder.shaped(furnaceBoat, 1).group("furnace_boat").define('F', Items.FURNACE).define('B', boat).pattern("F").pattern("B").unlockedBy(getHasName(boat), has(boat)).save(consumer1))
+                .build(consumer, new ResourceLocation(CompatOPlenty.MOD_ID, "crafting/" + getItemName(furnaceBoat)));
+    }
+
+    public static void largeBoatRecipe(ItemLike boat, ItemLike planks, ItemLike largeBoat, Consumer<FinishedRecipe> consumer) {
+        ConditionalRecipe.builder()
+                .addCondition(new ModLoadedCondition(CompatOPlenty.BOATLOAD_ID))
+                .addRecipe(consumer1 -> ShapedRecipeBuilder.shaped(largeBoat, 1).group("large_boat").define('B', boat).define('P', planks).pattern("PBP").pattern("PPP").unlockedBy(getHasName(boat), has(boat)).save(consumer1))
+                .build(consumer, new ResourceLocation(CompatOPlenty.MOD_ID, "crafting/" + getItemName(largeBoat)));
     }
 
     public static void sandstoneStairsRecipe(ItemLike material, ItemLike stairs, Consumer<FinishedRecipe> consumer) {
