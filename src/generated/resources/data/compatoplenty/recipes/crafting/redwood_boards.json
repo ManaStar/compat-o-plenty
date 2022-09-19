@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "modid": "woodworks",
+              "type": "forge:mod_loaded"
+            },
+            {
+              "value": "wooden_boards",
+              "type": "woodworks:config"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
+        "key": {
+          "S": {
+            "item": "biomesoplenty:redwood_planks"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:redwood_boards",
+          "count": 3
+        }
+      }
+    }
+  ]
+}

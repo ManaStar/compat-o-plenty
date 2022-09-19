@@ -1,0 +1,26 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "overlay": "biomesoplenty:block/flowering_oak_leaves_overlay",
+    "base": "biomesoplenty:block/flowering_oak_leaves",
+    "particle": "#base"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0.1 ],
+      "to": [ 16, 16, 0.1 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "base", "tintindex": 0},
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "base", "tintindex": 0}
+      }
+    },
+    {
+      "from": [ 0, 0, 0.1 ],
+      "to": [ 16, 16, 0.1 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "overlay"},
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "overlay"}
+      }
+    }
+  ]
+}

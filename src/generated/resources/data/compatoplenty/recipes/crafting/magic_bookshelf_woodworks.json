@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "modid": "woodworks",
+              "type": "forge:mod_loaded"
+            },
+            {
+              "value": "wooden_bookshelves",
+              "type": "woodworks:config"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "BBB",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:magic_planks"
+          },
+          "B": {
+            "item": "minecraft:book"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:magic_bookshelf"
+        }
+      }
+    }
+  ]
+}

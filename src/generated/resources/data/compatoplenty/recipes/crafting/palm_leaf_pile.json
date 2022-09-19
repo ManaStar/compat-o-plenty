@@ -1,0 +1,35 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "modid": "woodworks",
+              "type": "forge:mod_loaded"
+            },
+            {
+              "value": "leaf_piles",
+              "type": "woodworks:config"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "group": "leaf_pile",
+        "ingredients": [
+          {
+            "item": "biomesoplenty:palm_leaves"
+          }
+        ],
+        "result": {
+          "item": "compatoplenty:palm_leaf_pile",
+          "count": 4
+        }
+      }
+    }
+  ]
+}

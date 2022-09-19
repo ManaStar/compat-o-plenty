@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "compatoplenty:hellbark_vertical_slab",
+    "compatoplenty:vertical_hellbark_planks",
+    "compatoplenty:hellbark_boards",
+    "compatoplenty:hellbark_bookshelf",
+    "compatoplenty:hellbark_ladder",
+    "compatoplenty:hellbark_beehive",
+    "compatoplenty:hellbark_chest",
+    "compatoplenty:hellbark_trapped_chest"
+  ]
+}

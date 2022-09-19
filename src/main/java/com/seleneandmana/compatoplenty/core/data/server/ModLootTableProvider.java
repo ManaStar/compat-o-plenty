@@ -17,6 +17,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
+import org.checkerframework.checker.units.qual.C;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -273,6 +274,39 @@ public class ModLootTableProvider extends LootTableProvider {
             this.dropSelf(CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get());
             this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), BlockLoot::createSlabItemTable);
             this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(), BlockLoot::createSlabItemTable);
+
+            //Boards
+            this.dropSelf(CompatBlocks.CHERRY_BOARDS.get());
+            this.dropSelf(CompatBlocks.FIR_BOARDS.get());
+            this.dropSelf(CompatBlocks.JACARANDA_BOARDS.get());
+            this.dropSelf(CompatBlocks.REDWOOD_BOARDS.get());
+            this.dropSelf(CompatBlocks.MAHOGANY_BOARDS.get());
+            this.dropSelf(CompatBlocks.WILLOW_BOARDS.get());
+            this.dropSelf(CompatBlocks.MAGIC_BOARDS.get());
+            this.dropSelf(CompatBlocks.DEAD_BOARDS.get());
+            this.dropSelf(CompatBlocks.UMBRAN_BOARDS.get());
+            this.dropSelf(CompatBlocks.PALM_BOARDS.get());
+            this.dropSelf(CompatBlocks.HELLBARK_BOARDS.get());
+
+            //Leaf Piles
+            this.add(CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.PINK_CHERRY_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.JACARANDA_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.FIR_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.REDWOOD_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.MAHOGANY_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.WILLOW_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.MAGIC_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.DEAD_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.UMBRAN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.PALM_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.HELLBARK_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.ORIGIN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.MAPLE_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
         }
 
         @Override

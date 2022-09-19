@@ -122,6 +122,35 @@ public class CompatCompat {
         DataUtil.registerFlammable(CompatBlocks.DEAD_TABLE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.UMBRAN_TABLE.get(), 5, 20);
         DataUtil.registerFlammable(CompatBlocks.PALM_TABLE.get(), 5, 20);
+
+        DataUtil.registerFlammable(CompatBlocks.CHERRY_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.FIR_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.JACARANDA_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.REDWOOD_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.MAHOGANY_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.WILLOW_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.MAGIC_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.DEAD_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.UMBRAN_BOARDS.get(), 5, 20);
+        DataUtil.registerFlammable(CompatBlocks.PALM_BOARDS.get(), 5, 20);
+
+        DataUtil.registerFlammable(CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.PINK_CHERRY_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.JACARANDA_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.FIR_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.REDWOOD_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.MAHOGANY_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.WILLOW_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.MAGIC_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.DEAD_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.UMBRAN_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.PALM_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.ORIGIN_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.MAPLE_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(), 30, 60);
+        DataUtil.registerFlammable(CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get(), 30, 60);
     }
 
     public static void compostablility() {

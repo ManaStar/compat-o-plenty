@@ -24,6 +24,8 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PINK_CHERRY_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.WHITE_CHERRY_LEAF_CARPET.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PINK_CHERRY_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PINK_CHERRY_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.CHERRY_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.JACARANDA_LADDER.get(), RenderType.cutout());
@@ -31,6 +33,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_JACARANDA_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.JACARANDA_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.JACARANDA_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.JACARANDA_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.JACARANDA_TABLE.get(), RenderType.cutout());
 
 
@@ -39,6 +42,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_FIR_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.FIR_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.FIR_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.FIR_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.FIR_TABLE.get(), RenderType.cutout());
 
 
@@ -47,6 +51,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_REDWOOD_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.REDWOOD_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.REDWOOD_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.REDWOOD_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.REDWOOD_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAHOGANY_LADDER.get(), RenderType.cutout());
@@ -54,6 +59,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_MAHOGANY_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAHOGANY_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAHOGANY_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAHOGANY_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAHOGANY_TABLE.get(), RenderType.cutout());
 
 
@@ -62,6 +68,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_WILLOW_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.WILLOW_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.WILLOW_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.WILLOW_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.WILLOW_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAGIC_LADDER.get(), RenderType.cutout());
@@ -69,6 +76,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_MAGIC_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAGIC_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAGIC_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAGIC_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAGIC_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.DEAD_LADDER.get(), RenderType.cutout());
@@ -76,6 +84,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_DEAD_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.DEAD_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.DEAD_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.DEAD_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.DEAD_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.UMBRAN_LADDER.get(), RenderType.cutout());
@@ -83,6 +92,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_UMBRAN_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.UMBRAN_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.UMBRAN_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.UMBRAN_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.UMBRAN_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PALM_LADDER.get(), RenderType.cutout());
@@ -90,6 +100,7 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_PALM_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PALM_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PALM_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PALM_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.PALM_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.HELLBARK_LADDER.get(), RenderType.cutout());
@@ -97,19 +108,26 @@ public class ClientRegister {
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.STRIPPED_HELLBARK_POST.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.HELLBARK_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.HELLBARK_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.HELLBARK_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.HELLBARK_TABLE.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.FLOWERING_OAK_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.RAINBOW_BIRCH_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.ORIGIN_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.ORIGIN_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.ORIGIN_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAPLE_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAPLE_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.MAPLE_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.ORANGE_AUTUMN_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.ORANGE_AUTUMN_HEDGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.YELLOW_AUTUMN_LEAF_CARPET.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CompatBlocks.YELLOW_AUTUMN_HEDGE.get(), RenderType.cutout());
     }
 }

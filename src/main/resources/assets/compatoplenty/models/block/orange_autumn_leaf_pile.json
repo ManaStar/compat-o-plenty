@@ -1,0 +1,6 @@
+{
+  "parent": "blueprint:block/leaf_pile",
+  "textures": {
+    "all": "biomesoplenty:block/orange_autumn_leaves"
+  }
+}

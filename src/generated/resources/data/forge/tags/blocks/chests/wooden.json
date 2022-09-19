@@ -11,6 +11,17 @@
     "compatoplenty:dead_chest",
     "compatoplenty:umbran_chest",
     "compatoplenty:palm_chest",
-    "compatoplenty:hellbark_chest"
+    "compatoplenty:hellbark_chest",
+    "compatoplenty:cherry_trapped_chest",
+    "compatoplenty:jacaranda_trapped_chest",
+    "compatoplenty:fir_trapped_chest",
+    "compatoplenty:redwood_trapped_chest",
+    "compatoplenty:mahogany_trapped_chest",
+    "compatoplenty:willow_trapped_chest",
+    "compatoplenty:magic_trapped_chest",
+    "compatoplenty:dead_trapped_chest",
+    "compatoplenty:umbran_trapped_chest",
+    "compatoplenty:palm_trapped_chest",
+    "compatoplenty:hellbark_trapped_chest"
   ]
 }

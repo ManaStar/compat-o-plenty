@@ -3,22 +3,23 @@ package com.seleneandmana.compatoplenty.core.data.server.tags;
 import biomesoplenty.api.block.BOPBlocks;
 import com.mojang.datafixers.util.Pair;
 import com.seleneandmana.compatoplenty.core.CompatOPlenty;
-import com.seleneandmana.compatoplenty.core.other.CompatTags;
 import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
-    public ModBlockTagsProvider(DataGenerator p_126511_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_126511_, CompatOPlenty.MOD_ID, existingFileHelper);
+    public ModBlockTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
+        super(generator, CompatOPlenty.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -36,6 +37,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.CHERRY_CABINET.get(),
                 CompatBlocks.CHERRY_TABLE.get(),
                 CompatBlocks.VERTICAL_CHERRY_PLANKS.get(),
+                CompatBlocks.CHERRY_BOARDS.get(),
                 getNormalChest(CompatBlocks.CHERRY_CHESTS),
                 getTrappedChest(CompatBlocks.CHERRY_CHESTS),
 
@@ -49,6 +51,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.JACARANDA_CABINET.get(),
                 CompatBlocks.JACARANDA_TABLE.get(),
                 CompatBlocks.VERTICAL_JACARANDA_PLANKS.get(),
+                CompatBlocks.JACARANDA_BOARDS.get(),
                 getNormalChest(CompatBlocks.JACARANDA_CHESTS),
                 getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
 
@@ -62,6 +65,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.FIR_CABINET.get(),
                 CompatBlocks.FIR_TABLE.get(),
                 CompatBlocks.VERTICAL_FIR_PLANKS.get(),
+                CompatBlocks.FIR_BOARDS.get(),
                 getNormalChest(CompatBlocks.FIR_CHESTS),
                 getTrappedChest(CompatBlocks.FIR_CHESTS),
 
@@ -76,6 +80,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.REDWOOD_CABINET.get(),
                 CompatBlocks.REDWOOD_TABLE.get(),
                 CompatBlocks.VERTICAL_REDWOOD_PLANKS.get(),
+                CompatBlocks.REDWOOD_BOARDS.get(),
                 getNormalChest(CompatBlocks.REDWOOD_CHESTS),
                 getTrappedChest(CompatBlocks.REDWOOD_CHESTS),
 
@@ -89,6 +94,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.MAHOGANY_CABINET.get(),
                 CompatBlocks.MAHOGANY_TABLE.get(),
                 CompatBlocks.VERTICAL_MAHOGANY_PLANKS.get(),
+                CompatBlocks.MAHOGANY_BOARDS.get(),
                 getNormalChest(CompatBlocks.MAHOGANY_CHESTS),
                 getTrappedChest(CompatBlocks.MAHOGANY_CHESTS),
 
@@ -102,6 +108,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.WILLOW_CABINET.get(),
                 CompatBlocks.WILLOW_TABLE.get(),
                 CompatBlocks.VERTICAL_WILLOW_PLANKS.get(),
+                CompatBlocks.WILLOW_BOARDS.get(),
                 getNormalChest(CompatBlocks.WILLOW_CHESTS),
                 getTrappedChest(CompatBlocks.WILLOW_CHESTS),
 
@@ -115,6 +122,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.MAGIC_CABINET.get(),
                 CompatBlocks.MAGIC_TABLE.get(),
                 CompatBlocks.VERTICAL_MAGIC_PLANKS.get(),
+                CompatBlocks.MAGIC_BOARDS.get(),
                 getNormalChest(CompatBlocks.MAGIC_CHESTS),
                 getTrappedChest(CompatBlocks.MAGIC_CHESTS),
 
@@ -128,6 +136,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.DEAD_CABINET.get(),
                 CompatBlocks.DEAD_TABLE.get(),
                 CompatBlocks.VERTICAL_DEAD_PLANKS.get(),
+                CompatBlocks.DEAD_BOARDS.get(),
                 getNormalChest(CompatBlocks.DEAD_CHESTS),
                 getTrappedChest(CompatBlocks.DEAD_CHESTS),
 
@@ -141,6 +150,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.UMBRAN_CABINET.get(),
                 CompatBlocks.UMBRAN_TABLE.get(),
                 CompatBlocks.VERTICAL_UMBRAN_PLANKS.get(),
+                CompatBlocks.UMBRAN_BOARDS.get(),
                 getNormalChest(CompatBlocks.UMBRAN_CHESTS),
                 getTrappedChest(CompatBlocks.UMBRAN_CHESTS),
 
@@ -154,6 +164,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.PALM_CABINET.get(),
                 CompatBlocks.PALM_TABLE.get(),
                 CompatBlocks.VERTICAL_PALM_PLANKS.get(),
+                CompatBlocks.PALM_BOARDS.get(),
                 getNormalChest(CompatBlocks.PALM_CHESTS),
                 getTrappedChest(CompatBlocks.PALM_CHESTS),
 
@@ -167,6 +178,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.HELLBARK_CABINET.get(),
                 CompatBlocks.HELLBARK_TABLE.get(),
                 CompatBlocks.VERTICAL_HELLBARK_PLANKS.get(),
+                CompatBlocks.HELLBARK_BOARDS.get(),
                 getNormalChest(CompatBlocks.HELLBARK_CHESTS),
                 getTrappedChest(CompatBlocks.HELLBARK_CHESTS),
 
@@ -179,8 +191,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         );
 
         tag(BlockTags.MINEABLE_WITH_HOE).add(
-                CompatBlocks.PINK_CHERRY_LEAF_CARPET.get(),
                 CompatBlocks.WHITE_CHERRY_LEAF_CARPET.get(),
+                CompatBlocks.PINK_CHERRY_LEAF_CARPET.get(),
                 CompatBlocks.JACARANDA_LEAF_CARPET.get(),
                 CompatBlocks.FIR_LEAF_CARPET.get(),
                 CompatBlocks.REDWOOD_LEAF_CARPET.get(),
@@ -196,7 +208,26 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.ORIGIN_LEAF_CARPET.get(),
                 CompatBlocks.MAPLE_LEAF_CARPET.get(),
                 CompatBlocks.ORANGE_AUTUMN_LEAF_CARPET.get(),
-                CompatBlocks.YELLOW_AUTUMN_LEAF_CARPET.get()
+                CompatBlocks.YELLOW_AUTUMN_LEAF_CARPET.get(),
+
+                CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(),
+                CompatBlocks.PINK_CHERRY_LEAF_PILE.get(),
+                CompatBlocks.JACARANDA_LEAF_PILE.get(),
+                CompatBlocks.FIR_LEAF_PILE.get(),
+                CompatBlocks.REDWOOD_LEAF_PILE.get(),
+                CompatBlocks.MAHOGANY_LEAF_PILE.get(),
+                CompatBlocks.WILLOW_LEAF_PILE.get(),
+                CompatBlocks.MAGIC_LEAF_PILE.get(),
+                CompatBlocks.DEAD_LEAF_PILE.get(),
+                CompatBlocks.UMBRAN_LEAF_PILE.get(),
+                CompatBlocks.PALM_LEAF_PILE.get(),
+                CompatBlocks.HELLBARK_LEAF_PILE.get(),
+                CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(),
+                CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(),
+                CompatBlocks.ORIGIN_LEAF_PILE.get(),
+                CompatBlocks.MAPLE_LEAF_PILE.get(),
+                CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(),
+                CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get()
         );
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
@@ -336,7 +367,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         );
 
         //Forge Tags
-        tag(CompatTags.BlockTags.CHESTS_WOODEN).add(
+        tag(Tags.Blocks.CHESTS_WOODEN).add(
                 getNormalChest(CompatBlocks.CHERRY_CHESTS),
                 getNormalChest(CompatBlocks.JACARANDA_CHESTS),
                 getNormalChest(CompatBlocks.FIR_CHESTS),
@@ -347,10 +378,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 getNormalChest(CompatBlocks.DEAD_CHESTS),
                 getNormalChest(CompatBlocks.UMBRAN_CHESTS),
                 getNormalChest(CompatBlocks.PALM_CHESTS),
-                getNormalChest(CompatBlocks.HELLBARK_CHESTS)
-        );
+                getNormalChest(CompatBlocks.HELLBARK_CHESTS),
 
-        tag(CompatTags.BlockTags.CHESTS_TRAPPED).add(
                 getTrappedChest(CompatBlocks.CHERRY_CHESTS),
                 getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
                 getTrappedChest(CompatBlocks.FIR_CHESTS),
@@ -364,8 +393,22 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 getTrappedChest(CompatBlocks.HELLBARK_CHESTS)
         );
 
-        //Quark
-        tag(CompatTags.BlockTags.HEDGES).add(
+        tag(Tags.Blocks.CHESTS_TRAPPED).add(
+                getTrappedChest(CompatBlocks.CHERRY_CHESTS),
+                getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
+                getTrappedChest(CompatBlocks.FIR_CHESTS),
+                getTrappedChest(CompatBlocks.REDWOOD_CHESTS),
+                getTrappedChest(CompatBlocks.MAHOGANY_CHESTS),
+                getTrappedChest(CompatBlocks.WILLOW_CHESTS),
+                getTrappedChest(CompatBlocks.MAGIC_CHESTS),
+                getTrappedChest(CompatBlocks.DEAD_CHESTS),
+                getTrappedChest(CompatBlocks.UMBRAN_CHESTS),
+                getTrappedChest(CompatBlocks.PALM_CHESTS),
+                getTrappedChest(CompatBlocks.HELLBARK_CHESTS)
+        );
+
+        //Other Tags
+        tag(BlueprintBlockTags.HEDGES).add(
                 CompatBlocks.WHITE_CHERRY_HEDGE.get(),
                 CompatBlocks.PINK_CHERRY_HEDGE.get(),
                 CompatBlocks.JACARANDA_HEDGE.get(),
@@ -385,7 +428,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.YELLOW_AUTUMN_HEDGE.get()
         );
 
-        tag(CompatTags.BlockTags.LADDERS).add(
+        tag(BlueprintBlockTags.LADDERS).add(
                 CompatBlocks.CHERRY_LADDER.get(),
                 CompatBlocks.JACARANDA_LADDER.get(),
                 CompatBlocks.FIR_LADDER.get(),
@@ -399,7 +442,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.HELLBARK_LADDER.get()
         );
 
-        tag(CompatTags.BlockTags.VERTICAL_SLABS).add(
+        tag(BlueprintBlockTags.VERTICAL_SLABS).add(
                 CompatBlocks.CHERRY_VERTICAL_SLAB.get(),
                 CompatBlocks.JACARANDA_VERTICAL_SLAB.get(),
                 CompatBlocks.FIR_VERTICAL_SLAB.get(),
@@ -433,6 +476,27 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(),
 
                 CompatBlocks.MUD_BRICK_VERTICAL_SLAB.get()
+        );
+
+        tag(BlueprintBlockTags.LEAF_PILES).add(
+                CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(),
+                CompatBlocks.PINK_CHERRY_LEAF_PILE.get(),
+                CompatBlocks.JACARANDA_LEAF_PILE.get(),
+                CompatBlocks.FIR_LEAF_PILE.get(),
+                CompatBlocks.REDWOOD_LEAF_PILE.get(),
+                CompatBlocks.MAHOGANY_LEAF_PILE.get(),
+                CompatBlocks.WILLOW_LEAF_PILE.get(),
+                CompatBlocks.MAGIC_LEAF_PILE.get(),
+                CompatBlocks.DEAD_LEAF_PILE.get(),
+                CompatBlocks.UMBRAN_LEAF_PILE.get(),
+                CompatBlocks.PALM_LEAF_PILE.get(),
+                CompatBlocks.HELLBARK_LEAF_PILE.get(),
+                CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(),
+                CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(),
+                CompatBlocks.ORIGIN_LEAF_PILE.get(),
+                CompatBlocks.MAPLE_LEAF_PILE.get(),
+                CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(),
+                CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get()
         );
     }
 

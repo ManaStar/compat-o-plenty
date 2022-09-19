@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "compatoplenty:pink_cherry_leaf_carpet",
     "compatoplenty:white_cherry_leaf_carpet",
+    "compatoplenty:pink_cherry_leaf_carpet",
     "compatoplenty:jacaranda_leaf_carpet",
     "compatoplenty:fir_leaf_carpet",
     "compatoplenty:redwood_leaf_carpet",
@@ -18,6 +18,24 @@
     "compatoplenty:origin_leaf_carpet",
     "compatoplenty:maple_leaf_carpet",
     "compatoplenty:orange_autumn_leaf_carpet",
-    "compatoplenty:yellow_autumn_leaf_carpet"
+    "compatoplenty:yellow_autumn_leaf_carpet",
+    "compatoplenty:white_cherry_leaf_pile",
+    "compatoplenty:pink_cherry_leaf_pile",
+    "compatoplenty:jacaranda_leaf_pile",
+    "compatoplenty:fir_leaf_pile",
+    "compatoplenty:redwood_leaf_pile",
+    "compatoplenty:mahogany_leaf_pile",
+    "compatoplenty:willow_leaf_pile",
+    "compatoplenty:magic_leaf_pile",
+    "compatoplenty:dead_leaf_pile",
+    "compatoplenty:umbran_leaf_pile",
+    "compatoplenty:palm_leaf_pile",
+    "compatoplenty:hellbark_leaf_pile",
+    "compatoplenty:flowering_oak_leaf_pile",
+    "compatoplenty:rainbow_birch_leaf_pile",
+    "compatoplenty:origin_leaf_pile",
+    "compatoplenty:maple_leaf_pile",
+    "compatoplenty:orange_autumn_leaf_pile",
+    "compatoplenty:yellow_autumn_leaf_pile"
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "values": [
+            {
+              "modid": "woodworks",
+              "type": "forge:mod_loaded"
+            },
+            {
+              "value": "wooden_beehives",
+              "type": "woodworks:config"
+            }
+          ],
+          "type": "forge:and"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "###",
+          "HHH",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "biomesoplenty:fir_planks"
+          },
+          "H": {
+            "item": "minecraft:honeycomb"
+          }
+        },
+        "result": {
+          "item": "compatoplenty:fir_beehive"
+        }
+      }
+    }
+  ]
+}
