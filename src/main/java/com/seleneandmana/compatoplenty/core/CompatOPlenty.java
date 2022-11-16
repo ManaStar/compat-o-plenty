@@ -1,5 +1,6 @@
 package com.seleneandmana.compatoplenty.core;
 
+import com.seleneandmana.compatoplenty.core.data.client.ModLanguageProvider;
 import com.seleneandmana.compatoplenty.core.data.server.ModLootTableProvider;
 import com.seleneandmana.compatoplenty.core.data.server.ModRecipeProvider;
 import com.seleneandmana.compatoplenty.core.data.server.tags.ModBlockTagsProvider;
@@ -56,6 +57,10 @@ public class CompatOPlenty
             generator.addProvider(new ModItemTagsProvider(generator, modBlockTagsProvider, fileHelper));
             generator.addProvider(new ModLootTableProvider(generator));
             generator.addProvider(new ModRecipeProvider(generator));
+        }
+
+        if (event.includeClient()) {
+            generator.addProvider(new ModLanguageProvider(generator));
         }
     }
 
