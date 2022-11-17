@@ -3,6 +3,8 @@ package com.seleneandmana.compatoplenty.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
+import com.teamabnormals.woodworks.core.data.server.WoodworksLootTableProvider;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
@@ -15,7 +17,9 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.RegistryObject;
 import org.checkerframework.checker.units.qual.C;
 import org.jetbrains.annotations.NotNull;
@@ -70,7 +74,6 @@ public class ModLootTableProvider extends LootTableProvider {
             this.add(CompatBlocks.ORANGE_SANDSTONE_BRICK_VERTICAL_SLAB.get(), BlockLoot::createSlabItemTable);
             this.add(CompatBlocks.BLACK_SANDSTONE_BRICK_VERTICAL_SLAB.get(), BlockLoot::createSlabItemTable);
             this.add(CompatBlocks.GALANOS_VERTICAL_SLAB.get(), BlockLoot::createSlabItemTable);
-            this.add(CompatBlocks.MUD_BRICK_VERTICAL_SLAB.get(), BlockLoot::createSlabItemTable);
             this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(), BlockLoot::createSlabItemTable);
             this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), BlockLoot::createSlabItemTable);
 
@@ -289,24 +292,24 @@ public class ModLootTableProvider extends LootTableProvider {
             this.dropSelf(CompatBlocks.HELLBARK_BOARDS.get());
 
             //Leaf Piles
-            this.add(CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.PINK_CHERRY_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.JACARANDA_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.FIR_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.REDWOOD_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.MAHOGANY_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.WILLOW_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.MAGIC_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.DEAD_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.UMBRAN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.PALM_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.HELLBARK_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.ORIGIN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.MAPLE_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
-            this.add(CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get(), BlockLoot::createGlowLichenDrops);
+            this.add(CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.PINK_CHERRY_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.JACARANDA_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.FIR_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.REDWOOD_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.MAHOGANY_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.WILLOW_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.MAGIC_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.DEAD_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.UMBRAN_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.PALM_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.HELLBARK_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.ORIGIN_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.MAPLE_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
+            this.add(CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get(), CompatBlockLoot::createLeafPileDrops);
         }
 
         @Override
@@ -320,6 +323,10 @@ public class ModLootTableProvider extends LootTableProvider {
 
         private void createBeehiveTable(Block beehive) {
             this.add(beehive, createBeeHiveDrop(beehive));
+        }
+
+        private static LootTable.Builder createLeafPileDrops(Block block) {
+            return createMultifaceBlockDrops(block, MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS)));
         }
     }
 }

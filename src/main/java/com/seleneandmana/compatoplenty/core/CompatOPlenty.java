@@ -11,20 +11,19 @@ import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod("compatoplenty")
 @Mod.EventBusSubscriber(modid = CompatOPlenty.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class CompatOPlenty
-{
+public class CompatOPlenty {
     public static final String MOD_ID = "compatoplenty";
     public static final String QUARK_ID = "quark";
     public static final String WOODWORKS_ID = "woodworks";
@@ -51,17 +50,13 @@ public class CompatOPlenty
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
-        if (event.includeServer()) {
-            ModBlockTagsProvider modBlockTagsProvider = new ModBlockTagsProvider(generator, fileHelper);
-            generator.addProvider(modBlockTagsProvider);
-            generator.addProvider(new ModItemTagsProvider(generator, modBlockTagsProvider, fileHelper));
-            generator.addProvider(new ModLootTableProvider(generator));
-            generator.addProvider(new ModRecipeProvider(generator));
-        }
+        ModBlockTagsProvider modBlockTagsProvider = new ModBlockTagsProvider(generator, fileHelper);
+        generator.addProvider(event.includeServer(), modBlockTagsProvider);
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(generator, modBlockTagsProvider, fileHelper));
+        generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
 
-        if (event.includeClient()) {
-            generator.addProvider(new ModLanguageProvider(generator));
-        }
+        generator.addProvider(event.includeClient(), new ModLanguageProvider(generator));
     }
 
     private void compatSetup(FMLCommonSetupEvent event) {

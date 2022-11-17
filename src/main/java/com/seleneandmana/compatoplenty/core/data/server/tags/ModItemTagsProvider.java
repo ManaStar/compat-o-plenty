@@ -75,7 +75,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 asItem(CompatBlocks.HELLBARK_BEEHIVE),
                 CompatBlocks.HELLBARK_CHESTS.getFirst().get().asItem(),
                 CompatBlocks.HELLBARK_CHESTS.getSecond().get().asItem(),
-                CompatItems.HELLBARK_CHEST_BOAT.get(),
                 CompatItems.HELLBARK_FURNACE_BOAT.get(),
                 CompatItems.LARGE_HELLBARK_BOAT.get()
         );
@@ -197,9 +196,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 asItem(CompatBlocks.GALANOS_VERTICAL_SLAB),
 
                 asItem(CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB),
-                asItem(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB),
-
-                asItem(CompatBlocks.MUD_BRICK_VERTICAL_SLAB)
+                asItem(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB)
         );
     }
 

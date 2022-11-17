@@ -40,7 +40,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add(CompatBlocks.GALANOS_VERTICAL_SLAB.get(), "Galanos Vertical Slab");
         add(CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(), "Polished Rose Quartz Vertical Slab");
         add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), "Polished Rose Quartz Brick Vertical Slab");
-        add(CompatBlocks.MUD_BRICK_VERTICAL_SLAB.get(), "Mud Brick Vertical Slab");
 
         //Bookshelves
         add(CompatBlocks.CHERRY_BOOKSHELF.get(), "Cherry Bookshelf");
@@ -276,19 +275,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get(), "Polished Rose Quartz Brick Wall");
         add(CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get(), "Cracked Polished Rose Quartz Bricks");
         add(CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get(), "Chiseled Polished Rose Quartz");
-
-        //Chest Boats
-        add(CompatItems.CHERRY_CHEST_BOAT.get(), "Cherry Boat with Chest");
-        add(CompatItems.JACARANDA_CHEST_BOAT.get(), "Jacaranda Boat with Chest");
-        add(CompatItems.FIR_CHEST_BOAT.get(), "Fir Boat with Chest");
-        add(CompatItems.REDWOOD_CHEST_BOAT.get(), "Redwood Boat with Chest");
-        add(CompatItems.MAHOGANY_CHEST_BOAT.get(), "Mahogany Boat with Chest");
-        add(CompatItems.WILLOW_CHEST_BOAT.get(), "Willow Boat with Chest");
-        add(CompatItems.MAGIC_CHEST_BOAT.get(), "Magic Boat with Chest");
-        add(CompatItems.DEAD_CHEST_BOAT.get(), "Dead Boat with Chest");
-        add(CompatItems.UMBRAN_CHEST_BOAT.get(), "Umbran Boat with Chest");
-        add(CompatItems.PALM_CHEST_BOAT.get(), "Palm Boat with Chest");
-        add(CompatItems.HELLBARK_CHEST_BOAT.get(), "Hellbark Boat with Chest");
 
         //Furnace Boats
         add(CompatItems.CHERRY_FURNACE_BOAT.get(), "Cherry Boat with Furnace");

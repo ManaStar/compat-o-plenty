@@ -274,9 +274,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(),
                 CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(),
                 CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get(),
-                CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get(),
-
-                CompatBlocks.MUD_BRICK_VERTICAL_SLAB.get()
+                CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get()
         );
 
         tag(BlockTags.BEEHIVES).add(
@@ -362,8 +360,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         //Farmer's Delight Tags
         tag(ModTags.COMPOST_ACTIVATORS).add(
-                BOPBlocks.TOADSTOOL,
-                BOPBlocks.GLOWSHROOM
+                BOPBlocks.TOADSTOOL.get(),
+                BOPBlocks.GLOWSHROOM.get()
         );
 
         //Forge Tags
@@ -473,9 +471,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.GALANOS_VERTICAL_SLAB.get(),
 
                 CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(),
-
-                CompatBlocks.MUD_BRICK_VERTICAL_SLAB.get()
+                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get()
         );
 
         tag(BlueprintBlockTags.LEAF_PILES).add(

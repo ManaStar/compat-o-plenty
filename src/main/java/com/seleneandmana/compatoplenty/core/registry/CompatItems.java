@@ -15,19 +15,6 @@ public class CompatItems {
 
     public static final RegistryObject<Item> GLOWING_MOSS_PASTE = HELPER.createCompatItem("glowing_moss_paste", new Item.Properties(), CreativeModeTab.TAB_MATERIALS, CompatOPlenty.QUARK_ID);
 
-    //Chest Boats
-    public static final RegistryObject<Item> CHERRY_CHEST_BOAT = HELPER.createItem("cherry_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.CHERRY_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> JACARANDA_CHEST_BOAT = HELPER.createItem("jacaranda_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.JACARANDA_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> FIR_CHEST_BOAT = HELPER.createItem("fir_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.FIR_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> REDWOOD_CHEST_BOAT = HELPER.createItem("redwood_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.REDWOOD_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MAHOGANY_CHEST_BOAT = HELPER.createItem("mahogany_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.MAHOGANY_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> WILLOW_CHEST_BOAT = HELPER.createItem("willow_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.WILLOW_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MAGIC_CHEST_BOAT = HELPER.createItem("magic_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.MAGIC_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> DEAD_CHEST_BOAT = HELPER.createItem("dead_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.DEAD_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> UMBRAN_CHEST_BOAT = HELPER.createItem("umbran_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.UMBRAN_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> PALM_CHEST_BOAT = HELPER.createItem("palm_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.PALM_CHEST_BOAT : () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> HELLBARK_CHEST_BOAT = HELPER.createItem("hellbark_chest_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.HELLBARK_CHEST_BOAT : () -> new Item(new Item.Properties()));
-
     //Furnace Boats
     public static final RegistryObject<Item> CHERRY_FURNACE_BOAT = HELPER.createItem("cherry_furnace_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.CHERRY_FURNACE_BOAT : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> JACARANDA_FURNACE_BOAT = HELPER.createItem("jacaranda_furnace_boat", ItemSubRegistryHelper.areModsLoaded(CompatOPlenty.BOATLOAD_ID) ? CompatBoatTypes.JACARANDA_FURNACE_BOAT : () -> new Item(new Item.Properties()));
