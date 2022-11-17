@@ -1,8 +1,6 @@
 {
     "pack": {
-        "description": "Compat o' Plenty resources",
-        "pack_format": 9,
-        "forge:resource_pack_format": 9,
-        "forge:data_pack_format": 10
+        "description": "Compat O' Plenty resources",
+        "pack_format": 8
     }
 }
