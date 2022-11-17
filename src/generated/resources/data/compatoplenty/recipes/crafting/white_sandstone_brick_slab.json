@@ -4,23 +4,23 @@
     {
       "conditions": [
         {
-          "flag": "sandstone_bricks",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "sandstone_bricks"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "###"
-        ],
         "key": {
           "#": {
             "item": "compatoplenty:white_sandstone_bricks"
           }
         },
+        "pattern": [
+          "###"
+        ],
         "result": {
-          "item": "compatoplenty:white_sandstone_brick_slab",
-          "count": 6
+          "count": 6,
+          "item": "compatoplenty:white_sandstone_brick_slab"
         }
       }
     }

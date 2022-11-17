@@ -11,6 +11,7 @@ import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
 @Mod.EventBusSubscriber(modid = CompatOPlenty.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientRegister {
 
+    //TODO: Replace with full blockstate/model datagen!
     @SubscribeEvent
     public static void registerClient(FMLClientSetupEvent event) {
         event.enqueueWork(ClientRegister::setupRenderLayer);

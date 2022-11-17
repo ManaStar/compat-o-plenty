@@ -4,8 +4,8 @@
     {
       "conditions": [
         {
-          "flag": "variant_chests",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "variant_chests"
         }
       ],
       "recipe": {

@@ -1,0 +1,13 @@
+// 1.19.2	2022-11-16T18:04:10.7289904	Tags for minecraft:item
+c680f244f0cfdb3b03158ab02390893c16f1de84 data/forge/tags/items/bookshelves.json
+be544c80aec72647ef3a11c3ae1bad2e03f74ad3 data/forge/tags/items/chests/trapped.json
+0765d3593ba63c562b1e81f854554c21f5f2d9ec data/forge/tags/items/chests/wooden.json
+8292491712a4c3ce696d6306c8e286ef0ab58e93 data/minecraft/tags/items/non_flammable_wood.json
+ab365cce14ad0e26ba9ae51ca3c8edb5152962ae data/minecraft/tags/items/planks.json
+8196a5090eff3a9889df27d15078eeb3219bca67 data/minecraft/tags/items/slabs.json
+35ed7518349a17c4e8e0fa2f508b4d6ef7d27990 data/minecraft/tags/items/stairs.json
+dfa4208049dac04a236e0ff21b9c3232205572ef data/minecraft/tags/items/walls.json
+0765d3593ba63c562b1e81f854554c21f5f2d9ec data/quark/tags/items/boatable_chests.json
+8a529eca3fc9a6417312e7d5c22f7be197c73f0e data/quark/tags/items/ladders.json
+0765d3593ba63c562b1e81f854554c21f5f2d9ec data/quark/tags/items/revertable_chests.json
+2c03ff68edc454835275100b057dce66a1b246c3 data/quark/tags/items/vertical_slabs.json

@@ -1,5 +1,4 @@
 {
-  "replace": false,
   "values": [
     "compatoplenty:cherry_vertical_slab",
     "compatoplenty:jacaranda_vertical_slab",
@@ -26,7 +25,6 @@
     "compatoplenty:white_sandstone_brick_vertical_slab",
     "compatoplenty:galanos_vertical_slab",
     "compatoplenty:polished_rose_quartz_vertical_slab",
-    "compatoplenty:polished_rose_quartz_brick_vertical_slab",
-    "compatoplenty:mud_brick_vertical_slab"
+    "compatoplenty:polished_rose_quartz_brick_vertical_slab"
   ]
 }

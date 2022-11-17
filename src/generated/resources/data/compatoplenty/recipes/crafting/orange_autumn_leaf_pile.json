@@ -4,17 +4,17 @@
     {
       "conditions": [
         {
+          "type": "forge:and",
           "values": [
             {
-              "modid": "woodworks",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             },
             {
-              "value": "leaf_piles",
-              "type": "woodworks:config"
+              "type": "woodworks:config",
+              "value": "leaf_piles"
             }
-          ],
-          "type": "forge:and"
+          ]
         }
       ],
       "recipe": {
@@ -26,8 +26,8 @@
           }
         ],
         "result": {
-          "item": "compatoplenty:orange_autumn_leaf_pile",
-          "count": 4
+          "count": 4,
+          "item": "compatoplenty:orange_autumn_leaf_pile"
         }
       }
     }

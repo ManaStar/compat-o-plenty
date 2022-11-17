@@ -4,18 +4,18 @@
     {
       "conditions": [
         {
-          "flag": "midori",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "midori"
         }
       ],
       "recipe": {
         "type": "minecraft:smelting",
+        "cookingtime": 200,
+        "experience": 1.0,
         "ingredient": {
           "item": "biomesoplenty:glowing_moss_block"
         },
-        "result": "compatoplenty:glowing_moss_paste",
-        "experience": 1.0,
-        "cookingtime": 200
+        "result": "compatoplenty:glowing_moss_paste"
       }
     }
   ]

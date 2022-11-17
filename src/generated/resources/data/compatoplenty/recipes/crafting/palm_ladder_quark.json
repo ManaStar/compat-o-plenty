@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "variant_ladders",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "variant_ladders"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "# #",
-          "#P#",
-          "# #"
-        ],
         "key": {
           "#": {
             "item": "minecraft:stick"
@@ -23,9 +18,14 @@
             "item": "biomesoplenty:palm_planks"
           }
         },
+        "pattern": [
+          "# #",
+          "#P#",
+          "# #"
+        ],
         "result": {
-          "item": "compatoplenty:palm_ladder",
-          "count": 4
+          "count": 4,
+          "item": "compatoplenty:palm_ladder"
         }
       }
     }

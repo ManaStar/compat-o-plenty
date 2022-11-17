@@ -4,17 +4,13 @@
     {
       "conditions": [
         {
-          "modid": "boatload",
-          "type": "forge:mod_loaded"
+          "type": "forge:mod_loaded",
+          "modid": "boatload"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
         "group": "large_boat",
-        "pattern": [
-          "PBP",
-          "PPP"
-        ],
         "key": {
           "B": {
             "item": "biomesoplenty:hellbark_boat"
@@ -23,6 +19,10 @@
             "item": "biomesoplenty:hellbark_planks"
           }
         },
+        "pattern": [
+          "PBP",
+          "PPP"
+        ],
         "result": {
           "item": "compatoplenty:large_hellbark_boat"
         }

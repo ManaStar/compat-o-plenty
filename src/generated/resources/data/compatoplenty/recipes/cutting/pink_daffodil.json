@@ -4,8 +4,8 @@
     {
       "conditions": [
         {
-          "modid": "farmersdelight",
-          "type": "forge:mod_loaded"
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
       ],
       "recipe": {
@@ -15,16 +15,16 @@
             "item": "biomesoplenty:pink_daffodil"
           }
         ],
-        "tool": {
-          "tag": "forge:tools/knives"
-        },
         "result": [
           {
-            "item": "minecraft:pink_dye",
-            "count": 2
+            "count": 2,
+            "item": "minecraft:pink_dye"
           }
         ],
-        "sound": "farmersdelight:block.cutting_board.knife"
+        "sound": "farmersdelight:block.cutting_board.knife",
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
       }
     }
   ]

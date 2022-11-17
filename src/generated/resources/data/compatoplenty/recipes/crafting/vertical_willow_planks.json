@@ -4,25 +4,25 @@
     {
       "conditions": [
         {
-          "flag": "vertical_planks",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_planks"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "S",
-          "S",
-          "S"
-        ],
         "key": {
           "S": {
             "item": "biomesoplenty:willow_planks"
           }
         },
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
         "result": {
-          "item": "compatoplenty:vertical_willow_planks",
-          "count": 3
+          "count": 3,
+          "item": "compatoplenty:vertical_willow_planks"
         }
       }
     }

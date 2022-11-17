@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "modid": "farmersdelight",
-          "type": "forge:mod_loaded"
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "###",
-          "T T",
-          "###"
-        ],
         "key": {
           "#": {
             "item": "biomesoplenty:hellbark_slab"
@@ -23,6 +18,11 @@
             "item": "biomesoplenty:hellbark_trapdoor"
           }
         },
+        "pattern": [
+          "###",
+          "T T",
+          "###"
+        ],
         "result": {
           "item": "compatoplenty:hellbark_cabinet"
         }

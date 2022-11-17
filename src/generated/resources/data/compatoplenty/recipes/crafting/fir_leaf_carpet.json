@@ -4,23 +4,23 @@
     {
       "conditions": [
         {
-          "flag": "leaf_carpet",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "leaf_carpet"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "##"
-        ],
         "key": {
           "#": {
             "item": "biomesoplenty:fir_leaves"
           }
         },
+        "pattern": [
+          "##"
+        ],
         "result": {
-          "item": "compatoplenty:fir_leaf_carpet",
-          "count": 3
+          "count": 3,
+          "item": "compatoplenty:fir_leaf_carpet"
         }
       }
     }

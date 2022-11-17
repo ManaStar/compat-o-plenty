@@ -4,22 +4,22 @@
     {
       "conditions": [
         {
-          "flag": "variant_chests",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "variant_chests"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "###",
-          "# #",
-          "###"
-        ],
         "key": {
           "#": {
             "item": "biomesoplenty:palm_planks"
           }
         },
+        "pattern": [
+          "###",
+          "# #",
+          "###"
+        ],
         "result": {
           "item": "compatoplenty:palm_chest"
         }

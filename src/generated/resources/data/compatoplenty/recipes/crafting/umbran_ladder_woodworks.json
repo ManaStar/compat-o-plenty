@@ -4,26 +4,21 @@
     {
       "conditions": [
         {
+          "type": "forge:and",
           "values": [
             {
-              "modid": "woodworks",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             },
             {
-              "value": "wooden_ladders",
-              "type": "woodworks:config"
+              "type": "woodworks:config",
+              "value": "wooden_ladders"
             }
-          ],
-          "type": "forge:and"
+          ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "# #",
-          "#P#",
-          "# #"
-        ],
         "key": {
           "#": {
             "item": "minecraft:stick"
@@ -32,9 +27,14 @@
             "item": "biomesoplenty:umbran_planks"
           }
         },
+        "pattern": [
+          "# #",
+          "#P#",
+          "# #"
+        ],
         "result": {
-          "item": "compatoplenty:umbran_ladder",
-          "count": 4
+          "count": 4,
+          "item": "compatoplenty:umbran_ladder"
         }
       }
     }

@@ -4,17 +4,17 @@
     {
       "conditions": [
         {
+          "type": "forge:and",
           "values": [
             {
-              "modid": "woodworks",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             },
             {
-              "value": "wooden_chests",
-              "type": "woodworks:config"
+              "type": "woodworks:config",
+              "value": "wooden_chests"
             }
-          ],
-          "type": "forge:and"
+          ]
         }
       ],
       "recipe": {

@@ -4,17 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "sandstone_bricks",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "sandstone_bricks"
         }
       ],
       "recipe": {
         "type": "minecraft:stonecutting",
+        "count": 1,
         "ingredient": {
           "item": "biomesoplenty:black_sandstone"
         },
-        "result": "compatoplenty:black_sandstone_bricks",
-        "count": 1
+        "result": "compatoplenty:black_sandstone_bricks"
       }
     }
   ]

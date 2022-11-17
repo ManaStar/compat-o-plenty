@@ -4,8 +4,8 @@
     {
       "conditions": [
         {
-          "modid": "farmersdelight",
-          "type": "forge:mod_loaded"
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
         }
       ],
       "recipe": {
@@ -15,16 +15,16 @@
             "item": "biomesoplenty:umbran_trapdoor"
           }
         ],
-        "tool": {
-          "type": "farmersdelight:tool_action",
-          "action": "axe_dig"
-        },
         "result": [
           {
             "item": "biomesoplenty:umbran_planks"
           }
         ],
-        "sound": "minecraft:block.wood.break"
+        "sound": "minecraft:block.wood.break",
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "axe_dig"
+        }
       }
     }
   ]

@@ -4,16 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "hedges",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "hedges"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "L",
-          "#"
-        ],
         "key": {
           "#": {
             "tag": "biomesoplenty:fir_logs"
@@ -22,9 +18,13 @@
             "item": "biomesoplenty:fir_leaves"
           }
         },
+        "pattern": [
+          "L",
+          "#"
+        ],
         "result": {
-          "item": "compatoplenty:fir_hedge",
-          "count": 2
+          "count": 2,
+          "item": "compatoplenty:fir_hedge"
         }
       }
     }

@@ -4,17 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "vertical_slabs",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
         }
       ],
       "recipe": {
         "type": "minecraft:stonecutting",
+        "count": 2,
         "ingredient": {
           "item": "biomesoplenty:orange_sandstone"
         },
-        "result": "compatoplenty:orange_sandstone_vertical_slab",
-        "count": 2
+        "result": "compatoplenty:orange_sandstone_vertical_slab"
       }
     }
   ]

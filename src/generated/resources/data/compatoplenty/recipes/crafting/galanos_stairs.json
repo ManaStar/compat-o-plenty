@@ -4,25 +4,25 @@
     {
       "conditions": [
         {
-          "flag": "midori",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "midori"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "#  ",
-          "## ",
-          "###"
-        ],
         "key": {
           "#": {
             "item": "compatoplenty:galanos_block"
           }
         },
+        "pattern": [
+          "#  ",
+          "## ",
+          "###"
+        ],
         "result": {
-          "item": "compatoplenty:galanos_stairs",
-          "count": 4
+          "count": 4,
+          "item": "compatoplenty:galanos_stairs"
         }
       }
     }

@@ -4,16 +4,12 @@
     {
       "conditions": [
         {
-          "flag": "hedges",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "hedges"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "L",
-          "#"
-        ],
         "key": {
           "#": {
             "tag": "minecraft:dark_oak_logs"
@@ -22,9 +18,13 @@
             "item": "biomesoplenty:orange_autumn_leaves"
           }
         },
+        "pattern": [
+          "L",
+          "#"
+        ],
         "result": {
-          "item": "compatoplenty:orange_autumn_hedge",
-          "count": 2
+          "count": 2,
+          "item": "compatoplenty:orange_autumn_hedge"
         }
       }
     }

@@ -4,34 +4,34 @@
     {
       "conditions": [
         {
+          "type": "forge:and",
           "values": [
             {
-              "modid": "woodworks",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             },
             {
-              "value": "wooden_boards",
-              "type": "woodworks:config"
+              "type": "woodworks:config",
+              "value": "wooden_boards"
             }
-          ],
-          "type": "forge:and"
+          ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "S",
-          "S",
-          "S"
-        ],
         "key": {
           "S": {
             "item": "biomesoplenty:dead_planks"
           }
         },
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
         "result": {
-          "item": "compatoplenty:dead_boards",
-          "count": 3
+          "count": 3,
+          "item": "compatoplenty:dead_boards"
         }
       }
     }

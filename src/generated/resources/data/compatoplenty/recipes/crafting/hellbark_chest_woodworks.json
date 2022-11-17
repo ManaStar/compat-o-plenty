@@ -4,31 +4,31 @@
     {
       "conditions": [
         {
+          "type": "forge:and",
           "values": [
             {
-              "modid": "woodworks",
-              "type": "forge:mod_loaded"
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             },
             {
-              "value": "wooden_chests",
-              "type": "woodworks:config"
+              "type": "woodworks:config",
+              "value": "wooden_chests"
             }
-          ],
-          "type": "forge:and"
+          ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "###",
-          "# #",
-          "###"
-        ],
         "key": {
           "#": {
             "item": "biomesoplenty:hellbark_planks"
           }
         },
+        "pattern": [
+          "###",
+          "# #",
+          "###"
+        ],
         "result": {
           "item": "compatoplenty:hellbark_chest"
         }

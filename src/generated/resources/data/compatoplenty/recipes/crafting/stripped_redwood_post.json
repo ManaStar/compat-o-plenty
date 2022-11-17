@@ -4,25 +4,25 @@
     {
       "conditions": [
         {
-          "flag": "wooden_posts",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "wooden_posts"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "#",
-          "#",
-          "#"
-        ],
         "key": {
           "#": {
             "item": "biomesoplenty:stripped_redwood_wood"
           }
         },
+        "pattern": [
+          "#",
+          "#",
+          "#"
+        ],
         "result": {
-          "item": "compatoplenty:stripped_redwood_post",
-          "count": 8
+          "count": 8,
+          "item": "compatoplenty:stripped_redwood_post"
         }
       }
     }

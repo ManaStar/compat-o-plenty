@@ -4,17 +4,17 @@
     {
       "conditions": [
         {
-          "flag": "vertical_slabs",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
         }
       ],
       "recipe": {
         "type": "minecraft:stonecutting",
+        "count": 2,
         "ingredient": {
           "item": "compatoplenty:galanos_block"
         },
-        "result": "compatoplenty:galanos_vertical_slab",
-        "count": 2
+        "result": "compatoplenty:galanos_vertical_slab"
       }
     }
   ]

@@ -4,25 +4,25 @@
     {
       "conditions": [
         {
-          "flag": "vertical_slabs",
-          "type": "blueprint:quark_flag"
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "S",
-          "S",
-          "S"
-        ],
         "key": {
           "S": {
             "item": "biomesoplenty:cut_black_sandstone_slab"
           }
         },
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
         "result": {
-          "item": "compatoplenty:cut_black_sandstone_vertical_slab",
-          "count": 3
+          "count": 3,
+          "item": "compatoplenty:cut_black_sandstone_vertical_slab"
         }
       }
     }
