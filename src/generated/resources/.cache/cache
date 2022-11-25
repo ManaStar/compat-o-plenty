@@ -728,7 +728,7 @@ b0a5f7c81420b1206df61de6f34958e418cc3822 data/minecraft/tags/blocks/walls.json
 e99b4898a33338c9aceda45d4cc91662ec64c0cc data/minecraft/tags/items/slabs.json
 036116fa86d7b16a10c786e20cf56b9f651d8634 data/minecraft/tags/items/stairs.json
 b0a5f7c81420b1206df61de6f34958e418cc3822 data/minecraft/tags/items/walls.json
-70bcd8a7fb3dd1afb71f32938402ebe94065566f data/quark/tags/blocks/hedges.json
+a09f23096cceffd5f3ce9f448bbab06943de3e02 data/quark/tags/blocks/hedges.json
 82174afaa8f3290880dea991f93880cdfc22b9bf data/quark/tags/blocks/ladders.json
 54d2a1588ee382a84c05489fbc2fafac1ba872c4 data/quark/tags/blocks/vertical_slabs.json
 d140375823efc0726a3b06780a66b12b0f16f0e6 data/quark/tags/items/boatable_chests.json
