@@ -412,6 +412,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.JACARANDA_HEDGE.get(),
                 CompatBlocks.FIR_HEDGE.get(),
                 CompatBlocks.REDWOOD_HEDGE.get(),
+                CompatBlocks.MAHOGANY_HEDGE.get(),
                 CompatBlocks.WILLOW_HEDGE.get(),
                 CompatBlocks.MAGIC_HEDGE.get(),
                 CompatBlocks.DEAD_HEDGE.get(),

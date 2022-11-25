@@ -1,4 +1,4 @@
-// 1.19.2	2022-11-16T18:04:10.7329912	Tags for minecraft:block
+// 1.19.2	2022-11-25T12:11:30.9437908	Tags for minecraft:block
 305500b28f91478c6045c585ccfbd5cac521a9bb data/farmersdelight/tags/blocks/compost_activators.json
 be544c80aec72647ef3a11c3ae1bad2e03f74ad3 data/forge/tags/blocks/chests/trapped.json
 2d9cedb70da27e509ecc92d93385a15b1ae78485 data/forge/tags/blocks/chests/wooden.json
@@ -12,7 +12,7 @@ ab365cce14ad0e26ba9ae51ca3c8edb5152962ae data/minecraft/tags/blocks/planks.json
 8196a5090eff3a9889df27d15078eeb3219bca67 data/minecraft/tags/blocks/slabs.json
 35ed7518349a17c4e8e0fa2f508b4d6ef7d27990 data/minecraft/tags/blocks/stairs.json
 dfa4208049dac04a236e0ff21b9c3232205572ef data/minecraft/tags/blocks/walls.json
-1111d70f9381addb6e7bee70d87a63ebb2afcdc6 data/quark/tags/blocks/hedges.json
+83d21a31159eaa45e2d55e8d411f104eb2c65ba1 data/quark/tags/blocks/hedges.json
 8a529eca3fc9a6417312e7d5c22f7be197c73f0e data/quark/tags/blocks/ladders.json
 2c03ff68edc454835275100b057dce66a1b246c3 data/quark/tags/blocks/vertical_slabs.json
 88ff053c1f7f30a229c1a0c20d2ac3aa99116b67 data/woodworks/tags/blocks/leaf_piles.json
