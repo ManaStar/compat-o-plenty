@@ -15,7 +15,7 @@ A mod designed to fill the gap in content between Biomes O' Plenty and Quark, Fa
 [[dependencies.compatoplenty]]
     modId="forge"
     mandatory=true
-    versionRange="[43,)"
+    versionRange="[43.2.0,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.compatoplenty]]
