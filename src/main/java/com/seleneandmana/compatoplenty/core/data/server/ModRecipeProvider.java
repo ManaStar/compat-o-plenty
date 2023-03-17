@@ -76,8 +76,8 @@ public class ModRecipeProvider extends RecipeProvider {
         verticalSlabRecipe(BOPBlocks.SMOOTH_WHITE_SANDSTONE_SLAB.get(), CompatBlocks.SMOOTH_WHITE_SANDSTONE_VERTICAL_SLAB.get(), consumer);
         verticalSlabRecipe(CompatBlocks.WHITE_SANDSTONE_BRICK_SLAB.get(), CompatBlocks.WHITE_SANDSTONE_BRICK_VERTICAL_SLAB.get(), consumer);
 
-        //verticalSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(), consumer);
-        //verticalSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), consumer);
+        verticalSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(), consumer);
+        verticalSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), consumer);
 
         verticalSlabRecipe(CompatBlocks.GALANOS_SLAB.get(), CompatBlocks.GALANOS_VERTICAL_SLAB.get(), consumer);
 
@@ -248,33 +248,32 @@ public class ModRecipeProvider extends RecipeProvider {
         sandstoneStairsRecipe(CompatBlocks.ORANGE_SANDSTONE_BRICKS.get(), CompatBlocks.ORANGE_SANDSTONE_BRICK_STAIRS.get(), consumer);
         sandstoneStairsRecipe(CompatBlocks.WHITE_SANDSTONE_BRICKS.get(), CompatBlocks.WHITE_SANDSTONE_BRICK_STAIRS.get(), consumer);
         galanosStairsRecipe(CompatBlocks.GALANOS_BLOCK.get(), CompatBlocks.GALANOS_STAIRS.get(), consumer);
-        //polishedRoseStairsRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(), consumer);
-        //polishedRoseStairsRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_STAIRS.get(), consumer);
+        polishedRoseStairsRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(), consumer);
+        polishedRoseStairsRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_STAIRS.get(), consumer);
 
         //Slab
         sandstoneSlabRecipe(CompatBlocks.BLACK_SANDSTONE_BRICKS.get(), CompatBlocks.BLACK_SANDSTONE_BRICK_SLAB.get(), consumer);
         sandstoneSlabRecipe(CompatBlocks.ORANGE_SANDSTONE_BRICKS.get(), CompatBlocks.ORANGE_SANDSTONE_BRICK_SLAB.get(), consumer);
         sandstoneSlabRecipe(CompatBlocks.WHITE_SANDSTONE_BRICKS.get(), CompatBlocks.WHITE_SANDSTONE_BRICK_SLAB.get(), consumer);
         galanosSlabRecipe(CompatBlocks.GALANOS_BLOCK.get(), CompatBlocks.GALANOS_SLAB.get(), consumer);
-        //polishedRoseSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), consumer);
-        //polishedRoseSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(), consumer);
+        polishedRoseSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), consumer);
+        polishedRoseSlabRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(), consumer);
 
         //Walls
         sandstoneWallRecipe(CompatBlocks.BLACK_SANDSTONE_BRICKS.get(), CompatBlocks.BLACK_SANDSTONE_BRICK_WALL.get(), consumer);
         sandstoneWallRecipe(CompatBlocks.ORANGE_SANDSTONE_BRICKS.get(), CompatBlocks.ORANGE_SANDSTONE_BRICK_WALL.get(), consumer);
         sandstoneWallRecipe(CompatBlocks.WHITE_SANDSTONE_BRICKS.get(), CompatBlocks.WHITE_SANDSTONE_BRICK_WALL.get(), consumer);
-        //polishedRoseWallRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get(), consumer);
+        polishedRoseWallRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get(), consumer);
 
         //2x2
-        //polishedRoseRecipe(consumer);
+        polishedRoseRecipe(consumer);
         galanosRecipe(consumer);
 
         //Chiseled
-        //chiseledBlockRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get(), CompatOPlenty.TWIGS_ID, consumer);
+        chiseledBlockRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get(), CompatOPlenty.TWIGS_ID, consumer);
 
         //Tables
 
-        /*
         tableRecipe(BOPBlocks.CHERRY_SLAB.get(), BOPBlocks.CHERRY_FENCE.get(), CompatBlocks.CHERRY_TABLE.get(), consumer);
         tableRecipe(BOPBlocks.JACARANDA_SLAB.get(), BOPBlocks.JACARANDA_FENCE.get(), CompatBlocks.JACARANDA_TABLE.get(), consumer);
         tableRecipe(BOPBlocks.FIR_SLAB.get(), BOPBlocks.FIR_FENCE.get(), CompatBlocks.FIR_TABLE.get(), consumer);
@@ -286,7 +285,6 @@ public class ModRecipeProvider extends RecipeProvider {
         tableRecipe(BOPBlocks.UMBRAN_SLAB.get(), BOPBlocks.UMBRAN_FENCE.get(), CompatBlocks.UMBRAN_TABLE.get(), consumer);
         tableRecipe(BOPBlocks.PALM_SLAB.get(), BOPBlocks.PALM_FENCE.get(), CompatBlocks.PALM_TABLE.get(), consumer);
         tableRecipe(BOPBlocks.HELLBARK_SLAB.get(), BOPBlocks.HELLBARK_FENCE.get(), CompatBlocks.HELLBARK_TABLE.get(), consumer);
-        */
 
         //Boards
         boardsRecipe(BOPBlocks.CHERRY_PLANKS.get(), CompatBlocks.CHERRY_BOARDS.get(), consumer);
@@ -367,7 +365,7 @@ public class ModRecipeProvider extends RecipeProvider {
         quarkFlagStoneCutterRecipe(CompatBlocks.GALANOS_BLOCK.get(), CompatBlocks.GALANOS_PILLAR.get(), 1, "midori", consumer);
 
         //Polished Rose Quartz
-        /*modLoadedStoneCutterRecipe(BOPBlocks.ROSE_QUARTZ_BLOCK.get(), CompatBlocks.POLISHED_ROSE_QUARTZ.get(), 1, CompatOPlenty.TWIGS_ID, consumer);
+        modLoadedStoneCutterRecipe(BOPBlocks.ROSE_QUARTZ_BLOCK.get(), CompatBlocks.POLISHED_ROSE_QUARTZ.get(), 1, CompatOPlenty.TWIGS_ID, consumer);
         modLoadedStoneCutterRecipe(BOPBlocks.ROSE_QUARTZ_BLOCK.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(), 1, CompatOPlenty.TWIGS_ID, consumer);
         modLoadedStoneCutterRecipe(BOPBlocks.ROSE_QUARTZ_BLOCK.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), 2, CompatOPlenty.TWIGS_ID, consumer);
         modLoadedStoneCutterRecipe(BOPBlocks.ROSE_QUARTZ_BLOCK.get(), CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get(), 1, CompatOPlenty.TWIGS_ID, consumer);
@@ -389,14 +387,13 @@ public class ModRecipeProvider extends RecipeProvider {
         multiModStoneCutterRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(), 2, CompatOPlenty.TWIGS_ID, "vertical_slabs", consumer);
         multiModStoneCutterRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), 2, CompatOPlenty.TWIGS_ID, "vertical_slabs", consumer);
         multiModStoneCutterRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), 2, CompatOPlenty.TWIGS_ID, "vertical_slabs", consumer);
-        */
 
         /*
         Smelting
         */
 
         flaggedFurnaceRecipe(BOPBlocks.GLOWING_MOSS_BLOCK.get(), CompatItems.GLOWING_MOSS_PASTE.get(), 1.0f, "midori", consumer);
-        //modLoadedFurnaceRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get(), 0.1f, CompatOPlenty.TWIGS_ID, consumer);
+        modLoadedFurnaceRecipe(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get(), 0.1f, CompatOPlenty.TWIGS_ID, consumer);
 
         /*
         Cutting Board
@@ -456,7 +453,7 @@ public class ModRecipeProvider extends RecipeProvider {
         furnitureSalvageCuttingRecipes(BOPBlocks.HELLBARK_PLANKS.get(), BOPBlocks.HELLBARK_DOOR.get(), BOPBlocks.HELLBARK_TRAPDOOR.get(), BOPBlocks.HELLBARK_SIGN.get(), consumer);
 
         //Misc
-        //genericCuttingRecipe(BOPBlocks.ROSE_QUARTZ_BLOCK.get(), new ToolActionIngredient(ToolActions.PICKAXE_DIG), BOPItems.ROSE_QUARTZ_SHARD.get(), 4, ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AMETHYST_BLOCK_BREAK).toString(), consumer);
+        genericCuttingRecipe(BOPBlocks.ROSE_QUARTZ_BLOCK.get(), new ToolActionIngredient(ToolActions.PICKAXE_DIG), BOPItems.ROSE_QUARTZ_SHARD.get(), 4, ForgeRegistries.SOUND_EVENTS.getKey(SoundEvents.AMETHYST_BLOCK_BREAK).toString(), consumer);
     }
     public static Ingredient ingredientOf(ItemLike itemLike) {
         return Ingredient.of(itemLike);

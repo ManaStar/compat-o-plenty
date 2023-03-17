@@ -80,12 +80,13 @@ dependencies {
     implementation fg.deobf("curse.maven:bop-220318:4049119")
     implementation fg.deobf("curse.maven:farmersdelight-398521:3999157")
     implementation fg.deobf("com.teamabnormals:boatload:1.19-4.1.0")
-    implementation fg.deobf("curse.maven:woodworks-543610:4023081")
+    implementation fg.deobf("curse.maven:woodworks-543610:4381283")
+    implementation fg.deobf("curse.maven:clayworks-592162:4380998")
 
     runtimeOnly fg.deobf("curse.maven:terrablender-563928:4057292")
     runtimeOnly fg.deobf("curse.maven:quark-243121:3961436")
     runtimeOnly fg.deobf("curse.maven:autoreglib-250363:3857246")
-    //runtimeOnly fg.deobf("curse.maven:twigs-496913:3756844")
+    runtimeOnly fg.deobf("curse.maven:twigs-496913:4160178")
 
     runtimeOnly fg.deobf("curse.maven:jei-238222:4087658")
 }
