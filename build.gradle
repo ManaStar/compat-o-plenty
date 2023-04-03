@@ -80,7 +80,7 @@ dependencies {
     implementation fg.deobf("curse.maven:bop-220318:4128419")
     implementation fg.deobf("curse.maven:farmersdelight-398521:3999157")
     implementation fg.deobf("com.teamabnormals:boatload:1.19.2-4.2.1")
-    implementation fg.deobf("curse.maven:woodworks-543610:4396958")
+    compileOnly fg.deobf("curse.maven:woodworks-543610:4396958")
     implementation fg.deobf("curse.maven:clayworks-592162:4396960")
 
     runtimeOnly fg.deobf("curse.maven:terrablender-563928:4095397")

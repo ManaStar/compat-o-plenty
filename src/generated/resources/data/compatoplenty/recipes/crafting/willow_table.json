@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "twigs"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "#": {
+            "item": "biomesoplenty:willow_slab"
+          },
+          "I": {
+            "item": "biomesoplenty:willow_fence"
+          }
+        },
+        "pattern": [
+          "###",
+          "I I",
+          "I I"
+        ],
+        "result": {
+          "item": "compatoplenty:willow_table"
+        }
+      }
+    }
+  ]
+}

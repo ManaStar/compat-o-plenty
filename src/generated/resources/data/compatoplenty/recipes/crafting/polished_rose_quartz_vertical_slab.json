@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "blueprint:quark_flag",
+          "flag": "vertical_slabs"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "S": {
+            "item": "compatoplenty:polished_rose_quartz_slab"
+          }
+        },
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
+        "result": {
+          "count": 3,
+          "item": "compatoplenty:polished_rose_quartz_vertical_slab"
+        }
+      }
+    }
+  ]
+}

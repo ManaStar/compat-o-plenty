@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "biomesoplenty:rose_quartz_block"
+          }
+        ],
+        "result": [
+          {
+            "count": 4,
+            "item": "biomesoplenty:rose_quartz_shard"
+          }
+        ],
+        "sound": "minecraft:block.amethyst_block.break",
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "pickaxe_dig"
+        }
+      }
+    }
+  ]
+}
