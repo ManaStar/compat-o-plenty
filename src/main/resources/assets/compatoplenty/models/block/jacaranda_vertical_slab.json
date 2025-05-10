@@ -1,8 +1,0 @@
-{
-  "parent": "blueprint:block/vertical_slab",
-  "textures": {
-    "side": "biomesoplenty:block/jacaranda_planks",
-    "top": "biomesoplenty:block/jacaranda_planks",
-    "bottom": "biomesoplenty:block/jacaranda_planks"
-  }
-}

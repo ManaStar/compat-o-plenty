@@ -1,11 +1,11 @@
 modLoader="javafml"
-loaderVersion="[43,)"
+loaderVersion="[47,)"
 license="Apache-2.0"
 
 [[mods]]
 modId="compatoplenty"
 authors = "Selene and Mana"
-version="${file.jarVersion}"
+version="${version}"
 displayName="Compat O' Plenty"
 logoFile="logo.png"
 description='''
@@ -15,18 +15,18 @@ A mod designed to fill the gap in content between Biomes O' Plenty and Quark, Fa
 [[dependencies.compatoplenty]]
     modId="forge"
     mandatory=true
-    versionRange="[43.2.0,)"
+    versionRange="[47.1.3,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.compatoplenty]]
     modId="blueprint"
     mandatory=true
-    versionRange="[1.19.2-6.1.0,)"
+    versionRange="[1.20.1-7.1.0,)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.compatoplenty]]
     modId="biomesoplenty"
     mandatory=true
-    versionRange="[1.19.2-17.1.1.163,)"
+    versionRange="[1.20.1-18.0.0.598,)"
     ordering="AFTER"
     side="BOTH"

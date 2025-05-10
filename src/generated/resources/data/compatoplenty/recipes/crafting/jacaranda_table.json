@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "biomesoplenty:jacaranda_slab"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "compatoplenty:jacaranda_table"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

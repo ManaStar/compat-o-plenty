@@ -1,5 +1,5 @@
 {
-  "parent": "blueprint:block/vertical_slab",
+  "parent": "quark:block/vertical_slab",
   "textures": {
     "side": "biomesoplenty:block/cut_white_sandstone",
     "top": "biomesoplenty:block/white_sandstone_top",

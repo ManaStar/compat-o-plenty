@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "hedges"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "tag": "biomesoplenty:palm_logs"
@@ -25,7 +26,8 @@
         "result": {
           "count": 2,
           "item": "compatoplenty:palm_hedge"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

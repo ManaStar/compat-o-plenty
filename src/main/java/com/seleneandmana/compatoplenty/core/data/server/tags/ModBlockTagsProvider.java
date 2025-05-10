@@ -7,228 +7,60 @@ import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
+import java.util.concurrent.CompletableFuture;
+
 public class ModBlockTagsProvider extends BlockTagsProvider {
-    public ModBlockTagsProvider(DataGenerator generator, @Nullable ExistingFileHelper existingFileHelper) {
-        super(generator, CompatOPlenty.MOD_ID, existingFileHelper);
+    public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookup, ExistingFileHelper fileHelper) {
+        super(output, lookup, CompatOPlenty.MOD_ID, fileHelper);
+    }
+
+    private void add(CompatBlocks.LeafSet set) {
+        var hedgeTag = BlockTags.create(new ResourceLocation(CompatOPlenty.QUARK_ID, "hedges"));
+
+        tag(BlockTags.MINEABLE_WITH_AXE).add(set.hedge().get());
+        tag(BlockTags.MINEABLE_WITH_HOE).add(set.leafPile().get(), set.leafCarpet().get());
+        tag(BlueprintBlockTags.LEAF_PILES).add(set.leafPile().get());
+        tag(hedgeTag).add(set.hedge().get());
+    }
+
+    private void add(CompatBlocks.WoodSet set) {
+        tag(BlockTags.MINEABLE_WITH_AXE).add(
+                set.verticalSlab().get(),
+                set.bookshelf().get(),
+                set.ladder().get(),
+                set.strippedPost().get(),
+                set.post().get(),
+                set.beehive().get(),
+                set.cabinet().get(),
+                set.table().get(),
+                set.verticalPlanks().get(),
+                set.boards().get(),
+                set.chest().get(),
+                set.trappedChest().get()
+        );
+        tag(BlockTags.BEEHIVES).add(set.beehive().get());
+        tag(BlockTags.CLIMBABLE).add(set.ladder().get());
+        tag(BlueprintBlockTags.LADDERS).add(set.ladder().get());
+        tag(BlockTags.PLANKS).add(set.verticalPlanks().get());
+        tag(Tags.Blocks.CHESTS_WOODEN).add(set.chest().get(), set.trappedChest().get());
+        tag(Tags.Blocks.CHESTS_TRAPPED).add(set.trappedChest().get());
     }
 
     @Override
-    public void addTags() {
-        //Minecraft tags
-        tag(BlockTags.MINEABLE_WITH_AXE).add(
-                CompatBlocks.CHERRY_VERTICAL_SLAB.get(),
-                CompatBlocks.CHERRY_BOOKSHELF.get(),
-                CompatBlocks.CHERRY_LADDER.get(),
-                CompatBlocks.STRIPPED_CHERRY_POST.get(),
-                CompatBlocks.CHERRY_POST.get(),
-                CompatBlocks.WHITE_CHERRY_HEDGE.get(),
-                CompatBlocks.PINK_CHERRY_HEDGE.get(),
-                CompatBlocks.CHERRY_BEEHIVE.get(),
-                CompatBlocks.CHERRY_CABINET.get(),
-                CompatBlocks.CHERRY_TABLE.get(),
-                CompatBlocks.VERTICAL_CHERRY_PLANKS.get(),
-                CompatBlocks.CHERRY_BOARDS.get(),
-                getNormalChest(CompatBlocks.CHERRY_CHESTS),
-                getTrappedChest(CompatBlocks.CHERRY_CHESTS),
-
-                CompatBlocks.JACARANDA_VERTICAL_SLAB.get(),
-                CompatBlocks.JACARANDA_BOOKSHELF.get(),
-                CompatBlocks.JACARANDA_LADDER.get(),
-                CompatBlocks.STRIPPED_JACARANDA_POST.get(),
-                CompatBlocks.JACARANDA_POST.get(),
-                CompatBlocks.JACARANDA_HEDGE.get(),
-                CompatBlocks.JACARANDA_BEEHIVE.get(),
-                CompatBlocks.JACARANDA_CABINET.get(),
-                CompatBlocks.JACARANDA_TABLE.get(),
-                CompatBlocks.VERTICAL_JACARANDA_PLANKS.get(),
-                CompatBlocks.JACARANDA_BOARDS.get(),
-                getNormalChest(CompatBlocks.JACARANDA_CHESTS),
-                getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
-
-                CompatBlocks.FIR_VERTICAL_SLAB.get(),
-                CompatBlocks.FIR_BOOKSHELF.get(),
-                CompatBlocks.FIR_LADDER.get(),
-                CompatBlocks.STRIPPED_FIR_POST.get(),
-                CompatBlocks.FIR_POST.get(),
-                CompatBlocks.FIR_HEDGE.get(),
-                CompatBlocks.FIR_BEEHIVE.get(),
-                CompatBlocks.FIR_CABINET.get(),
-                CompatBlocks.FIR_TABLE.get(),
-                CompatBlocks.VERTICAL_FIR_PLANKS.get(),
-                CompatBlocks.FIR_BOARDS.get(),
-                getNormalChest(CompatBlocks.FIR_CHESTS),
-                getTrappedChest(CompatBlocks.FIR_CHESTS),
-
-
-                CompatBlocks.REDWOOD_VERTICAL_SLAB.get(),
-                CompatBlocks.REDWOOD_BOOKSHELF.get(),
-                CompatBlocks.REDWOOD_LADDER.get(),
-                CompatBlocks.STRIPPED_REDWOOD_POST.get(),
-                CompatBlocks.REDWOOD_POST.get(),
-                CompatBlocks.REDWOOD_HEDGE.get(),
-                CompatBlocks.REDWOOD_BEEHIVE.get(),
-                CompatBlocks.REDWOOD_CABINET.get(),
-                CompatBlocks.REDWOOD_TABLE.get(),
-                CompatBlocks.VERTICAL_REDWOOD_PLANKS.get(),
-                CompatBlocks.REDWOOD_BOARDS.get(),
-                getNormalChest(CompatBlocks.REDWOOD_CHESTS),
-                getTrappedChest(CompatBlocks.REDWOOD_CHESTS),
-
-                CompatBlocks.MAHOGANY_VERTICAL_SLAB.get(),
-                CompatBlocks.MAHOGANY_BOOKSHELF.get(),
-                CompatBlocks.MAHOGANY_LADDER.get(),
-                CompatBlocks.STRIPPED_MAHOGANY_POST.get(),
-                CompatBlocks.MAHOGANY_POST.get(),
-                CompatBlocks.MAHOGANY_HEDGE.get(),
-                CompatBlocks.MAHOGANY_BEEHIVE.get(),
-                CompatBlocks.MAHOGANY_CABINET.get(),
-                CompatBlocks.MAHOGANY_TABLE.get(),
-                CompatBlocks.VERTICAL_MAHOGANY_PLANKS.get(),
-                CompatBlocks.MAHOGANY_BOARDS.get(),
-                getNormalChest(CompatBlocks.MAHOGANY_CHESTS),
-                getTrappedChest(CompatBlocks.MAHOGANY_CHESTS),
-
-                CompatBlocks.WILLOW_VERTICAL_SLAB.get(),
-                CompatBlocks.WILLOW_BOOKSHELF.get(),
-                CompatBlocks.WILLOW_LADDER.get(),
-                CompatBlocks.STRIPPED_WILLOW_POST.get(),
-                CompatBlocks.WILLOW_POST.get(),
-                CompatBlocks.WILLOW_HEDGE.get(),
-                CompatBlocks.WILLOW_BEEHIVE.get(),
-                CompatBlocks.WILLOW_CABINET.get(),
-                CompatBlocks.WILLOW_TABLE.get(),
-                CompatBlocks.VERTICAL_WILLOW_PLANKS.get(),
-                CompatBlocks.WILLOW_BOARDS.get(),
-                getNormalChest(CompatBlocks.WILLOW_CHESTS),
-                getTrappedChest(CompatBlocks.WILLOW_CHESTS),
-
-                CompatBlocks.MAGIC_VERTICAL_SLAB.get(),
-                CompatBlocks.MAGIC_BOOKSHELF.get(),
-                CompatBlocks.MAGIC_LADDER.get(),
-                CompatBlocks.STRIPPED_MAGIC_POST.get(),
-                CompatBlocks.MAGIC_POST.get(),
-                CompatBlocks.MAGIC_HEDGE.get(),
-                CompatBlocks.MAGIC_BEEHIVE.get(),
-                CompatBlocks.MAGIC_CABINET.get(),
-                CompatBlocks.MAGIC_TABLE.get(),
-                CompatBlocks.VERTICAL_MAGIC_PLANKS.get(),
-                CompatBlocks.MAGIC_BOARDS.get(),
-                getNormalChest(CompatBlocks.MAGIC_CHESTS),
-                getTrappedChest(CompatBlocks.MAGIC_CHESTS),
-
-                CompatBlocks.DEAD_VERTICAL_SLAB.get(),
-                CompatBlocks.DEAD_BOOKSHELF.get(),
-                CompatBlocks.DEAD_LADDER.get(),
-                CompatBlocks.STRIPPED_DEAD_POST.get(),
-                CompatBlocks.DEAD_POST.get(),
-                CompatBlocks.DEAD_HEDGE.get(),
-                CompatBlocks.DEAD_BEEHIVE.get(),
-                CompatBlocks.DEAD_CABINET.get(),
-                CompatBlocks.DEAD_TABLE.get(),
-                CompatBlocks.VERTICAL_DEAD_PLANKS.get(),
-                CompatBlocks.DEAD_BOARDS.get(),
-                getNormalChest(CompatBlocks.DEAD_CHESTS),
-                getTrappedChest(CompatBlocks.DEAD_CHESTS),
-
-                CompatBlocks.UMBRAN_VERTICAL_SLAB.get(),
-                CompatBlocks.UMBRAN_BOOKSHELF.get(),
-                CompatBlocks.UMBRAN_LADDER.get(),
-                CompatBlocks.STRIPPED_UMBRAN_POST.get(),
-                CompatBlocks.UMBRAN_POST.get(),
-                CompatBlocks.UMBRAN_HEDGE.get(),
-                CompatBlocks.UMBRAN_BEEHIVE.get(),
-                CompatBlocks.UMBRAN_CABINET.get(),
-                CompatBlocks.UMBRAN_TABLE.get(),
-                CompatBlocks.VERTICAL_UMBRAN_PLANKS.get(),
-                CompatBlocks.UMBRAN_BOARDS.get(),
-                getNormalChest(CompatBlocks.UMBRAN_CHESTS),
-                getTrappedChest(CompatBlocks.UMBRAN_CHESTS),
-
-                CompatBlocks.PALM_VERTICAL_SLAB.get(),
-                CompatBlocks.PALM_BOOKSHELF.get(),
-                CompatBlocks.PALM_LADDER.get(),
-                CompatBlocks.STRIPPED_PALM_POST.get(),
-                CompatBlocks.PALM_POST.get(),
-                CompatBlocks.PALM_HEDGE.get(),
-                CompatBlocks.PALM_BEEHIVE.get(),
-                CompatBlocks.PALM_CABINET.get(),
-                CompatBlocks.PALM_TABLE.get(),
-                CompatBlocks.VERTICAL_PALM_PLANKS.get(),
-                CompatBlocks.PALM_BOARDS.get(),
-                getNormalChest(CompatBlocks.PALM_CHESTS),
-                getTrappedChest(CompatBlocks.PALM_CHESTS),
-
-                CompatBlocks.HELLBARK_VERTICAL_SLAB.get(),
-                CompatBlocks.HELLBARK_BOOKSHELF.get(),
-                CompatBlocks.HELLBARK_LADDER.get(),
-                CompatBlocks.STRIPPED_HELLBARK_POST.get(),
-                CompatBlocks.HELLBARK_POST.get(),
-                CompatBlocks.HELLBARK_HEDGE.get(),
-                CompatBlocks.HELLBARK_BEEHIVE.get(),
-                CompatBlocks.HELLBARK_CABINET.get(),
-                CompatBlocks.HELLBARK_TABLE.get(),
-                CompatBlocks.VERTICAL_HELLBARK_PLANKS.get(),
-                CompatBlocks.HELLBARK_BOARDS.get(),
-                getNormalChest(CompatBlocks.HELLBARK_CHESTS),
-                getTrappedChest(CompatBlocks.HELLBARK_CHESTS),
-
-                CompatBlocks.FLOWERING_OAK_HEDGE.get(),
-                CompatBlocks.RAINBOW_BIRCH_HEDGE.get(),
-                CompatBlocks.ORIGIN_HEDGE.get(),
-                CompatBlocks.MAPLE_HEDGE.get(),
-                CompatBlocks.ORANGE_AUTUMN_HEDGE.get(),
-                CompatBlocks.YELLOW_AUTUMN_HEDGE.get()
-        );
-
-        tag(BlockTags.MINEABLE_WITH_HOE).add(
-                CompatBlocks.WHITE_CHERRY_LEAF_CARPET.get(),
-                CompatBlocks.PINK_CHERRY_LEAF_CARPET.get(),
-                CompatBlocks.JACARANDA_LEAF_CARPET.get(),
-                CompatBlocks.FIR_LEAF_CARPET.get(),
-                CompatBlocks.REDWOOD_LEAF_CARPET.get(),
-                CompatBlocks.MAHOGANY_LEAF_CARPET.get(),
-                CompatBlocks.WILLOW_LEAF_CARPET.get(),
-                CompatBlocks.MAGIC_LEAF_CARPET.get(),
-                CompatBlocks.DEAD_LEAF_CARPET.get(),
-                CompatBlocks.UMBRAN_LEAF_CARPET.get(),
-                CompatBlocks.PALM_LEAF_CARPET.get(),
-                CompatBlocks.HELLBARK_LEAF_CARPET.get(),
-                CompatBlocks.FLOWERING_OAK_LEAF_CARPET.get(),
-                CompatBlocks.RAINBOW_BIRCH_LEAF_CARPET.get(),
-                CompatBlocks.ORIGIN_LEAF_CARPET.get(),
-                CompatBlocks.MAPLE_LEAF_CARPET.get(),
-                CompatBlocks.ORANGE_AUTUMN_LEAF_CARPET.get(),
-                CompatBlocks.YELLOW_AUTUMN_LEAF_CARPET.get(),
-
-                CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(),
-                CompatBlocks.PINK_CHERRY_LEAF_PILE.get(),
-                CompatBlocks.JACARANDA_LEAF_PILE.get(),
-                CompatBlocks.FIR_LEAF_PILE.get(),
-                CompatBlocks.REDWOOD_LEAF_PILE.get(),
-                CompatBlocks.MAHOGANY_LEAF_PILE.get(),
-                CompatBlocks.WILLOW_LEAF_PILE.get(),
-                CompatBlocks.MAGIC_LEAF_PILE.get(),
-                CompatBlocks.DEAD_LEAF_PILE.get(),
-                CompatBlocks.UMBRAN_LEAF_PILE.get(),
-                CompatBlocks.PALM_LEAF_PILE.get(),
-                CompatBlocks.HELLBARK_LEAF_PILE.get(),
-                CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(),
-                CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(),
-                CompatBlocks.ORIGIN_LEAF_PILE.get(),
-                CompatBlocks.MAPLE_LEAF_PILE.get(),
-                CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(),
-                CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get()
-        );
+    protected void addTags(HolderLookup.Provider provider) {
+        CompatBlocks.woodSets().forEach(this::add);
+        CompatBlocks.leaveSets().forEach(this::add);
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 CompatBlocks.BLACK_SANDSTONE_VERTICAL_SLAB.get(),
@@ -277,34 +109,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get()
         );
 
-        tag(BlockTags.BEEHIVES).add(
-                CompatBlocks.CHERRY_BEEHIVE.get(),
-                CompatBlocks.JACARANDA_BEEHIVE.get(),
-                CompatBlocks.FIR_BEEHIVE.get(),
-                CompatBlocks.REDWOOD_BEEHIVE.get(),
-                CompatBlocks.MAHOGANY_BEEHIVE.get(),
-                CompatBlocks.WILLOW_BEEHIVE.get(),
-                CompatBlocks.MAGIC_BEEHIVE.get(),
-                CompatBlocks.DEAD_BEEHIVE.get(),
-                CompatBlocks.UMBRAN_BEEHIVE.get(),
-                CompatBlocks.PALM_BEEHIVE.get(),
-                CompatBlocks.HELLBARK_BEEHIVE.get()
-        );
-
-        tag(BlockTags.CLIMBABLE).add(
-                CompatBlocks.CHERRY_LADDER.get(),
-                CompatBlocks.JACARANDA_LADDER.get(),
-                CompatBlocks.FIR_LADDER.get(),
-                CompatBlocks.REDWOOD_LADDER.get(),
-                CompatBlocks.MAHOGANY_LADDER.get(),
-                CompatBlocks.WILLOW_LADDER.get(),
-                CompatBlocks.MAGIC_LADDER.get(),
-                CompatBlocks.DEAD_LADDER.get(),
-                CompatBlocks.UMBRAN_LADDER.get(),
-                CompatBlocks.PALM_LADDER.get(),
-                CompatBlocks.HELLBARK_LADDER.get()
-        );
-
         tag(BlockTags.CRYSTAL_SOUND_BLOCKS).add(
                 CompatBlocks.POLISHED_ROSE_QUARTZ.get(),
                 CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(),
@@ -344,68 +148,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get()
         );
 
-        tag(BlockTags.PLANKS).add(
-                CompatBlocks.VERTICAL_CHERRY_PLANKS.get(),
-                CompatBlocks.VERTICAL_JACARANDA_PLANKS.get(),
-                CompatBlocks.VERTICAL_FIR_PLANKS.get(),
-                CompatBlocks.VERTICAL_REDWOOD_PLANKS.get(),
-                CompatBlocks.VERTICAL_MAHOGANY_PLANKS.get(),
-                CompatBlocks.VERTICAL_WILLOW_PLANKS.get(),
-                CompatBlocks.VERTICAL_MAGIC_PLANKS.get(),
-                CompatBlocks.VERTICAL_DEAD_PLANKS.get(),
-                CompatBlocks.VERTICAL_UMBRAN_PLANKS.get(),
-                CompatBlocks.VERTICAL_PALM_PLANKS.get(),
-                CompatBlocks.VERTICAL_HELLBARK_PLANKS.get()
-        );
-
         //Farmer's Delight Tags
         tag(ModTags.COMPOST_ACTIVATORS).add(
                 BOPBlocks.TOADSTOOL.get(),
                 BOPBlocks.GLOWSHROOM.get()
         );
 
-        //Forge Tags
-        tag(Tags.Blocks.CHESTS_WOODEN).add(
-                getNormalChest(CompatBlocks.CHERRY_CHESTS),
-                getNormalChest(CompatBlocks.JACARANDA_CHESTS),
-                getNormalChest(CompatBlocks.FIR_CHESTS),
-                getNormalChest(CompatBlocks.REDWOOD_CHESTS),
-                getNormalChest(CompatBlocks.MAHOGANY_CHESTS),
-                getNormalChest(CompatBlocks.WILLOW_CHESTS),
-                getNormalChest(CompatBlocks.MAGIC_CHESTS),
-                getNormalChest(CompatBlocks.DEAD_CHESTS),
-                getNormalChest(CompatBlocks.UMBRAN_CHESTS),
-                getNormalChest(CompatBlocks.PALM_CHESTS),
-                getNormalChest(CompatBlocks.HELLBARK_CHESTS),
-
-                getTrappedChest(CompatBlocks.CHERRY_CHESTS),
-                getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
-                getTrappedChest(CompatBlocks.FIR_CHESTS),
-                getTrappedChest(CompatBlocks.REDWOOD_CHESTS),
-                getTrappedChest(CompatBlocks.MAHOGANY_CHESTS),
-                getTrappedChest(CompatBlocks.WILLOW_CHESTS),
-                getTrappedChest(CompatBlocks.MAGIC_CHESTS),
-                getTrappedChest(CompatBlocks.DEAD_CHESTS),
-                getTrappedChest(CompatBlocks.UMBRAN_CHESTS),
-                getTrappedChest(CompatBlocks.PALM_CHESTS),
-                getTrappedChest(CompatBlocks.HELLBARK_CHESTS)
-        );
-
-        tag(Tags.Blocks.CHESTS_TRAPPED).add(
-                getTrappedChest(CompatBlocks.CHERRY_CHESTS),
-                getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
-                getTrappedChest(CompatBlocks.FIR_CHESTS),
-                getTrappedChest(CompatBlocks.REDWOOD_CHESTS),
-                getTrappedChest(CompatBlocks.MAHOGANY_CHESTS),
-                getTrappedChest(CompatBlocks.WILLOW_CHESTS),
-                getTrappedChest(CompatBlocks.MAGIC_CHESTS),
-                getTrappedChest(CompatBlocks.DEAD_CHESTS),
-                getTrappedChest(CompatBlocks.UMBRAN_CHESTS),
-                getTrappedChest(CompatBlocks.PALM_CHESTS),
-                getTrappedChest(CompatBlocks.HELLBARK_CHESTS)
-        );
-
         //Other Tags
+        /* TODO remove
         tag(BlueprintBlockTags.HEDGES).add(
                 CompatBlocks.WHITE_CHERRY_HEDGE.get(),
                 CompatBlocks.PINK_CHERRY_HEDGE.get(),
@@ -426,21 +176,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.ORANGE_AUTUMN_HEDGE.get(),
                 CompatBlocks.YELLOW_AUTUMN_HEDGE.get()
         );
+         */
 
-        tag(BlueprintBlockTags.LADDERS).add(
-                CompatBlocks.CHERRY_LADDER.get(),
-                CompatBlocks.JACARANDA_LADDER.get(),
-                CompatBlocks.FIR_LADDER.get(),
-                CompatBlocks.REDWOOD_LADDER.get(),
-                CompatBlocks.MAHOGANY_LADDER.get(),
-                CompatBlocks.WILLOW_LADDER.get(),
-                CompatBlocks.MAGIC_LADDER.get(),
-                CompatBlocks.DEAD_LADDER.get(),
-                CompatBlocks.UMBRAN_LADDER.get(),
-                CompatBlocks.PALM_LADDER.get(),
-                CompatBlocks.HELLBARK_LADDER.get()
-        );
-
+        /* TODO remove
         tag(BlueprintBlockTags.VERTICAL_SLABS).add(
                 CompatBlocks.CHERRY_VERTICAL_SLAB.get(),
                 CompatBlocks.JACARANDA_VERTICAL_SLAB.get(),
@@ -474,27 +212,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(),
                 CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get()
         );
-
-        tag(BlueprintBlockTags.LEAF_PILES).add(
-                CompatBlocks.WHITE_CHERRY_LEAF_PILE.get(),
-                CompatBlocks.PINK_CHERRY_LEAF_PILE.get(),
-                CompatBlocks.JACARANDA_LEAF_PILE.get(),
-                CompatBlocks.FIR_LEAF_PILE.get(),
-                CompatBlocks.REDWOOD_LEAF_PILE.get(),
-                CompatBlocks.MAHOGANY_LEAF_PILE.get(),
-                CompatBlocks.WILLOW_LEAF_PILE.get(),
-                CompatBlocks.MAGIC_LEAF_PILE.get(),
-                CompatBlocks.DEAD_LEAF_PILE.get(),
-                CompatBlocks.UMBRAN_LEAF_PILE.get(),
-                CompatBlocks.PALM_LEAF_PILE.get(),
-                CompatBlocks.HELLBARK_LEAF_PILE.get(),
-                CompatBlocks.FLOWERING_OAK_LEAF_PILE.get(),
-                CompatBlocks.RAINBOW_BIRCH_LEAF_PILE.get(),
-                CompatBlocks.ORIGIN_LEAF_PILE.get(),
-                CompatBlocks.MAPLE_LEAF_PILE.get(),
-                CompatBlocks.ORANGE_AUTUMN_LEAF_PILE.get(),
-                CompatBlocks.YELLOW_AUTUMN_LEAF_PILE.get()
-        );
+         */
     }
 
     public static Block getNormalChest(Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> chestPair) {

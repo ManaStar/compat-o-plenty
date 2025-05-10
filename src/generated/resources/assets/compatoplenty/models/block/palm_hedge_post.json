@@ -1,0 +1,7 @@
+{
+  "parent": "quark:block/hedge_post",
+  "textures": {
+    "leaf": "biomesoplenty:block/palm_leaves",
+    "log": "biomesoplenty:block/palm_log"
+  }
+}

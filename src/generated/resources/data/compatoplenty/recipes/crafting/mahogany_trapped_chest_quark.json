@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "variant_chests"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "category": "redstone",
         "ingredients": [
           {
             "item": "compatoplenty:mahogany_chest"

@@ -1,8 +1,0 @@
-{
-  "parent": "block/orientable",
-  "textures": {
-    "top": "compatoplenty:block/redwood_cabinet_top",
-    "front": "compatoplenty:block/redwood_cabinet_front",
-    "side": "compatoplenty:block/redwood_cabinet_side"
-  }
-}

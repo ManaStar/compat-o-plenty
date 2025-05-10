@@ -7,10 +7,13 @@ import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
 import com.seleneandmana.compatoplenty.core.registry.CompatItems;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
 import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -19,13 +22,30 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.concurrent.CompletableFuture;
+
 public class ModItemTagsProvider extends ItemTagsProvider {
-    public ModItemTagsProvider(DataGenerator dataGenerator, BlockTagsProvider blockTagsProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(dataGenerator, blockTagsProvider, CompatOPlenty.MOD_ID, existingFileHelper);
+    public ModItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookup, CompletableFuture<TagsProvider.TagLookup<Block>> tagLookup, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookup, tagLookup, CompatOPlenty.MOD_ID, existingFileHelper);
+    }
+
+    private void add(CompatBlocks.LeafSet set) {
+        tag(BlueprintItemTags.LEAF_PILES).add(asItem(set.leafPile()));
+    }
+
+    private void add(CompatBlocks.WoodSet set) {
+        tag(BlueprintItemTags.LADDERS).add(asItem(set.ladder()));
+        tag(ItemTags.PLANKS).add(asItem(set.verticalPlanks()));
+        tag(Tags.Items.CHESTS_WOODEN).add(asItem(set.chest()), asItem(set.trappedChest()));
+        tag(Tags.Items.CHESTS_TRAPPED).add(asItem(set.trappedChest()));
+        tag(Tags.Items.BOOKSHELVES).add(asItem(set.bookshelf()));
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
+        CompatBlocks.woodSets().forEach(this::add);
+        CompatBlocks.leaveSets().forEach(this::add);
+
         //Minecraft
         tag(ItemTags.SLABS).add(
                 asItem(CompatBlocks.BLACK_SANDSTONE_BRICK_SLAB),
@@ -52,163 +72,21 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 asItem(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL)
         );
 
-        tag(ItemTags.PLANKS).add(
-                asItem(CompatBlocks.VERTICAL_CHERRY_PLANKS),
-                asItem(CompatBlocks.VERTICAL_JACARANDA_PLANKS),
-                asItem(CompatBlocks.VERTICAL_FIR_PLANKS),
-                asItem(CompatBlocks.VERTICAL_REDWOOD_PLANKS),
-                asItem(CompatBlocks.VERTICAL_MAHOGANY_PLANKS),
-                asItem(CompatBlocks.VERTICAL_WILLOW_PLANKS),
-                asItem(CompatBlocks.VERTICAL_MAGIC_PLANKS),
-                asItem(CompatBlocks.VERTICAL_DEAD_PLANKS),
-                asItem(CompatBlocks.VERTICAL_UMBRAN_PLANKS),
-                asItem(CompatBlocks.VERTICAL_PALM_PLANKS),
-                asItem(CompatBlocks.VERTICAL_HELLBARK_PLANKS)
-        );
-
         tag(ItemTags.NON_FLAMMABLE_WOOD).add(
-                asItem(CompatBlocks.HELLBARK_VERTICAL_SLAB),
-                asItem(CompatBlocks.VERTICAL_HELLBARK_PLANKS),
-                asItem(CompatBlocks.HELLBARK_BOARDS),
-                asItem(CompatBlocks.HELLBARK_BOOKSHELF),
-                asItem(CompatBlocks.HELLBARK_LADDER),
-                asItem(CompatBlocks.HELLBARK_BEEHIVE),
-                CompatBlocks.HELLBARK_CHESTS.getFirst().get().asItem(),
-                CompatBlocks.HELLBARK_CHESTS.getSecond().get().asItem(),
+                asItem(CompatBlocks.HELLBARK.verticalSlab()),
+                asItem(CompatBlocks.HELLBARK.verticalPlanks()),
+                asItem(CompatBlocks.HELLBARK.boards()),
+                asItem(CompatBlocks.HELLBARK.bookshelf()),
+                asItem(CompatBlocks.HELLBARK.ladder()),
+                asItem(CompatBlocks.HELLBARK.beehive()),
+                asItem(CompatBlocks.HELLBARK.chest()),
+                asItem(CompatBlocks.HELLBARK.trappedChest()),
                 CompatItems.HELLBARK_FURNACE_BOAT.get(),
                 CompatItems.LARGE_HELLBARK_BOAT.get()
         );
-
-        //Forge Tags
-        tag(Tags.Items.CHESTS_WOODEN).add(
-                getNormalChest(CompatBlocks.CHERRY_CHESTS),
-                getNormalChest(CompatBlocks.JACARANDA_CHESTS),
-                getNormalChest(CompatBlocks.FIR_CHESTS),
-                getNormalChest(CompatBlocks.REDWOOD_CHESTS),
-                getNormalChest(CompatBlocks.MAHOGANY_CHESTS),
-                getNormalChest(CompatBlocks.WILLOW_CHESTS),
-                getNormalChest(CompatBlocks.MAGIC_CHESTS),
-                getNormalChest(CompatBlocks.DEAD_CHESTS),
-                getNormalChest(CompatBlocks.UMBRAN_CHESTS),
-                getNormalChest(CompatBlocks.PALM_CHESTS),
-                getNormalChest(CompatBlocks.HELLBARK_CHESTS)
-        );
-
-        tag(Tags.Items.CHESTS_TRAPPED).add(
-                getTrappedChest(CompatBlocks.CHERRY_CHESTS),
-                getTrappedChest(CompatBlocks.JACARANDA_CHESTS),
-                getTrappedChest(CompatBlocks.FIR_CHESTS),
-                getTrappedChest(CompatBlocks.REDWOOD_CHESTS),
-                getTrappedChest(CompatBlocks.MAHOGANY_CHESTS),
-                getTrappedChest(CompatBlocks.WILLOW_CHESTS),
-                getTrappedChest(CompatBlocks.MAGIC_CHESTS),
-                getTrappedChest(CompatBlocks.DEAD_CHESTS),
-                getTrappedChest(CompatBlocks.UMBRAN_CHESTS),
-                getTrappedChest(CompatBlocks.PALM_CHESTS),
-                getTrappedChest(CompatBlocks.HELLBARK_CHESTS)
-        );
-
-        tag(Tags.Items.BOOKSHELVES).add(
-                asItem(CompatBlocks.CHERRY_BOOKSHELF),
-                asItem(CompatBlocks.JACARANDA_BOOKSHELF),
-                asItem(CompatBlocks.FIR_BOOKSHELF),
-                asItem(CompatBlocks.REDWOOD_BOOKSHELF),
-                asItem(CompatBlocks.MAHOGANY_BOOKSHELF),
-                asItem(CompatBlocks.WILLOW_BOOKSHELF),
-                asItem(CompatBlocks.MAGIC_BOOKSHELF),
-                asItem(CompatBlocks.DEAD_BOOKSHELF),
-                asItem(CompatBlocks.UMBRAN_BOOKSHELF),
-                asItem(CompatBlocks.PALM_BOOKSHELF),
-                asItem(CompatBlocks.HELLBARK_BOOKSHELF)
-        );
-
-        //Other Tags
-        tag(BlueprintItemTags.BOATABLE_CHESTS).add(
-                getNormalChest(CompatBlocks.CHERRY_CHESTS),
-                getNormalChest(CompatBlocks.JACARANDA_CHESTS),
-                getNormalChest(CompatBlocks.FIR_CHESTS),
-                getNormalChest(CompatBlocks.REDWOOD_CHESTS),
-                getNormalChest(CompatBlocks.MAHOGANY_CHESTS),
-                getNormalChest(CompatBlocks.WILLOW_CHESTS),
-                getNormalChest(CompatBlocks.MAGIC_CHESTS),
-                getNormalChest(CompatBlocks.DEAD_CHESTS),
-                getNormalChest(CompatBlocks.UMBRAN_CHESTS),
-                getNormalChest(CompatBlocks.PALM_CHESTS),
-                getNormalChest(CompatBlocks.HELLBARK_CHESTS)
-        );
-
-        tag(BlueprintItemTags.LADDERS).add(
-                asItem(CompatBlocks.CHERRY_LADDER),
-                asItem(CompatBlocks.JACARANDA_LADDER),
-                asItem(CompatBlocks.FIR_LADDER),
-                asItem(CompatBlocks.REDWOOD_LADDER),
-                asItem(CompatBlocks.MAHOGANY_LADDER),
-                asItem(CompatBlocks.WILLOW_LADDER),
-                asItem(CompatBlocks.MAGIC_LADDER),
-                asItem(CompatBlocks.DEAD_LADDER),
-                asItem(CompatBlocks.UMBRAN_LADDER),
-                asItem(CompatBlocks.PALM_LADDER),
-                asItem(CompatBlocks.HELLBARK_LADDER)
-        );
-
-        tag(BlueprintItemTags.REVERTABLE_CHESTS).add(
-                getNormalChest(CompatBlocks.CHERRY_CHESTS),
-                getNormalChest(CompatBlocks.JACARANDA_CHESTS),
-                getNormalChest(CompatBlocks.FIR_CHESTS),
-                getNormalChest(CompatBlocks.REDWOOD_CHESTS),
-                getNormalChest(CompatBlocks.MAHOGANY_CHESTS),
-                getNormalChest(CompatBlocks.WILLOW_CHESTS),
-                getNormalChest(CompatBlocks.MAGIC_CHESTS),
-                getNormalChest(CompatBlocks.DEAD_CHESTS),
-                getNormalChest(CompatBlocks.UMBRAN_CHESTS),
-                getNormalChest(CompatBlocks.PALM_CHESTS),
-                getNormalChest(CompatBlocks.HELLBARK_CHESTS)
-        );
-
-        tag(BlueprintItemTags.VERTICAL_SLABS).add(
-                asItem(CompatBlocks.CHERRY_VERTICAL_SLAB),
-                asItem(CompatBlocks.JACARANDA_VERTICAL_SLAB),
-                asItem(CompatBlocks.FIR_VERTICAL_SLAB),
-                asItem(CompatBlocks.REDWOOD_VERTICAL_SLAB),
-                asItem(CompatBlocks.MAHOGANY_VERTICAL_SLAB),
-                asItem(CompatBlocks.WILLOW_VERTICAL_SLAB),
-                asItem(CompatBlocks.MAGIC_VERTICAL_SLAB),
-                asItem(CompatBlocks.DEAD_VERTICAL_SLAB),
-                asItem(CompatBlocks.UMBRAN_VERTICAL_SLAB),
-                asItem(CompatBlocks.PALM_VERTICAL_SLAB),
-                asItem(CompatBlocks.HELLBARK_VERTICAL_SLAB),
-
-                asItem(CompatBlocks.BLACK_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.CUT_BLACK_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.SMOOTH_BLACK_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.BLACK_SANDSTONE_BRICK_VERTICAL_SLAB),
-
-                asItem(CompatBlocks.ORANGE_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.CUT_ORANGE_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.SMOOTH_ORANGE_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.ORANGE_SANDSTONE_BRICK_VERTICAL_SLAB),
-
-                asItem(CompatBlocks.WHITE_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.CUT_WHITE_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.SMOOTH_WHITE_SANDSTONE_VERTICAL_SLAB),
-                asItem(CompatBlocks.WHITE_SANDSTONE_BRICK_VERTICAL_SLAB),
-
-                asItem(CompatBlocks.GALANOS_VERTICAL_SLAB),
-
-                asItem(CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB),
-                asItem(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB)
-        );
     }
 
-    public static Item asItem(RegistryObject<Block> block) {
+    public static Item asItem(RegistryObject<? extends Block> block) {
         return block.get().asItem();
-    }
-
-    public static Item getNormalChest(Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> chestPair) {
-        return chestPair.getFirst().get().asItem();
-    }
-
-    public static Item getTrappedChest(Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> chestPair) {
-        return chestPair.getSecond().get().asItem();
     }
 }

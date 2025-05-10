@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "sandstone_bricks"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "building",
         "key": {
           "#": {
             "item": "compatoplenty:white_sandstone_bricks"
@@ -23,7 +24,8 @@
         "result": {
           "count": 4,
           "item": "compatoplenty:white_sandstone_brick_stairs"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

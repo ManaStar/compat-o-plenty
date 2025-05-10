@@ -1,8 +1,0 @@
-{
-  "parent": "block/orientable",
-  "textures": {
-    "top": "compatoplenty:block/umbran_cabinet_top",
-    "front": "compatoplenty:block/umbran_cabinet_front_open",
-    "side": "compatoplenty:block/umbran_cabinet_side"
-  }
-}

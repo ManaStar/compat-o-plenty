@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "type=double,waterlogged=false": {
+      "model": "biomesoplenty:block/magic_planks"
+    },
+    "type=double,waterlogged=true": {
+      "model": "biomesoplenty:block/magic_planks"
+    },
+    "type=east,waterlogged=false": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "type=east,waterlogged=true": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true,
+      "y": 90
+    },
+    "type=north,waterlogged=false": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true
+    },
+    "type=north,waterlogged=true": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true
+    },
+    "type=south,waterlogged=false": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "type=south,waterlogged=true": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "type=west,waterlogged=false": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    },
+    "type=west,waterlogged=true": {
+      "model": "compatoplenty:block/magic_vertical_slab",
+      "uvlock": true,
+      "y": 270
+    }
+  }
+}

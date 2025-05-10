@@ -1,8 +1,0 @@
-{
-  "parent": "compatoplenty:block/table_template",
-  "textures": {
-    "side": "compatoplenty:block/umbran_table",
-    "top": "compatoplenty:block/umbran_table_top",
-    "bottom": "compatoplenty:block/umbran_table_bottom"
-  }
-}

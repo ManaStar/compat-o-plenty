@@ -1,8 +1,0 @@
-{
-  "parent": "block/orientable",
-  "textures": {
-    "top": "compatoplenty:block/willow_cabinet_top",
-    "front": "compatoplenty:block/willow_cabinet_front",
-    "side": "compatoplenty:block/willow_cabinet_side"
-  }
-}

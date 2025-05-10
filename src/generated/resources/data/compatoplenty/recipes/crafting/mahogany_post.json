@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "wooden_posts"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "biomesoplenty:mahogany_wood"
@@ -23,7 +24,8 @@
         "result": {
           "count": 8,
           "item": "compatoplenty:mahogany_post"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

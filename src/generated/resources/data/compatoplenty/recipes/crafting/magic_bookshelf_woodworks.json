@@ -4,7 +4,7 @@
     {
       "conditions": [
         {
-          "type": "blueprint:and",
+          "type": "forge:and",
           "values": [
             {
               "type": "forge:mod_loaded",
@@ -19,6 +19,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "biomesoplenty:magic_planks"
@@ -34,7 +35,8 @@
         ],
         "result": {
           "item": "compatoplenty:magic_bookshelf"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

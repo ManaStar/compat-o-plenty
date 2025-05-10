@@ -1,8 +1,0 @@
-{
-  "parent": "compatoplenty:block/table_template",
-  "textures": {
-    "side": "compatoplenty:block/fir_table",
-    "top": "compatoplenty:block/fir_table_top",
-    "bottom": "compatoplenty:block/fir_table_bottom"
-  }
-}

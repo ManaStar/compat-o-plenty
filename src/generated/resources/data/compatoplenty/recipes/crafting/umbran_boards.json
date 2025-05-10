@@ -4,7 +4,7 @@
     {
       "conditions": [
         {
-          "type": "blueprint:and",
+          "type": "forge:and",
           "values": [
             {
               "type": "forge:mod_loaded",
@@ -19,20 +19,20 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "S": {
-            "item": "biomesoplenty:umbran_planks"
+            "item": "biomesoplenty:umbran_slab"
           }
         },
         "pattern": [
           "S",
-          "S",
           "S"
         ],
         "result": {
-          "count": 3,
           "item": "compatoplenty:umbran_boards"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

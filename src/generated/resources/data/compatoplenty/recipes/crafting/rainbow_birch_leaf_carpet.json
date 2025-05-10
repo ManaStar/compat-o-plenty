@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "leaf_carpet"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "biomesoplenty:rainbow_birch_leaves"
@@ -21,7 +22,8 @@
         "result": {
           "count": 3,
           "item": "compatoplenty:rainbow_birch_leaf_carpet"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

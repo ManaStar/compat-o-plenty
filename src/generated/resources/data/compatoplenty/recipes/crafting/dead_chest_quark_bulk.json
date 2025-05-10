@@ -7,18 +7,19 @@
           "type": "forge:and",
           "values": [
             {
-              "type": "blueprint:quark_flag",
-              "flag": "wood_to_chest_recipes"
+              "type": "forge:mod_loaded",
+              "modid": "quark"
             },
             {
-              "type": "blueprint:quark_flag",
-              "flag": "variant_chests"
+              "type": "forge:mod_loaded",
+              "modid": "quark"
             }
           ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "tag": "biomesoplenty:dead_logs"
@@ -32,7 +33,8 @@
         "result": {
           "count": 4,
           "item": "compatoplenty:dead_chest"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

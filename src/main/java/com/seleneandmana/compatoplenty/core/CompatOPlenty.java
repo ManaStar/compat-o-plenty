@@ -1,5 +1,6 @@
 package com.seleneandmana.compatoplenty.core;
 
+import com.seleneandmana.compatoplenty.core.data.client.ModBlockModelsProvider;
 import com.seleneandmana.compatoplenty.core.data.client.ModLanguageProvider;
 import com.seleneandmana.compatoplenty.core.data.server.ModLootTableProvider;
 import com.seleneandmana.compatoplenty.core.data.server.ModRecipeProvider;
@@ -9,6 +10,7 @@ import com.seleneandmana.compatoplenty.core.other.CompatCompat;
 import com.seleneandmana.compatoplenty.core.registry.util.CompatBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -21,15 +23,18 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod("compatoplenty")
+@Mod(CompatOPlenty.MOD_ID)
 @Mod.EventBusSubscriber(modid = CompatOPlenty.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CompatOPlenty {
     public static final String MOD_ID = "compatoplenty";
+    public static final String BOP_ID = "biomesoplenty";
     public static final String QUARK_ID = "quark";
     public static final String WOODWORKS_ID = "woodworks";
     public static final String TWIGS_ID = "twigs";
     public static final String FARMERS_ID = "farmersdelight";
     public static final String BOATLOAD_ID = "boatload";
+    public static final String VSLAB_ID = "v_slab_compat";
+    public static final String BLUEPRINT_ID = "blueprint";
 
 
     public static final Logger LOGGER = LogManager.getLogger();
@@ -49,14 +54,16 @@ public class CompatOPlenty {
     public void gatherData(GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
+        PackOutput output = generator.getPackOutput();
 
-        ModBlockTagsProvider modBlockTagsProvider = new ModBlockTagsProvider(generator, fileHelper);
+        ModBlockTagsProvider modBlockTagsProvider = new ModBlockTagsProvider(output, event.getLookupProvider(), fileHelper);
         generator.addProvider(event.includeServer(), modBlockTagsProvider);
-        generator.addProvider(event.includeServer(), new ModItemTagsProvider(generator, modBlockTagsProvider, fileHelper));
-        generator.addProvider(event.includeServer(), new ModLootTableProvider(generator));
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(generator));
+        generator.addProvider(event.includeServer(), new ModItemTagsProvider(output, event.getLookupProvider(), modBlockTagsProvider.contentsGetter(), fileHelper));
+        generator.addProvider(event.includeServer(), new ModLootTableProvider(output));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(output));
 
-        generator.addProvider(event.includeClient(), new ModLanguageProvider(generator));
+        generator.addProvider(event.includeClient(), new ModLanguageProvider(output));
+        generator.addProvider(event.includeClient(), new ModBlockModelsProvider(output, fileHelper));
     }
 
     private void compatSetup(FMLCommonSetupEvent event) {

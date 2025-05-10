@@ -1,283 +1,315 @@
 package com.seleneandmana.compatoplenty.core.registry;
 
 import biomesoplenty.api.block.BOPBlocks;
-import com.mojang.datafixers.util.Pair;
+import com.ninni.twigs.registry.TwigsItems;
 import com.seleneandmana.compatoplenty.common.blocks.RoseQuartzSlabBlock;
 import com.seleneandmana.compatoplenty.common.blocks.RoseQuartzStairBlock;
-import com.seleneandmana.compatoplenty.common.blocks.RoseQuartzVerticalSlabBlock;
 import com.seleneandmana.compatoplenty.common.blocks.RoseQuartzWallBlock;
 import com.seleneandmana.compatoplenty.core.CompatOPlenty;
 import com.seleneandmana.compatoplenty.core.other.CompatProperties;
 import com.seleneandmana.compatoplenty.core.registry.util.CompatBlockSubRegistryHelper;
-import com.seleneandmana.compatoplenty.integrations.farmersdelight.CompatCabinetSuppliers;
-import com.seleneandmana.compatoplenty.integrations.farmersdelight.ReplacementCabinetBlock;
-import com.seleneandmana.compatoplenty.integrations.twigs.CompatTableBlock;
+import com.seleneandmana.compatoplenty.integrations.CabinetSuppliers;
+import com.seleneandmana.compatoplenty.integrations.QuarkSuppliers;
+import com.seleneandmana.compatoplenty.integrations.CompatTableBlock;
+import com.seleneandmana.compatoplenty.integrations.TwigsSuppliers;
+import com.seleneandmana.compatoplenty.integrations.VSlabCompatSuppliers;
 import com.teamabnormals.blueprint.common.block.*;
-import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
-import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
-import com.teamabnormals.blueprint.common.block.wood.PlanksBlock;
-import com.teamabnormals.blueprint.common.block.wood.WoodPostBlock;
-import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
-import net.minecraft.world.item.CreativeModeTab;
+import com.teamabnormals.blueprint.core.util.PropertyUtil;
+import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
+import static com.seleneandmana.compatoplenty.core.CompatOPlenty.BLUEPRINT_ID;
+import static com.seleneandmana.compatoplenty.core.CompatOPlenty.FARMERS_ID;
+import static com.seleneandmana.compatoplenty.core.CompatOPlenty.QUARK_ID;
+import static com.seleneandmana.compatoplenty.core.CompatOPlenty.TWIGS_ID;
+import static com.seleneandmana.compatoplenty.core.CompatOPlenty.VSLAB_ID;
+import static com.seleneandmana.compatoplenty.core.CompatOPlenty.WOODWORKS_ID;
+import static com.seleneandmana.compatoplenty.core.registry.CompatItems.TAB_POPULATOR;
+import static com.seleneandmana.compatoplenty.core.registry.CompatItems.anyModLoaded;
+import static com.seleneandmana.compatoplenty.core.registry.CompatItems.of;
+
+@SuppressWarnings("Convert2MethodRef")
 @Mod.EventBusSubscriber(modid = CompatOPlenty.MOD_ID)
 public class CompatBlocks {
     public static final CompatBlockSubRegistryHelper HELPER = CompatOPlenty.REGISTRY_HELPER.getBlockSubHelper();
 
-    //Cherry
-    public static final RegistryObject<Block> CHERRY_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "cherry_vertical_slab",() -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CHERRY_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "cherry_bookshelf", () -> new BookshelfBlock(CompatProperties.CHERRY.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CHERRY_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "cherry_ladder", () -> new BlueprintLadderBlock(CompatProperties.CHERRY.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_CHERRY_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_cherry_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CHERRY_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "cherry_post", () -> new WoodPostBlock(STRIPPED_CHERRY_POST,  BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WHITE_CHERRY_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "white_cherry_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PINK_CHERRY_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "pink_cherry_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WHITE_CHERRY_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_cherry_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.CHERRY.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PINK_CHERRY_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "pink_cherry_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.CHERRY.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WHITE_CHERRY_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "white_cherry_leaf_pile", () -> new LeafPileBlock(CompatProperties.CHERRY.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PINK_CHERRY_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "pink_cherry_leaf_pile", () -> new LeafPileBlock(CompatProperties.CHERRY.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> CHERRY_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "cherry", MaterialColor.COLOR_RED);
-    public static final RegistryObject<Block> CHERRY_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "cherry_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> CHERRY_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"cherry_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> CHERRY_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "cherry_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_CHERRY_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_cherry_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CHERRY_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "cherry_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.CHERRY_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static Predicate<ItemStack> V_SLAB_PREDICATE = anyModLoaded(VSLAB_ID, QUARK_ID);
 
+    public record LeafSet(
+            RegistryObject<? extends Block> hedge,
+            RegistryObject<? extends Block> leafCarpet,
+            RegistryObject<? extends Block> leafPile,
+            Supplier<? extends Block> fence
+    ) {
+    }
 
+    public record WoodSet(
+            RegistryObject<? extends Block> verticalSlab,
+            RegistryObject<? extends Block> bookshelf,
+            RegistryObject<? extends Block> ladder,
+            RegistryObject<? extends Block> strippedPost,
+            RegistryObject<? extends Block> post,
+            LeafSet leaveSet,
+            RegistryObject<? extends Block> chest,
+            RegistryObject<? extends Block> trappedChest,
+            RegistryObject<? extends Block> beehive,
+            RegistryObject<? extends Block> cabinet,
+            RegistryObject<? extends Block> table,
+            RegistryObject<? extends Block> verticalPlanks,
+            RegistryObject<? extends RotatedPillarBlock> boards
+    ) {
+    }
 
-    //Jacaranda
-    public static final RegistryObject<Block> JACARANDA_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "jacaranda_vertical_slab",() -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> JACARANDA_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "jacaranda_bookshelf", () -> new BookshelfBlock(CompatProperties.JACARANDA.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> JACARANDA_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "jacaranda_ladder", () -> new BlueprintLadderBlock(CompatProperties.JACARANDA.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_JACARANDA_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_jacaranda_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> JACARANDA_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "jacaranda_post", () -> new WoodPostBlock(STRIPPED_JACARANDA_POST,  BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> JACARANDA_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "jacaranda_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> JACARANDA_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "jacaranda_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.JACARANDA.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> JACARANDA_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "jacaranda_leaf_pile", () -> new LeafPileBlock(CompatProperties.JACARANDA.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> JACARANDA_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "jacaranda", MaterialColor.TERRACOTTA_PINK);
-    public static final RegistryObject<Block> JACARANDA_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "jacaranda_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> JACARANDA_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"jacaranda_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> JACARANDA_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "jacaranda_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_JACARANDA_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_jacaranda_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> JACARANDA_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "jacaranda_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.JACARANDA_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-
-    //Fir
-    public static final RegistryObject<Block> FIR_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_vertical_slab",() -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> FIR_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "fir_bookshelf", () -> new BookshelfBlock(CompatProperties.FIR.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> FIR_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "fir_ladder", () -> new BlueprintLadderBlock(CompatProperties.FIR.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_FIR_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_fir_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> FIR_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_post", () -> new WoodPostBlock(STRIPPED_FIR_POST,  BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> FIR_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "fir_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FIR_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "fir_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.FIR.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FIR_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "fir_leaf_pile", () -> new LeafPileBlock(CompatProperties.FIR.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> FIR_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "fir", MaterialColor.TERRACOTTA_WHITE);
-    public static final RegistryObject<Block> FIR_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "fir_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FIR_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"fir_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FIR_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "fir_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_FIR_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_fir_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> FIR_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "fir_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.FIR_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-
-    //Redwood
-    public static final RegistryObject<Block> REDWOOD_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "redwood_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> REDWOOD_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "redwood_bookshelf", () -> new BookshelfBlock(CompatProperties.REDWOOD.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> REDWOOD_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "redwood_ladder", () -> new BlueprintLadderBlock(CompatProperties.REDWOOD.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_REDWOOD_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_redwood_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> REDWOOD_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "redwood_post", () -> new WoodPostBlock(STRIPPED_REDWOOD_POST,  BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> REDWOOD_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "redwood_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> REDWOOD_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "redwood_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.REDWOOD.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> REDWOOD_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "redwood_leaf_pile", () -> new LeafPileBlock(CompatProperties.REDWOOD.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> REDWOOD_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "redwood", MaterialColor.TERRACOTTA_ORANGE);
-    public static final RegistryObject<Block> REDWOOD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "redwood_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> REDWOOD_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"redwood_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> REDWOOD_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "redwood_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_REDWOOD_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_redwood_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> REDWOOD_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "redwood_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.REDWOOD_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    //Mahogany
-    public static final RegistryObject<Block> MAHOGANY_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAHOGANY_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "mahogany_bookshelf", () -> new BookshelfBlock(CompatProperties.MAHOGANY.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAHOGANY_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "mahogany_ladder", () -> new BlueprintLadderBlock(CompatProperties.MAHOGANY.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_MAHOGANY_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_mahogany_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAHOGANY_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_post", () -> new WoodPostBlock(STRIPPED_MAHOGANY_POST,  BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAHOGANY_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "mahogany_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAHOGANY_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "mahogany_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.MAHOGANY.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAHOGANY_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "mahogany_leaf_pile", () -> new LeafPileBlock(CompatProperties.MAHOGANY.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> MAHOGANY_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "mahogany", MaterialColor.TERRACOTTA_PINK);
-    public static final RegistryObject<Block> MAHOGANY_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "mahogany_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAHOGANY_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"mahogany_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAHOGANY_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "mahogany_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_MAHOGANY_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_mahogany_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAHOGANY_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "mahogany_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAHOGANY_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    //Willow
-    public static final RegistryObject<Block> WILLOW_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WILLOW_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "willow_bookshelf", () -> new BookshelfBlock(CompatProperties.WILLOW.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WILLOW_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "willow_ladder", () -> new BlueprintLadderBlock(CompatProperties.WILLOW.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_WILLOW_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_willow_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WILLOW_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_post", () -> new WoodPostBlock(STRIPPED_WILLOW_POST,  BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WILLOW_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "willow_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WILLOW_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "willow_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.WILLOW.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WILLOW_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "willow_leaf_pile", () -> new LeafPileBlock(CompatProperties.WILLOW.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> WILLOW_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "willow", MaterialColor.TERRACOTTA_LIGHT_GREEN);
-    public static final RegistryObject<Block> WILLOW_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "willow_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WILLOW_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"willow_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> WILLOW_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "willow_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_WILLOW_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_willow_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WILLOW_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "willow_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.WILLOW_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    //Magic
-    public static final RegistryObject<Block> MAGIC_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAGIC_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "magic_bookshelf", () -> new BookshelfBlock(CompatProperties.MAGIC.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAGIC_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "magic_ladder", () -> new BlueprintLadderBlock(CompatProperties.MAGIC.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_MAGIC_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_magic_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAGIC_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_post", () -> new WoodPostBlock(STRIPPED_MAGIC_POST,  BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAGIC_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "magic_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAGIC_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "magic_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.MAGIC.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAGIC_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "magic_leaf_pile", () -> new LeafPileBlock(CompatProperties.MAGIC.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> MAGIC_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "magic", MaterialColor.COLOR_BLUE);
-    public static final RegistryObject<Block> MAGIC_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "magic_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAGIC_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"magic_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAGIC_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "magic_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_MAGIC_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_magic_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> MAGIC_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "magic_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.MAGIC_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    //Dead
-    public static final RegistryObject<Block> DEAD_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DEAD_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "dead_bookshelf", () -> new BookshelfBlock(CompatProperties.DEAD.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DEAD_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "dead_ladder", () -> new BlueprintLadderBlock(CompatProperties.DEAD.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_DEAD_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_dead_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DEAD_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_post", () -> new WoodPostBlock(STRIPPED_DEAD_POST,  BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DEAD_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "dead_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DEAD_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "dead_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.DEAD.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DEAD_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "dead_leaf_pile", () -> new LeafPileBlock(CompatProperties.DEAD.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> DEAD_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "dead", MaterialColor.STONE);
-    public static final RegistryObject<Block> DEAD_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "dead_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DEAD_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"dead_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> DEAD_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "dead_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_DEAD_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_dead_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> DEAD_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "dead_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.DEAD_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    //Umbran
-    public static final RegistryObject<Block> UMBRAN_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> UMBRAN_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "umbran_bookshelf", () -> new BookshelfBlock(CompatProperties.UMBRAN.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> UMBRAN_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "umbran_ladder", () -> new BlueprintLadderBlock(CompatProperties.UMBRAN.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_UMBRAN_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_umbran_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> UMBRAN_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_post", () -> new WoodPostBlock(STRIPPED_UMBRAN_POST,  BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> UMBRAN_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "umbran_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> UMBRAN_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "umbran_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.UMBRAN.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> UMBRAN_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "umbran_leaf_pile", () -> new LeafPileBlock(CompatProperties.UMBRAN.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> UMBRAN_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "umbran", MaterialColor.TERRACOTTA_BLUE);
-    public static final RegistryObject<Block> UMBRAN_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "umbran_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> UMBRAN_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"umbran_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> UMBRAN_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "umbran_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_UMBRAN_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_umbran_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> UMBRAN_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "umbran_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.UMBRAN_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    //Palm
-    public static final RegistryObject<Block> PALM_VERTICAL_SLAB = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS.get())), 150, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> PALM_BOOKSHELF = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "palm_bookshelf", () -> new BookshelfBlock(CompatProperties.PALM.bookshelf()), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> PALM_LADDER = HELPER.createMultiCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "palm_ladder", () -> new BlueprintLadderBlock(CompatProperties.PALM.ladder()), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_PALM_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "stripped_palm_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> PALM_POST = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_post", () -> new WoodPostBlock(STRIPPED_PALM_POST,  BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> PALM_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "palm_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS.get())), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PALM_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "palm_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.PALM.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PALM_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "palm_leaf_pile", () -> new LeafPileBlock(CompatProperties.PALM.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> PALM_CHESTS = HELPER.createMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "palm", MaterialColor.TERRACOTTA_YELLOW);
-    public static final RegistryObject<Block> PALM_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "palm_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PALM_CABINET = HELPER.createCompatFuelBlock(CompatOPlenty.FARMERS_ID,"palm_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)),300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> PALM_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "palm_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_PALM_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_palm_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> PALM_BOARDS = HELPER.createCompatFuelBlock(CompatOPlenty.WOODWORKS_ID, "palm_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.PALM_PLANKS.get())), 300, CreativeModeTab.TAB_BUILDING_BLOCKS);
-
-    //Hellbark
-    public static final RegistryObject<Block> HELLBARK_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> HELLBARK_BOOKSHELF = HELPER.createMultiCompatBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "hellbark_bookshelf", () -> new BookshelfBlock(CompatProperties.HELLBARK.bookshelf()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> HELLBARK_LADDER = HELPER.createMultiCompatBlock(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID, "hellbark_ladder", () -> new BlueprintLadderBlock(CompatProperties.HELLBARK.ladder()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_HELLBARK_POST = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "stripped_hellbark_post", () -> new WoodPostBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> HELLBARK_POST = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_post", () -> new WoodPostBlock(STRIPPED_HELLBARK_POST,  BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> HELLBARK_HEDGE = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS.get())), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> HELLBARK_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "hellbark_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.HELLBARK.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> HELLBARK_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "hellbark_leaf_pile", () -> new LeafPileBlock(CompatProperties.HELLBARK.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final Pair<RegistryObject<BlueprintChestBlock>, RegistryObject<BlueprintTrappedChestBlock>> HELLBARK_CHESTS = HELPER.createUnburnableMultiCompatChestBlocks(CompatOPlenty.WOODWORKS_ID, CompatOPlenty.QUARK_ID,"hellbark", MaterialColor.TERRACOTTA_GRAY);
-    public static final RegistryObject<Block> HELLBARK_BEEHIVE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "hellbark_beehive", () -> new BlueprintBeehiveBlock(BlockBehaviour.Properties.copy(Blocks.BEEHIVE)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> HELLBARK_CABINET = HELPER.createCompatBlock(CompatOPlenty.FARMERS_ID, "hellbark_cabinet", BlockSubRegistryHelper.areModsLoaded(CompatOPlenty.FARMERS_ID) ? CompatCabinetSuppliers.CABINET : () -> new ReplacementCabinetBlock(BlockBehaviour.Properties.copy(Blocks.BARREL)), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> HELLBARK_TABLE = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "hellbark_table", () -> new CompatTableBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS.get()).instabreak()), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> VERTICAL_HELLBARK_PLANKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "vertical_hellbark_planks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> HELLBARK_BOARDS = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "hellbark_boards", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(BOPBlocks.HELLBARK_PLANKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final WoodSet JACARANDA = createCompatWoodSet("jacaranda", CompatProperties.JACARANDA, () -> BOPBlocks.JACARANDA_PLANKS.get(), () -> BOPBlocks.JACARANDA_LOG.get(), () -> BOPBlocks.STRIPPED_JACARANDA_LOG.get(), () -> BOPBlocks.JACARANDA_LEAVES.get(), () -> BOPBlocks.JACARANDA_FENCE.get(), () -> BOPBlocks.JACARANDA_SLAB.get());
+    public static final WoodSet FIR = createCompatWoodSet("fir", CompatProperties.FIR, () -> BOPBlocks.FIR_PLANKS.get(), () -> BOPBlocks.FIR_LOG.get(), () -> BOPBlocks.STRIPPED_FIR_LOG.get(), () -> BOPBlocks.FIR_LEAVES.get(), () -> BOPBlocks.FIR_FENCE.get(), () -> BOPBlocks.FIR_SLAB.get());
+    public static final WoodSet REDWOOD = createCompatWoodSet("redwood", CompatProperties.REDWOOD, () -> BOPBlocks.REDWOOD_PLANKS.get(), () -> BOPBlocks.REDWOOD_LOG.get(), () -> BOPBlocks.STRIPPED_REDWOOD_LOG.get(), () -> BOPBlocks.REDWOOD_LEAVES.get(), () -> BOPBlocks.REDWOOD_FENCE.get(), () -> BOPBlocks.REDWOOD_SLAB.get());
+    public static final WoodSet MAHOGANY = createCompatWoodSet("mahogany", CompatProperties.MAHOGANY, () -> BOPBlocks.MAHOGANY_PLANKS.get(), () -> BOPBlocks.MAHOGANY_LOG.get(), () -> BOPBlocks.STRIPPED_MAHOGANY_LOG.get(), () -> BOPBlocks.MAHOGANY_LEAVES.get(), () -> BOPBlocks.MAHOGANY_FENCE.get(), () -> BOPBlocks.MAHOGANY_SLAB.get());
+    public static final WoodSet WILLOW = createCompatWoodSet("willow", CompatProperties.WILLOW, () -> BOPBlocks.WILLOW_PLANKS.get(), () -> BOPBlocks.WILLOW_LOG.get(), () -> BOPBlocks.STRIPPED_WILLOW_LOG.get(), () -> BOPBlocks.WILLOW_LEAVES.get(), () -> BOPBlocks.WILLOW_FENCE.get(), () -> BOPBlocks.WILLOW_SLAB.get());
+    public static final WoodSet MAGIC = createCompatWoodSet("magic", CompatProperties.MAGIC, () -> BOPBlocks.MAGIC_PLANKS.get(), () -> BOPBlocks.MAGIC_LOG.get(), () -> BOPBlocks.STRIPPED_MAGIC_LOG.get(), () -> BOPBlocks.MAGIC_LEAVES.get(), () -> BOPBlocks.MAGIC_FENCE.get(), () -> BOPBlocks.MAGIC_SLAB.get());
+    public static final WoodSet DEAD = createCompatWoodSet("dead", CompatProperties.DEAD, () -> BOPBlocks.DEAD_PLANKS.get(), () -> BOPBlocks.DEAD_LOG.get(), () -> BOPBlocks.STRIPPED_DEAD_LOG.get(), () -> BOPBlocks.DEAD_LEAVES.get(), () -> BOPBlocks.DEAD_FENCE.get(), () -> BOPBlocks.DEAD_SLAB.get());
+    public static final WoodSet UMBRAN = createCompatWoodSet("umbran", CompatProperties.UMBRAN, () -> BOPBlocks.UMBRAN_PLANKS.get(), () -> BOPBlocks.UMBRAN_LOG.get(), () -> BOPBlocks.STRIPPED_UMBRAN_LOG.get(), () -> BOPBlocks.UMBRAN_LEAVES.get(), () -> BOPBlocks.UMBRAN_FENCE.get(), () -> BOPBlocks.UMBRAN_SLAB.get());
+    public static final WoodSet PALM = createCompatWoodSet("palm", CompatProperties.PALM, () -> BOPBlocks.PALM_PLANKS.get(), () -> BOPBlocks.PALM_LOG.get(), () -> BOPBlocks.STRIPPED_PALM_LOG.get(), () -> BOPBlocks.PALM_LEAVES.get(), () -> BOPBlocks.PALM_FENCE.get(), () -> BOPBlocks.PALM_SLAB.get());
+    public static final WoodSet HELLBARK = createCompatUnburnableWoodSet("hellbark", CompatProperties.HELLBARK, () -> BOPBlocks.HELLBARK_PLANKS.get(), () -> BOPBlocks.HELLBARK_LOG.get(), () -> BOPBlocks.STRIPPED_HELLBARK_LOG.get(), () -> BOPBlocks.HELLBARK_LEAVES.get(), () -> BOPBlocks.HELLBARK_FENCE.get(), () -> BOPBlocks.HELLBARK_SLAB.get());
 
     //Sandstone Blocks
-    public static final RegistryObject<Block> WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.WHITE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "cut_white_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.CUT_WHITE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SMOOTH_WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "smooth_white_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.SMOOTH_WHITE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.WHITE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_STAIRS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_brick_stairs", () -> new StairBlock(WHITE_SANDSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(WHITE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(WHITE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_WALL = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(WHITE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "white_sandstone_brick_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(WHITE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> ORANGE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "orange_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.ORANGE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_ORANGE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "cut_orange_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.CUT_ORANGE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SMOOTH_ORANGE_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "smooth_orange_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.SMOOTH_ORANGE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "orange_sandstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.ORANGE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_STAIRS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "orange_sandstone_brick_stairs", () -> new StairBlock(ORANGE_SANDSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ORANGE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "orange_sandstone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ORANGE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_WALL = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "orange_sandstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(ORANGE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "orange_sandstone_brick_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(ORANGE_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CUT_BLACK_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "cut_black_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.CUT_WHITE_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> BLACK_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.BLACK_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SMOOTH_BLACK_SANDSTONE_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "smooth_black_sandstone_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BOPBlocks.SMOOTH_BLACK_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICKS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(BOPBlocks.BLACK_SANDSTONE.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_STAIRS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_brick_stairs", () -> new StairBlock(BLACK_SANDSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(BLACK_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(BLACK_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_WALL = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(BLACK_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "black_sandstone_brick_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(BLACK_SANDSTONE_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("white_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.WHITE_SANDSTONE.get()));
+    public static final RegistryObject<Block> CUT_WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("cut_white_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.CUT_WHITE_SANDSTONE.get()));
+    public static final RegistryObject<Block> SMOOTH_WHITE_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("smooth_white_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.SMOOTH_WHITE_SANDSTONE.get()));
+    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICKS = HELPER.createBlock("white_sandstone_bricks", () -> new Block(Properties.copy(BOPBlocks.WHITE_SANDSTONE.get())));
+    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_STAIRS = HELPER.createBlock("white_sandstone_brick_stairs", () -> new StairBlock(() -> WHITE_SANDSTONE_BRICKS.get().defaultBlockState(), Properties.copy(WHITE_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_SLAB = HELPER.createBlock("white_sandstone_brick_slab", () -> new SlabBlock(Properties.copy(WHITE_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_WALL = HELPER.createBlock("white_sandstone_brick_wall", () -> new WallBlock(Properties.copy(WHITE_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> WHITE_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createBlock("white_sandstone_brick_vertical_slab", () -> createVerticalSlab(WHITE_SANDSTONE_BRICKS.get()));
+    public static final RegistryObject<Block> ORANGE_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("orange_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.ORANGE_SANDSTONE.get()));
+    public static final RegistryObject<Block> CUT_ORANGE_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("cut_orange_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.CUT_ORANGE_SANDSTONE.get()));
+    public static final RegistryObject<Block> SMOOTH_ORANGE_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("smooth_orange_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.SMOOTH_ORANGE_SANDSTONE.get()));
+    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICKS = HELPER.createBlock("orange_sandstone_bricks", () -> new Block(Properties.copy(BOPBlocks.ORANGE_SANDSTONE.get())));
+    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_STAIRS = HELPER.createBlock("orange_sandstone_brick_stairs", () -> new StairBlock(() -> ORANGE_SANDSTONE_BRICKS.get().defaultBlockState(), Properties.copy(ORANGE_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_SLAB = HELPER.createBlock("orange_sandstone_brick_slab", () -> new SlabBlock(Properties.copy(ORANGE_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_WALL = HELPER.createBlock("orange_sandstone_brick_wall", () -> new WallBlock(Properties.copy(ORANGE_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> ORANGE_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createBlock("orange_sandstone_brick_vertical_slab", () -> createVerticalSlab(ORANGE_SANDSTONE_BRICKS.get()));
+    public static final RegistryObject<Block> CUT_BLACK_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("cut_black_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.CUT_WHITE_SANDSTONE.get()));
+    public static final RegistryObject<Block> BLACK_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("black_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.BLACK_SANDSTONE.get()));
+    public static final RegistryObject<Block> SMOOTH_BLACK_SANDSTONE_VERTICAL_SLAB = HELPER.createBlock("smooth_black_sandstone_vertical_slab", () -> createVerticalSlab(BOPBlocks.SMOOTH_BLACK_SANDSTONE.get()));
+    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICKS = HELPER.createBlock("black_sandstone_bricks", () -> new Block(Properties.copy(BOPBlocks.BLACK_SANDSTONE.get())));
+    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_STAIRS = HELPER.createBlock("black_sandstone_brick_stairs", () -> new StairBlock(() -> BLACK_SANDSTONE_BRICKS.get().defaultBlockState(), Properties.copy(BLACK_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_SLAB = HELPER.createBlock("black_sandstone_brick_slab", () -> new SlabBlock(Properties.copy(BLACK_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_WALL = HELPER.createBlock("black_sandstone_brick_wall", () -> new WallBlock(Properties.copy(BLACK_SANDSTONE_BRICKS.get())));
+    public static final RegistryObject<Block> BLACK_SANDSTONE_BRICK_VERTICAL_SLAB = HELPER.createBlock("black_sandstone_brick_vertical_slab", () -> createVerticalSlab(BLACK_SANDSTONE_BRICKS.get()));
 
     //Galanos Blocks
-    public static final RegistryObject<Block> GALANOS_BLOCK = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DIAMOND).requiresCorrectToolForDrops().strength(1.5f, 6f).lightLevel(state -> 6).sound(SoundType.STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> GALANOS_PILLAR = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_pillar", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> GALANOS_STAIRS = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_stairs", () -> new StairBlock(() -> GALANOS_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.copy(CompatBlocks.GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> GALANOS_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> GALANOS_VERTICAL_SLAB = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "galanos_vertical_slab", () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(GALANOS_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GALANOS_BLOCK = HELPER.createBlock("galanos_block", () -> new Block(Properties.of().mapColor(MapColor.DIAMOND).requiresCorrectToolForDrops().strength(1.5f, 6f).lightLevel(state -> 6).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> GALANOS_PILLAR = HELPER.createBlock("galanos_pillar", () -> new RotatedPillarBlock(Properties.copy(GALANOS_BLOCK.get())));
+    public static final RegistryObject<Block> GALANOS_STAIRS = HELPER.createBlock("galanos_stairs", () -> new StairBlock(() -> GALANOS_BLOCK.get().defaultBlockState(), Properties.copy(CompatBlocks.GALANOS_BLOCK.get())));
+    public static final RegistryObject<Block> GALANOS_SLAB = HELPER.createBlock("galanos_slab", () -> new SlabBlock(Properties.copy(GALANOS_BLOCK.get())));
+    public static final RegistryObject<Block> GALANOS_VERTICAL_SLAB = HELPER.createBlock("galanos_vertical_slab", () -> createVerticalSlab(GALANOS_BLOCK.get()));
 
     //Polished Rose Quartz Blocks
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz", () -> new AmethystBlock(BlockBehaviour.Properties.copy(BOPBlocks.ROSE_QUARTZ_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_SLAB = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_slab", () -> new RoseQuartzSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_STAIRS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_stairs", () -> new RoseQuartzStairBlock(POLISHED_ROSE_QUARTZ.get().defaultBlockState(), BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_VERTICAL_SLAB = HELPER.createCompatBlock("polished_rose_quartz_vertical_slab", () -> new RoseQuartzVerticalSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS, CompatOPlenty.QUARK_ID, CompatOPlenty.TWIGS_ID);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICKS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_bricks", () -> new AmethystBlock(BlockBehaviour.Properties.copy(BOPBlocks.ROSE_QUARTZ_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_SLAB = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_brick_slab", () -> new RoseQuartzSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_STAIRS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_brick_stairs", () -> new RoseQuartzStairBlock(POLISHED_ROSE_QUARTZ_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB = HELPER.createCompatBlock("polished_rose_quartz_brick_vertical_slab", () -> new RoseQuartzVerticalSlabBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS, CompatOPlenty.QUARK_ID, CompatOPlenty.TWIGS_ID);
-    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_WALL = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "polished_rose_quartz_brick_wall", () -> new RoseQuartzWallBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CRACKED_POLISHED_ROSE_QUARTZ_BRICKS = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "cracked_polished_rose_quartz_bricks", () -> new AmethystBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> CHISELED_POLISHED_ROSE_QUARTZ = HELPER.createCompatBlock(CompatOPlenty.TWIGS_ID, "chiseled_polished_rose_quartz", () -> new AmethystBlock(BlockBehaviour.Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ = HELPER.createBlock("polished_rose_quartz", () -> new AmethystBlock(Properties.copy(BOPBlocks.ROSE_QUARTZ_BLOCK.get())));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_SLAB = HELPER.createBlock("polished_rose_quartz_slab", () -> new RoseQuartzSlabBlock(Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_STAIRS = HELPER.createBlock("polished_rose_quartz_stairs", () -> new RoseQuartzStairBlock(POLISHED_ROSE_QUARTZ.get().defaultBlockState(), Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_VERTICAL_SLAB = HELPER.createBlock("polished_rose_quartz_vertical_slab", () -> createVerticalSlab(CompatBlocks.POLISHED_ROSE_QUARTZ.get()));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICKS = HELPER.createBlock("polished_rose_quartz_bricks", () -> new AmethystBlock(Properties.copy(BOPBlocks.ROSE_QUARTZ_BLOCK.get())));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_SLAB = HELPER.createBlock("polished_rose_quartz_brick_slab", () -> new RoseQuartzSlabBlock(Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_STAIRS = HELPER.createBlock("polished_rose_quartz_brick_stairs", () -> new RoseQuartzStairBlock(POLISHED_ROSE_QUARTZ_BRICKS.get().defaultBlockState(), Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB = HELPER.createBlock("polished_rose_quartz_brick_vertical_slab", () -> createVerticalSlab(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get()));
+    public static final RegistryObject<Block> POLISHED_ROSE_QUARTZ_BRICK_WALL = HELPER.createBlock("polished_rose_quartz_brick_wall", () -> new RoseQuartzWallBlock(Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())));
+    public static final RegistryObject<Block> CRACKED_POLISHED_ROSE_QUARTZ_BRICKS = HELPER.createBlock("cracked_polished_rose_quartz_bricks", () -> new AmethystBlock(Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get())));
+    public static final RegistryObject<Block> CHISELED_POLISHED_ROSE_QUARTZ = HELPER.createBlock("chiseled_polished_rose_quartz", () -> new AmethystBlock(Properties.copy(CompatBlocks.POLISHED_ROSE_QUARTZ.get())));
 
-    //Misc
-    public static final RegistryObject<Block> FLOWERING_OAK_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "flowering_oak_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.WILLOW.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FLOWERING_OAK_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "flowering_oak_leaf_pile", () -> new LeafPileBlock(CompatProperties.WILLOW.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> FLOWERING_OAK_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "flowering_oak_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> RAINBOW_BIRCH_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "rainbow_birch_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.WILLOW.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> RAINBOW_BIRCH_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "rainbow_birch_leaf_pile", () -> new LeafPileBlock(CompatProperties.WILLOW.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> RAINBOW_BIRCH_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "rainbow_birch_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ORIGIN_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "origin_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.WILLOW.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ORIGIN_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "origin_leaf_pile", () -> new LeafPileBlock(CompatProperties.WILLOW.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ORIGIN_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "origin_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAPLE_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "maple_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.WILLOW.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAPLE_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "maple_leaf_pile", () -> new LeafPileBlock(CompatProperties.WILLOW.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> MAPLE_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "maple_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ORANGE_AUTUMN_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "orange_autumn_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.WILLOW.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ORANGE_AUTUMN_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "orange_autumn_leaf_pile", () -> new LeafPileBlock(CompatProperties.WILLOW.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> ORANGE_AUTUMN_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "orange_autumn_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> YELLOW_AUTUMN_LEAF_CARPET = HELPER.createCompatBlock(CompatOPlenty.QUARK_ID, "yellow_autumn_leaf_carpet", () -> new LeafCarpetBlock(CompatProperties.WILLOW.leafCarpet()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> YELLOW_AUTUMN_LEAF_PILE = HELPER.createCompatBlock(CompatOPlenty.WOODWORKS_ID, "yellow_autumn_leaf_pile", () -> new LeafPileBlock(CompatProperties.WILLOW.leafPile()), CreativeModeTab.TAB_DECORATIONS);
-    public static final RegistryObject<Block> YELLOW_AUTUMN_HEDGE = HELPER.createCompatFuelBlock(CompatOPlenty.QUARK_ID, "yellow_autumn_hedge", () -> new HedgeBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)), 300, CreativeModeTab.TAB_DECORATIONS);
+    public static LeafSet FLOWERING_OAK = createCompatLeafSet("flowering_oak", CompatProperties.WILLOW, () -> BOPBlocks.FLOWERING_OAK_LEAVES.get(), () -> Blocks.OAK_FENCE);
+    public static LeafSet RAINBOW_BIRCH = createCompatLeafSet("rainbow_birch", CompatProperties.WILLOW, () -> BOPBlocks.RAINBOW_BIRCH_LEAVES.get(), () -> Blocks.BIRCH_FENCE);
+    public static LeafSet ORIGIN = createCompatLeafSet("origin", CompatProperties.WILLOW, () -> BOPBlocks.ORIGIN_LEAVES.get(), () -> Blocks.OAK_FENCE);
+    public static LeafSet MAPLE = createCompatLeafSet("maple", CompatProperties.WILLOW, () -> BOPBlocks.MAPLE_LEAVES.get(), () -> Blocks.OAK_FENCE);
+    public static LeafSet ORANGE_AUTUMN = createCompatLeafSet("orange_autumn", CompatProperties.WILLOW, () -> BOPBlocks.ORANGE_AUTUMN_LEAVES.get(), () -> Blocks.DARK_OAK_FENCE);
+    public static LeafSet YELLOW_AUTUMN = createCompatLeafSet("yellow_autumn", CompatProperties.WILLOW, () -> BOPBlocks.YELLOW_AUTUMN_LEAVES.get(), () -> Blocks.BIRCH_FENCE);
+    public static LeafSet SNOW_BLOSSOM = createCompatLeafSet("snowblossom", CompatProperties.SNOW_BLOSSOM, () -> BOPBlocks.SNOWBLOSSOM_LEAVES.get(), () -> Blocks.CHERRY_FENCE);
+
+    public static Stream<WoodSet> woodSets() {
+        return Stream.of(JACARANDA, FIR, REDWOOD, MAHOGANY, WILLOW, MAGIC, DEAD, UMBRAN, PALM, HELLBARK);
+    }
+
+    public static Stream<LeafSet> leaveSets() {
+        return Stream.concat(Stream.of(FLOWERING_OAK, RAINBOW_BIRCH, ORIGIN, MAPLE, ORANGE_AUTUMN, YELLOW_AUTUMN, SNOW_BLOSSOM), woodSets().map(WoodSet::leaveSet));
+    }
+
+    public static LeafSet createCompatLeafSet(String name, PropertyUtil.WoodSetProperties properties, Supplier<? extends Block> leaves, Supplier<? extends Block> fence) {
+        var set = new LeafSet(
+                HELPER.createFuelBlock(name + "_hedge", optional(QUARK_ID, $ -> QuarkSuppliers.HEDGE.apply(fence.get(), leaves.get()), () -> Properties.copy(fence.get())), 300),
+                HELPER.createBlock(name + "_leaf_carpet", optional(QUARK_ID, $ -> QuarkSuppliers.LEAF_CARPET.apply(leaves.get()), () -> Properties.copy(leaves.get()))),
+                HELPER.createBlock(name + "_leaf_pile", optional(BLUEPRINT_ID, it -> new LeafPileBlock(it), properties::leafPile)),
+                fence
+        );
+
+        populateCreativeTabs(set, leaves);
+
+        return set;
+    }
+
+    private static Block createVerticalSlab(Block slab) {
+        var properties = Properties.copy(slab);
+        if (ModList.get().isLoaded(QUARK_ID)) {
+            return QuarkSuppliers.V_SLAB.apply(properties, slab);
+        }
+
+        if (ModList.get().isLoaded(VSLAB_ID)) {
+            return VSlabCompatSuppliers.V_SLAB.apply(properties, slab);
+        }
+
+        return new Block(properties);
+    }
+
+    private static Supplier<? extends Block> optional(String modid, Function<Properties, Block> ifPresent, Supplier<Properties> properties) {
+        return optional(modid, ifPresent, Block::new, properties);
+    }
+
+    private static <B extends Block> Supplier<? extends B> optional(String modid, Function<Properties, ? extends B> ifPresent, Function<Properties, ? extends B> notPresent, Supplier<Properties> properties) {
+        if (ModList.get().isLoaded(modid)) {
+            return () -> ifPresent.apply(properties.get());
+        } else {
+            return () -> notPresent.apply(properties.get());
+        }
+    }
+
+    public static WoodSet createCompatWoodSet(String name, PropertyUtil.WoodSetProperties properties, Supplier<? extends Block> planks, Supplier<? extends Block> log, Supplier<? extends Block> strippedLog, Supplier<? extends Block> leaves, Supplier<? extends Block> fence, Supplier<? extends Block> slab) {
+        var chests = HELPER.createChestBlocks(name, properties.woodColor());
+
+        var set = new WoodSet(
+                HELPER.createFuelBlock(name + "_vertical_slab", () -> createVerticalSlab(planks.get()), 150),
+                HELPER.createFuelBlock(name + "_bookshelf", () -> new Block(properties.bookshelf()), 300),
+                HELPER.createFuelBlock(name + "_ladder", () -> new LadderBlock(properties.ladder()), 300),
+                HELPER.createFuelBlock("stripped_" + name + "_post", optional(QUARK_ID, $ -> QuarkSuppliers.POST.apply(strippedLog.get()), () -> Properties.copy(log.get()).mapColor(properties.woodColor())), 300),
+                HELPER.createFuelBlock(name + "_post", optional(QUARK_ID, $ -> QuarkSuppliers.POST.apply(log.get()), () -> Properties.copy(log.get()).mapColor(properties.woodColor())), 300),
+                createCompatLeafSet(name, properties, leaves, fence),
+                chests.getFirst(),
+                chests.getSecond(),
+                HELPER.createBlock(name + "_beehive", optional(BLUEPRINT_ID, it -> new BlueprintBeehiveBlock(it), () -> Properties.copy(Blocks.BEEHIVE).mapColor(properties.woodColor()))),
+                HELPER.createFuelBlock(name + "_cabinet", optional(CompatOPlenty.FARMERS_ID, $ -> CabinetSuppliers.CABINET.get(), () -> Properties.copy(Blocks.BARREL).mapColor(properties.woodColor())), 300),
+                HELPER.createBlock(name + "_table", () -> new CompatTableBlock(Properties.copy(planks.get()).instabreak())),
+                HELPER.createBlock("vertical_" + name + "_planks", () -> new Block(Properties.copy(planks.get()))),
+                HELPER.createFuelBlock(name + "_boards", () -> new RotatedPillarBlock(Properties.copy(planks.get())), 300)
+        );
+
+        populateCreativeTabs(set, planks, slab);
+
+        return set;
+    }
+
+    public static WoodSet createCompatUnburnableWoodSet(String name, PropertyUtil.WoodSetProperties properties, Supplier<? extends Block> planks, Supplier<? extends Block> log, Supplier<? extends Block> strippedLog, Supplier<? extends Block> leaves, Supplier<? extends Block> fence, Supplier<? extends Block> slab) {
+        var chests = HELPER.createUnburnableChestBlocks(name, properties.woodColor());
+
+        var set = new WoodSet(
+                HELPER.createBlock(name + "_vertical_slab", () -> createVerticalSlab(planks.get())),
+                HELPER.createBlock(name + "_bookshelf", () -> new Block(properties.bookshelf())),
+                HELPER.createBlock(name + "_ladder", () -> new LadderBlock(properties.ladder())),
+                HELPER.createBlock("stripped_" + name + "_post", optional(QUARK_ID, $ -> QuarkSuppliers.POST.apply(strippedLog.get()), () -> Properties.copy(log.get()).mapColor(properties.woodColor()))),
+                HELPER.createBlock(name + "_post", optional(QUARK_ID, $ -> QuarkSuppliers.POST.apply(log.get()), () -> Properties.copy(log.get()).mapColor(properties.woodColor()))),
+                createCompatLeafSet(name, properties, leaves, fence),
+                chests.getFirst(),
+                chests.getSecond(),
+                HELPER.createBlock(name + "_beehive", optional(BLUEPRINT_ID, it -> new BlueprintBeehiveBlock(it), () -> Properties.copy(Blocks.BEEHIVE).mapColor(properties.woodColor()))),
+                HELPER.createBlock(name + "_cabinet", optional(CompatOPlenty.FARMERS_ID, $ -> CabinetSuppliers.CABINET.get(), () -> Properties.copy(Blocks.BARREL).mapColor(properties.woodColor()))),
+                HELPER.createBlock(name + "_table", () -> new CompatTableBlock(Properties.copy(planks.get()).instabreak())),
+                HELPER.createBlock("vertical_" + name + "_planks", () -> new Block(Properties.copy(planks.get()))),
+                HELPER.createBlock(name + "_boards", () -> new RotatedPillarBlock(Properties.copy(planks.get())))
+        );
+
+        populateCreativeTabs(set, planks, slab);
+
+        return set;
+    }
+
+    public static void populateCreativeTabs(WoodSet set, Supplier<? extends ItemLike> planks, Supplier<? extends ItemLike> slab) {
+        TAB_POPULATOR
+                .addItemsAfter(of(slab).and(V_SLAB_PREDICATE), set.verticalSlab())
+                .addItemsAfter(of(Items.BOOKSHELF).and(anyModLoaded(WOODWORKS_ID, QUARK_ID)), set.bookshelf())
+                .addItemsAfter(of(Items.LADDER).and(anyModLoaded(WOODWORKS_ID, QUARK_ID)), set.ladder())
+                .addItemsAfter(of(set.verticalSlab()).and(anyModLoaded(QUARK_ID)), set.post())
+                .addItemsAfter(of(set.post()).and(anyModLoaded(QUARK_ID)), set.strippedPost())
+                .addItemsAfter(of(Blocks.CHEST).and(anyModLoaded(WOODWORKS_ID, QUARK_ID)), set.chest())
+                .addItemsAfter(of(Blocks.TRAPPED_CHEST).and(anyModLoaded(WOODWORKS_ID, QUARK_ID)), set.trappedChest())
+                .addItemsAfter(of(Blocks.BEEHIVE).and(anyModLoaded(WOODWORKS_ID, QUARK_ID)), set.beehive())
+                .addItemsAfter(of(planks).and(anyModLoaded(QUARK_ID)), set.verticalPlanks())
+                .addItemsAfter(of(planks).and(anyModLoaded(TWIGS_ID)), set.boards());
+
+        if (ModList.get().isLoaded(FARMERS_ID)) {
+            TAB_POPULATOR.addItemsAfter(CabinetSuppliers.CABINET_PREDICATE, set.cabinet());
+        }
+
+        if (ModList.get().isLoaded(TWIGS_ID)) {
+            TAB_POPULATOR.addItemsAfter(TwigsSuppliers.TABLE_PREDICATE, set.table());
+        }
+    }
+
+    public static void populateCreativeTabs(LeafSet set, Supplier<? extends ItemLike> leaves) {
+        TAB_POPULATOR
+                .addItemsAfter(of(leaves).and(anyModLoaded(QUARK_ID)), set.hedge())
+                .addItemsAfter(of(leaves).and(anyModLoaded(QUARK_ID)), set.leafCarpet())
+                .addItemsAfter(of(leaves).and(anyModLoaded(WOODWORKS_ID)), set.leafPile());
+    }
+
+    static {
+        CreativeModeTabContentsPopulator.mod(CompatOPlenty.MOD_ID)
+                .addItemsAfter(of(() -> BOPBlocks.WHITE_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), WHITE_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.SMOOTH_WHITE_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), SMOOTH_WHITE_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.CUT_WHITE_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), CUT_WHITE_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.CUT_WHITE_SANDSTONE_SLAB.get()).and(anyModLoaded(QUARK_ID)),
+                        WHITE_SANDSTONE_BRICKS,
+                        WHITE_SANDSTONE_BRICK_STAIRS,
+                        WHITE_SANDSTONE_BRICK_SLAB,
+                        WHITE_SANDSTONE_BRICK_VERTICAL_SLAB,
+                        WHITE_SANDSTONE_BRICK_WALL)
+                .addItemsAfter(of(() -> BOPBlocks.BLACK_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), BLACK_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.SMOOTH_BLACK_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), SMOOTH_BLACK_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.CUT_BLACK_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), CUT_BLACK_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.CUT_BLACK_SANDSTONE_SLAB.get()).and(anyModLoaded(QUARK_ID)),
+                        BLACK_SANDSTONE_BRICKS,
+                        BLACK_SANDSTONE_BRICK_STAIRS,
+                        BLACK_SANDSTONE_BRICK_SLAB,
+                        BLACK_SANDSTONE_BRICK_VERTICAL_SLAB,
+                        BLACK_SANDSTONE_BRICK_WALL)
+                .addItemsAfter(of(() -> BOPBlocks.ORANGE_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), ORANGE_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.SMOOTH_ORANGE_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), SMOOTH_ORANGE_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.CUT_ORANGE_SANDSTONE_SLAB.get()).and(V_SLAB_PREDICATE), CUT_ORANGE_SANDSTONE_VERTICAL_SLAB)
+                .addItemsAfter(of(() -> BOPBlocks.CUT_ORANGE_SANDSTONE_SLAB.get()).and(anyModLoaded(QUARK_ID)),
+                        ORANGE_SANDSTONE_BRICKS,
+                        ORANGE_SANDSTONE_BRICK_STAIRS,
+                        ORANGE_SANDSTONE_BRICK_SLAB,
+                        ORANGE_SANDSTONE_BRICK_VERTICAL_SLAB,
+                        ORANGE_SANDSTONE_BRICK_WALL)
+                .addItemsAfter(of(Blocks.PURPUR_SLAB).and(anyModLoaded(QUARK_ID)),
+                        GALANOS_BLOCK,
+                        GALANOS_PILLAR,
+                        GALANOS_SLAB,
+                        GALANOS_VERTICAL_SLAB,
+                        GALANOS_STAIRS
+                )
+                .addItemsAfter(of(() -> BOPBlocks.ROSE_QUARTZ_BLOCK.get()).and(anyModLoaded(TWIGS_ID)),
+                        POLISHED_ROSE_QUARTZ,
+                        POLISHED_ROSE_QUARTZ_SLAB,
+                        POLISHED_ROSE_QUARTZ_VERTICAL_SLAB,
+                        POLISHED_ROSE_QUARTZ_STAIRS,
+                        POLISHED_ROSE_QUARTZ_BRICKS,
+                        POLISHED_ROSE_QUARTZ_BRICK_SLAB,
+                        POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB,
+                        POLISHED_ROSE_QUARTZ_BRICK_STAIRS,
+                        CRACKED_POLISHED_ROSE_QUARTZ_BRICKS,
+                        CHISELED_POLISHED_ROSE_QUARTZ
+                )
+        ;
+    }
+
 }

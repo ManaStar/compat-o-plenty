@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "compatoplenty:block/redwood_beehive_end",
+    "front": "compatoplenty:block/redwood_beehive_front",
+    "side": "compatoplenty:block/redwood_beehive_side",
+    "top": "compatoplenty:block/redwood_beehive_end"
+  }
+}

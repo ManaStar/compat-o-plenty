@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "biomesoplenty:dead_slab"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "compatoplenty:dead_cabinet"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

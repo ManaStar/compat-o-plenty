@@ -4,12 +4,22 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "vertical_slabs"
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "v_slab_compat"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "quark"
+            }
+          ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "building",
         "key": {
           "S": {
             "item": "biomesoplenty:redwood_slab"
@@ -23,7 +33,8 @@
         "result": {
           "count": 3,
           "item": "compatoplenty:redwood_vertical_slab"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

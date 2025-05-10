@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "variant_chests"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "biomesoplenty:dead_planks"
@@ -22,7 +23,8 @@
         ],
         "result": {
           "item": "compatoplenty:dead_chest"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

@@ -4,7 +4,7 @@
     {
       "conditions": [
         {
-          "type": "blueprint:and",
+          "type": "forge:and",
           "values": [
             {
               "type": "forge:mod_loaded",
@@ -19,6 +19,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "minecraft:stick"
@@ -35,7 +36,8 @@
         "result": {
           "count": 4,
           "item": "compatoplenty:fir_ladder"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

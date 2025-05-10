@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "variant_ladders"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "minecraft:stick"
@@ -26,7 +27,8 @@
         "result": {
           "count": 4,
           "item": "compatoplenty:willow_ladder"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

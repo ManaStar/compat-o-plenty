@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "variant_bookshelves"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "#": {
             "item": "biomesoplenty:willow_planks"
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "compatoplenty:willow_bookshelf"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

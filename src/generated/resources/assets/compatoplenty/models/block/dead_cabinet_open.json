@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "compatoplenty:block/dead_cabinet_front_open",
+    "side": "compatoplenty:block/dead_cabinet_side",
+    "top": "compatoplenty:block/dead_cabinet_top"
+  }
+}

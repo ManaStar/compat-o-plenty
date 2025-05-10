@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "compatoplenty:block/jacaranda_beehive_end",
+    "front": "compatoplenty:block/jacaranda_beehive_front_honey",
+    "side": "compatoplenty:block/jacaranda_beehive_side",
+    "top": "compatoplenty:block/jacaranda_beehive_end"
+  }
+}

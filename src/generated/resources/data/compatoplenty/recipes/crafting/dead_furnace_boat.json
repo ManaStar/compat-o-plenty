@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "group": "furnace_boat",
         "key": {
           "B": {
@@ -25,7 +26,8 @@
         ],
         "result": {
           "item": "compatoplenty:dead_furnace_boat"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

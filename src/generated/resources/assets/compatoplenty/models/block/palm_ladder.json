@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures": {
+    "particle": "compatoplenty:block/palm_ladder",
+    "texture": "compatoplenty:block/palm_ladder"
+  }
+}

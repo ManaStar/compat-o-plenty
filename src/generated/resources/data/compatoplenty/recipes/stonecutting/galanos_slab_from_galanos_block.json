@@ -4,8 +4,8 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "midori"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {

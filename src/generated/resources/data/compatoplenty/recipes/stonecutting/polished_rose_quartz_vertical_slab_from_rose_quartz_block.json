@@ -8,8 +8,8 @@
           "modid": "twigs"
         },
         {
-          "type": "blueprint:quark_flag",
-          "flag": "vertical_slabs"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {

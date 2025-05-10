@@ -4,12 +4,13 @@
     {
       "conditions": [
         {
-          "type": "blueprint:quark_flag",
-          "flag": "sandstone_bricks"
+          "type": "forge:mod_loaded",
+          "modid": "quark"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "building",
         "key": {
           "#": {
             "item": "compatoplenty:orange_sandstone_bricks"
@@ -22,7 +23,8 @@
         "result": {
           "count": 6,
           "item": "compatoplenty:orange_sandstone_brick_wall"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "building",
         "key": {
           "#": {
             "item": "compatoplenty:polished_rose_quartz_slab"
@@ -21,7 +22,8 @@
         ],
         "result": {
           "item": "compatoplenty:chiseled_polished_rose_quartz"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

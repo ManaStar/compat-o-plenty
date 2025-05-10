@@ -1,5 +1,5 @@
 {
-  "parent": "blueprint:block/vertical_slab",
+  "parent": "quark:block/vertical_slab",
   "textures": {
     "side": "compatoplenty:block/black_sandstone_bricks",
     "top": "compatoplenty:block/black_sandstone_bricks",
