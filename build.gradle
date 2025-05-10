@@ -77,7 +77,7 @@ repositories {
         }
     }
     maven {
-        url "https://maven.jaackson.me"
+        url "https://maven.teamabnormals.com"
     }
 }
 
