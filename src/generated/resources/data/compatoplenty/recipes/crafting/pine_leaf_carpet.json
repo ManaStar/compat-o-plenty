@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "biomesoplenty:pine_leaves"
+          }
+        },
+        "pattern": [
+          "##"
+        ],
+        "result": {
+          "count": 3,
+          "item": "compatoplenty:pine_leaf_carpet"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

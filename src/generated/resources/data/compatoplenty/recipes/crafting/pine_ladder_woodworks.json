@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "wooden_ladders"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "minecraft:stick"
+          },
+          "P": {
+            "item": "biomesoplenty:pine_planks"
+          }
+        },
+        "pattern": [
+          "# #",
+          "#P#",
+          "# #"
+        ],
+        "result": {
+          "count": 4,
+          "item": "compatoplenty:pine_ladder"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

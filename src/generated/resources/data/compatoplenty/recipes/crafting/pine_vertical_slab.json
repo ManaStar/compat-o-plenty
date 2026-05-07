@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:or",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "v_slab_compat"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "quark"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "S": {
+            "item": "biomesoplenty:pine_slab"
+          }
+        },
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
+        "result": {
+          "count": 3,
+          "item": "compatoplenty:pine_vertical_slab"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

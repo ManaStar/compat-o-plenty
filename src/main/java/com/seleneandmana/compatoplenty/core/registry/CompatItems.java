@@ -36,6 +36,7 @@ public class CompatItems {
     public static final RegistryObject<Item> UMBRAN_FURNACE_BOAT = HELPER.createItem("umbran_furnace_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.UMBRAN_FURNACE_BOAT : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PALM_FURNACE_BOAT = HELPER.createItem("palm_furnace_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.PALM_FURNACE_BOAT : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HELLBARK_FURNACE_BOAT = HELPER.createItem("hellbark_furnace_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.HELLBARK_FURNACE_BOAT : () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EMPYREAL_FURNACE_BOAT = HELPER.createItem("empyreal_furnace_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.EMPYREAL_FURNACE_BOAT : () -> new Item(new Item.Properties()));
 
     //Large Boats
     public static final RegistryObject<Item> LARGE_JACARANDA_BOAT = HELPER.createItem("large_jacaranda_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.LARGE_JACARANDA_BOAT : () -> new Item(new Item.Properties()));
@@ -48,6 +49,7 @@ public class CompatItems {
     public static final RegistryObject<Item> LARGE_UMBRAN_BOAT = HELPER.createItem("large_umbran_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.LARGE_UMBRAN_BOAT : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LARGE_PALM_BOAT = HELPER.createItem("large_palm_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.LARGE_PALM_BOAT : () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LARGE_HELLBARK_BOAT = HELPER.createItem("large_hellbark_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.LARGE_HELLBARK_BOAT : () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LARGE_EMPYREAL_BOAT = HELPER.createItem("large_empyreal_boat", ItemSubRegistryHelper.areModsLoaded(BOATLOAD_ID) ? CompatBoatTypes.LARGE_EMPYREAL_BOAT : () -> new Item(new Item.Properties()));
 
     public static Predicate<ItemStack> of(Supplier<? extends ItemLike> item) {
         return it -> it.is(item.get().asItem());

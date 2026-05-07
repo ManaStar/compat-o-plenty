@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "wooden_boards"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "S": {
+            "item": "biomesoplenty:maple_slab"
+          }
+        },
+        "pattern": [
+          "S",
+          "S"
+        ],
+        "result": {
+          "item": "compatoplenty:maple_boards"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

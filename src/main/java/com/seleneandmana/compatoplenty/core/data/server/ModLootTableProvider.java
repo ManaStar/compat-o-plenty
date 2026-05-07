@@ -80,8 +80,6 @@ public class ModLootTableProvider extends LootTableProvider {
             this.add(CompatBlocks.ORANGE_SANDSTONE_BRICK_VERTICAL_SLAB.get(), this::createSlabItemTable);
             this.add(CompatBlocks.BLACK_SANDSTONE_BRICK_VERTICAL_SLAB.get(), this::createSlabItemTable);
             this.add(CompatBlocks.GALANOS_VERTICAL_SLAB.get(), this::createSlabItemTable);
-            this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(), this::createSlabItemTable);
-            this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), this::createSlabItemTable);
 
             //Block Sets
             CompatBlocks.leaveSets().forEach(this::add);
@@ -109,14 +107,6 @@ public class ModLootTableProvider extends LootTableProvider {
 
             //Polished Rose Quartz Blocks
             this.dropSelf(CompatBlocks.POLISHED_ROSE_QUARTZ.get());
-            this.dropSelf(CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get());
-            this.dropSelf(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get());
-            this.dropSelf(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_STAIRS.get());
-            this.dropSelf(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get());
-            this.dropSelf(CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get());
-            this.dropSelf(CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get());
-            this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), this::createSlabItemTable);
-            this.add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(), this::createSlabItemTable);
         }
 
         @Override

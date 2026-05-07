@@ -12,9 +12,11 @@ public class ModLanguageProvider extends LanguageProvider {
     }
 
     private void addTranslations(CompatBlocks.LeafSet set, String name) {
-        add(set.hedge().get(), name + " Leaf Hedge");
-        add(set.leafCarpet().get(), name + " Leaf Carpet");
-        add(set.leafPile().get(), "Pile of " + name + " Leaves");
+        if (set != null) {
+            add(set.hedge().get(), name + " Leaf Hedge");
+            add(set.leafCarpet().get(), name + " Leaf Carpet");
+            add(set.leafPile().get(), "Pile of " + name + " Leaves");
+        }
     }
 
     private void addTranslations(CompatBlocks.WoodSet set, String name) {
@@ -47,13 +49,16 @@ public class ModLanguageProvider extends LanguageProvider {
         addTranslations(CompatBlocks.UMBRAN, "Umbran");
         addTranslations(CompatBlocks.PALM, "Palm");
         addTranslations(CompatBlocks.HELLBARK, "Hellbark");
+        addTranslations(CompatBlocks.EMPYREAL, "Empyreal");
+        addTranslations(CompatBlocks.PINE, "Pine");
+        addTranslations(CompatBlocks.MAPLE, "Maple");
 
         addTranslations(CompatBlocks.FLOWERING_OAK, "Flowering Oak");
         addTranslations(CompatBlocks.RAINBOW_BIRCH, "Rainbow Birch");
         addTranslations(CompatBlocks.ORIGIN, "Origin");
-        addTranslations(CompatBlocks.MAPLE, "Maple");
-        addTranslations(CompatBlocks.ORANGE_AUTUMN, "Orange Autumn");
-        addTranslations(CompatBlocks.YELLOW_AUTUMN, "Yellow Autumn");
+        addTranslations(CompatBlocks.RED_MAPLE, "Red Maple");
+        addTranslations(CompatBlocks.ORANGE_MAPLE, "Orange Maple");
+        addTranslations(CompatBlocks.YELLOW_MAPLE, "Yellow Maple");
         addTranslations(CompatBlocks.SNOW_BLOSSOM, "Snowblossom");
 
         add(CompatBlocks.WHITE_SANDSTONE_VERTICAL_SLAB.get(), "White Sandstone Vertical Slab");
@@ -69,8 +74,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add(CompatBlocks.SMOOTH_BLACK_SANDSTONE_VERTICAL_SLAB.get(), "Smooth Black Sandstone Vertical Slab");
         add(CompatBlocks.BLACK_SANDSTONE_BRICK_VERTICAL_SLAB.get(), "Black Sandstone Brick Vertical Slab");
         add(CompatBlocks.GALANOS_VERTICAL_SLAB.get(), "Galanos Vertical Slab");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(), "Polished Rose Quartz Vertical Slab");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(), "Polished Rose Quartz Brick Vertical Slab");
 
         //Sandstone Bricks
         add(CompatBlocks.WHITE_SANDSTONE_BRICKS.get(), "White Sandstone Bricks");
@@ -94,14 +97,6 @@ public class ModLanguageProvider extends LanguageProvider {
 
         //Polished Rose Quartz
         add(CompatBlocks.POLISHED_ROSE_QUARTZ.get(), "Polished Rose Quartz");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(), "Polished Rose Quartz Slab");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(), "Polished Rose Quartz Stairs");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(), "Polished Rose Quartz Bricks");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(), "Polished Rose Quartz Brick Slab");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_STAIRS.get(), "Polished Rose Quartz Brick Stairs");
-        add(CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get(), "Polished Rose Quartz Brick Wall");
-        add(CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get(), "Cracked Polished Rose Quartz Bricks");
-        add(CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get(), "Chiseled Polished Rose Quartz");
 
         //Furnace Boats
         add(CompatItems.JACARANDA_FURNACE_BOAT.get(), "Jacaranda Boat with Furnace");
@@ -114,6 +109,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(CompatItems.UMBRAN_FURNACE_BOAT.get(), "Umbran Boat with Furnace");
         add(CompatItems.PALM_FURNACE_BOAT.get(), "Palm Boat with Furnace");
         add(CompatItems.HELLBARK_FURNACE_BOAT.get(), "Hellbark Boat with Furnace");
+        add(CompatItems.EMPYREAL_FURNACE_BOAT.get(), "Empyreal Boat with Furnace");
 
         //Large Boats
         add(CompatItems.LARGE_JACARANDA_BOAT.get(), "Large Jacaranda Boat");
@@ -126,6 +122,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(CompatItems.LARGE_UMBRAN_BOAT.get(), "Large Umbran Boat");
         add(CompatItems.LARGE_PALM_BOAT.get(), "Large Palm Boat");
         add(CompatItems.LARGE_HELLBARK_BOAT.get(), "Large Hellbark Boat");
+        add(CompatItems.LARGE_EMPYREAL_BOAT.get(), "Large Empyreal Boat");
 
         //Misc
         add(CompatItems.GLOWING_MOSS_PASTE.get(), "Glowing Moss Paste");

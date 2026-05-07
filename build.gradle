@@ -51,22 +51,23 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.1.3'
-    implementation fg.deobf("com.teamabnormals:blueprint:1.20.1-7.1.0")
-    implementation fg.deobf("curse.maven:bop-220318:4764804")
-    implementation fg.deobf("curse.maven:farmersdelight-398521:5051242")
+    minecraft 'net.minecraftforge:forge:1.20.1-47.3.0'
+    implementation fg.deobf("com.teamabnormals:blueprint:1.20.1-7.1.3")
+    implementation fg.deobf("curse.maven:bop-220318:6364065")
+    implementation fg.deobf("curse.maven:farmersdelight-398521:6154802")
     implementation fg.deobf("com.teamabnormals:boatload:1.20.1-5.0.1")
-    implementation fg.deobf("curse.maven:woodworks-543610:5292418")
-    implementation fg.deobf("curse.maven:clayworks-592162:5302012")
-    compileOnly fg.deobf("curse.maven:vertical-slabs-compat-724387:5022329")
-    implementation fg.deobf("curse.maven:selene-499980:5478857")
-    implementation fg.deobf("curse.maven:quark-243121:5418252")
-    implementation fg.deobf("curse.maven:zeta-968868:5418213")
+    implementation fg.deobf("curse.maven:woodworks-543610:6151448")
+    implementation fg.deobf("curse.maven:clayworks-592162:6321200")
+    compileOnly fg.deobf("curse.maven:vertical-slabs-compat-724387:6089569")
+    implementation fg.deobf("curse.maven:selene-499980:6507197")
+    implementation fg.deobf("curse.maven:quark-243121:6427817")
+    implementation fg.deobf("curse.maven:zeta-968868:6432578")
     implementation fg.deobf("curse.maven:twigs-496913:4998195")
 
-    runtimeOnly fg.deobf("curse.maven:terrablender-563928:5378180")
+    runtimeOnly fg.deobf("curse.maven:terrablender-563928:6290448")
+    runtimeOnly fg.deobf("curse.maven:glitchcore-955399:5787839")
 
-    runtimeOnly fg.deobf("curse.maven:jei-238222:5419575")
+    runtimeOnly fg.deobf("curse.maven:jei-238222:6075247")
 }
 
 repositories {

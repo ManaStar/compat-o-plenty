@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "building",
+        "ingredients": [
+          {
+            "item": "compatoplenty:vertical_empyreal_planks"
+          }
+        ],
+        "result": {
+          "item": "biomesoplenty:empyreal_planks"
+        }
+      }
+    }
+  ]
+}

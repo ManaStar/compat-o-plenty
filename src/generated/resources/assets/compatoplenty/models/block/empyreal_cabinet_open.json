@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "compatoplenty:block/empyreal_cabinet_front_open",
+    "side": "compatoplenty:block/empyreal_cabinet_side",
+    "top": "compatoplenty:block/empyreal_cabinet_top"
+  }
+}

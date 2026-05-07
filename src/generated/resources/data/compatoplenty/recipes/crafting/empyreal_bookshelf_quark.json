@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "biomesoplenty:empyreal_planks"
+          },
+          "B": {
+            "item": "minecraft:book"
+          }
+        },
+        "pattern": [
+          "###",
+          "BBB",
+          "###"
+        ],
+        "result": {
+          "item": "compatoplenty:empyreal_bookshelf"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

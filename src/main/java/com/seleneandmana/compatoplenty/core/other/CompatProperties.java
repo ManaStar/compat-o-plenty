@@ -16,4 +16,7 @@ public class CompatProperties {
     public static final PropertyUtil.WoodSetProperties PALM = PropertyUtil.WoodSetProperties.builder(MapColor.TERRACOTTA_YELLOW).build();
     public static final PropertyUtil.WoodSetProperties HELLBARK = PropertyUtil.WoodSetProperties.builder(MapColor.TERRACOTTA_GRAY).build();
     public static final PropertyUtil.WoodSetProperties SNOW_BLOSSOM = PropertyUtil.WoodSetProperties.builder(MapColor.SNOW).build();
+    public static final PropertyUtil.WoodSetProperties EMPYREAL = PropertyUtil.WoodSetProperties.builder(MapColor.COLOR_PURPLE).build();
+    public static final PropertyUtil.WoodSetProperties PINE = PropertyUtil.WoodSetProperties.builder(MapColor.TERRACOTTA_LIGHT_GREEN).build();
+    public static final PropertyUtil.WoodSetProperties MAPLE = PropertyUtil.WoodSetProperties.builder(MapColor.DIRT).build();
 }

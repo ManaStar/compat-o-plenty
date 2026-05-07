@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "boatload"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "furnace_boat",
+        "key": {
+          "B": {
+            "item": "biomesoplenty:empyreal_boat"
+          },
+          "F": {
+            "item": "minecraft:furnace"
+          }
+        },
+        "pattern": [
+          "F",
+          "B"
+        ],
+        "result": {
+          "item": "compatoplenty:empyreal_furnace_boat"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

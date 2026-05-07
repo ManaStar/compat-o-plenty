@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "compatoplenty:block/pine_cabinet_front_open",
+    "side": "compatoplenty:block/pine_cabinet_side",
+    "top": "compatoplenty:block/pine_cabinet_top"
+  }
+}

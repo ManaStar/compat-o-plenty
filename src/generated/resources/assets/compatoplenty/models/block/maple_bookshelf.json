@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "biomesoplenty:block/maple_planks",
+    "side": "compatoplenty:block/maple_bookshelf"
+  }
+}

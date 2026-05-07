@@ -6,12 +6,12 @@
     "compatoplenty:rainbow_birch_leaf_carpet",
     "compatoplenty:origin_leaf_pile",
     "compatoplenty:origin_leaf_carpet",
-    "compatoplenty:maple_leaf_pile",
-    "compatoplenty:maple_leaf_carpet",
-    "compatoplenty:orange_autumn_leaf_pile",
-    "compatoplenty:orange_autumn_leaf_carpet",
-    "compatoplenty:yellow_autumn_leaf_pile",
-    "compatoplenty:yellow_autumn_leaf_carpet",
+    "compatoplenty:red_maple_leaf_pile",
+    "compatoplenty:red_maple_leaf_carpet",
+    "compatoplenty:orange_maple_leaf_pile",
+    "compatoplenty:orange_maple_leaf_carpet",
+    "compatoplenty:yellow_maple_leaf_pile",
+    "compatoplenty:yellow_maple_leaf_carpet",
     "compatoplenty:snowblossom_leaf_pile",
     "compatoplenty:snowblossom_leaf_carpet",
     "compatoplenty:jacaranda_leaf_pile",
@@ -33,6 +33,10 @@
     "compatoplenty:palm_leaf_pile",
     "compatoplenty:palm_leaf_carpet",
     "compatoplenty:hellbark_leaf_pile",
-    "compatoplenty:hellbark_leaf_carpet"
+    "compatoplenty:hellbark_leaf_carpet",
+    "compatoplenty:empyreal_leaf_pile",
+    "compatoplenty:empyreal_leaf_carpet",
+    "compatoplenty:pine_leaf_pile",
+    "compatoplenty:pine_leaf_carpet"
   ]
 }

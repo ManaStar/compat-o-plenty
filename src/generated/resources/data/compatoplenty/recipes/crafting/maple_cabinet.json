@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "biomesoplenty:maple_slab"
+          },
+          "T": {
+            "item": "biomesoplenty:maple_trapdoor"
+          }
+        },
+        "pattern": [
+          "###",
+          "T T",
+          "###"
+        ],
+        "result": {
+          "item": "compatoplenty:maple_cabinet"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

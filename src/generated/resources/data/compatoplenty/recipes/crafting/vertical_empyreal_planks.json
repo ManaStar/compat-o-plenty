@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "S": {
+            "item": "biomesoplenty:empyreal_planks"
+          }
+        },
+        "pattern": [
+          "S",
+          "S",
+          "S"
+        ],
+        "result": {
+          "count": 3,
+          "item": "compatoplenty:vertical_empyreal_planks"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

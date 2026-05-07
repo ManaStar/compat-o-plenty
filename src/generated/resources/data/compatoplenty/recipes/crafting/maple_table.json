@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "twigs"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "item": "biomesoplenty:maple_slab"
+          },
+          "I": {
+            "item": "biomesoplenty:maple_fence"
+          }
+        },
+        "pattern": [
+          "###",
+          "I I",
+          "I I"
+        ],
+        "result": {
+          "item": "compatoplenty:maple_table"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

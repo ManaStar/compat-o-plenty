@@ -1,6 +1,6 @@
 package com.seleneandmana.compatoplenty.client;
 
-import biomesoplenty.client.handler.ColorHandler;
+import biomesoplenty.init.ModClient;
 import com.seleneandmana.compatoplenty.core.CompatOPlenty;
 import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
 import net.minecraft.client.color.block.BlockColors;
@@ -40,11 +40,12 @@ public class BlockColoring {
                         leafItems(CompatBlocks.FLOWERING_OAK),
                         leafItems(CompatBlocks.MAHOGANY.leaveSet()),
                         leafItems(CompatBlocks.WILLOW.leaveSet()),
-                        leafItems(CompatBlocks.PALM.leaveSet())
+                        leafItems(CompatBlocks.PALM.leaveSet()),
+                        leafItems(CompatBlocks.PINE.leaveSet())
                 ).flatMap(Function.identity()).toArray(Block[]::new)
         );
         //Rainbow
-        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? ColorHandler.getRainbowBirchColor(world, pos) : -1, leafItems(CompatBlocks.RAINBOW_BIRCH).toArray(Block[]::new));
+        blockColors.register((state, world, pos, tint) -> world != null && pos != null ? ModClient.getRainbowBirchColor(world, pos) : -1, leafItems(CompatBlocks.RAINBOW_BIRCH).toArray(Block[]::new));
     }
 
     @SubscribeEvent

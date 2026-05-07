@@ -26,12 +26,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     }
 
     private void add(CompatBlocks.LeafSet set) {
-        var hedgeTag = BlockTags.create(new ResourceLocation(CompatOPlenty.QUARK_ID, "hedges"));
+            var hedgeTag = BlockTags.create(new ResourceLocation(CompatOPlenty.QUARK_ID, "hedges"));
+            CompatOPlenty.LOGGER.info(set.leaves().get().toString());
 
-        tag(BlockTags.MINEABLE_WITH_AXE).add(set.hedge().get());
-        tag(BlockTags.MINEABLE_WITH_HOE).add(set.leafPile().get(), set.leafCarpet().get());
-        tag(BlueprintBlockTags.LEAF_PILES).add(set.leafPile().get());
-        tag(hedgeTag).add(set.hedge().get());
+            tag(BlockTags.MINEABLE_WITH_AXE).add(set.hedge().get());
+            tag(BlockTags.MINEABLE_WITH_HOE).add(set.leafPile().get(), set.leafCarpet().get());
+            tag(BlueprintBlockTags.LEAF_PILES).add(set.leafPile().get());
+            tag(hedgeTag).add(set.hedge().get());
     }
 
     private void add(CompatBlocks.WoodSet set) {
@@ -96,62 +97,37 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 CompatBlocks.GALANOS_SLAB.get(),
                 CompatBlocks.GALANOS_VERTICAL_SLAB.get(),
 
-                CompatBlocks.POLISHED_ROSE_QUARTZ.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(),
-                CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_STAIRS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get(),
-                CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get()
+                CompatBlocks.POLISHED_ROSE_QUARTZ.get()
         );
 
         tag(BlockTags.CRYSTAL_SOUND_BLOCKS).add(
-                CompatBlocks.POLISHED_ROSE_QUARTZ.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_VERTICAL_SLAB.get(),
-                CompatBlocks.CHISELED_POLISHED_ROSE_QUARTZ.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICKS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_STAIRS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_VERTICAL_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get(),
-                CompatBlocks.CRACKED_POLISHED_ROSE_QUARTZ_BRICKS.get()
+                CompatBlocks.POLISHED_ROSE_QUARTZ.get()
         );
 
         tag(BlockTags.SLABS).add(
                 CompatBlocks.BLACK_SANDSTONE_BRICK_SLAB.get(),
                 CompatBlocks.ORANGE_SANDSTONE_BRICK_SLAB.get(),
                 CompatBlocks.WHITE_SANDSTONE_BRICK_SLAB.get(),
-                CompatBlocks.GALANOS_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_SLAB.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_SLAB.get()
+                CompatBlocks.GALANOS_SLAB.get()
         );
 
         tag(BlockTags.STAIRS).add(
                 CompatBlocks.BLACK_SANDSTONE_BRICK_STAIRS.get(),
                 CompatBlocks.ORANGE_SANDSTONE_BRICK_STAIRS.get(),
                 CompatBlocks.WHITE_SANDSTONE_BRICK_STAIRS.get(),
-                CompatBlocks.GALANOS_STAIRS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_STAIRS.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_STAIRS.get()
+                CompatBlocks.GALANOS_STAIRS.get()
         );
 
         tag(BlockTags.WALLS).add(
                 CompatBlocks.BLACK_SANDSTONE_BRICK_WALL.get(),
                 CompatBlocks.ORANGE_SANDSTONE_BRICK_WALL.get(),
-                CompatBlocks.WHITE_SANDSTONE_BRICK_WALL.get(),
-                CompatBlocks.POLISHED_ROSE_QUARTZ_BRICK_WALL.get()
+                CompatBlocks.WHITE_SANDSTONE_BRICK_WALL.get()
         );
 
         //Farmer's Delight Tags
         tag(ModTags.COMPOST_ACTIVATORS).add(
-                BOPBlocks.TOADSTOOL.get(),
-                BOPBlocks.GLOWSHROOM.get()
+                BOPBlocks.TOADSTOOL,
+                BOPBlocks.GLOWSHROOM
         );
 
         //Other Tags

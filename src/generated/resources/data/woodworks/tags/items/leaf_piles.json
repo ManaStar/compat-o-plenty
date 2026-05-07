@@ -3,9 +3,9 @@
     "compatoplenty:flowering_oak_leaf_pile",
     "compatoplenty:rainbow_birch_leaf_pile",
     "compatoplenty:origin_leaf_pile",
-    "compatoplenty:maple_leaf_pile",
-    "compatoplenty:orange_autumn_leaf_pile",
-    "compatoplenty:yellow_autumn_leaf_pile",
+    "compatoplenty:red_maple_leaf_pile",
+    "compatoplenty:orange_maple_leaf_pile",
+    "compatoplenty:yellow_maple_leaf_pile",
     "compatoplenty:snowblossom_leaf_pile",
     "compatoplenty:jacaranda_leaf_pile",
     "compatoplenty:fir_leaf_pile",
@@ -16,6 +16,8 @@
     "compatoplenty:dead_leaf_pile",
     "compatoplenty:umbran_leaf_pile",
     "compatoplenty:palm_leaf_pile",
-    "compatoplenty:hellbark_leaf_pile"
+    "compatoplenty:hellbark_leaf_pile",
+    "compatoplenty:empyreal_leaf_pile",
+    "compatoplenty:pine_leaf_pile"
   ]
 }

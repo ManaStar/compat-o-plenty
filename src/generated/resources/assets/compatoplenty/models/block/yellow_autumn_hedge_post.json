@@ -1,7 +1,0 @@
-{
-  "parent": "quark:block/hedge_post",
-  "textures": {
-    "leaf": "biomesoplenty:block/yellow_autumn_leaves",
-    "log": "minecraft:block/birch_log"
-  }
-}

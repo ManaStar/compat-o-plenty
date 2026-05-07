@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "boatload"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "large_boat",
+        "key": {
+          "B": {
+            "item": "biomesoplenty:empyreal_boat"
+          },
+          "P": {
+            "item": "biomesoplenty:empyreal_planks"
+          }
+        },
+        "pattern": [
+          "PBP",
+          "PPP"
+        ],
+        "result": {
+          "item": "compatoplenty:large_empyreal_boat"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

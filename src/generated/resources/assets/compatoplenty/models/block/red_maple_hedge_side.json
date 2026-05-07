@@ -1,0 +1,6 @@
+{
+  "parent": "quark:block/hedge_side",
+  "textures": {
+    "leaf": "biomesoplenty:block/red_maple_leaves"
+  }
+}

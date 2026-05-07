@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "quark"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "building",
+        "ingredients": [
+          {
+            "item": "compatoplenty:vertical_pine_planks"
+          }
+        ],
+        "result": {
+          "item": "biomesoplenty:pine_planks"
+        }
+      }
+    }
+  ]
+}

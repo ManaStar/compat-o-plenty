@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
+            },
+            {
+              "type": "woodworks:config",
+              "value": "leaf_piles"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "group": "leaf_pile",
+        "ingredients": [
+          {
+            "item": "biomesoplenty:yellow_maple_leaves"
+          }
+        ],
+        "result": {
+          "count": 4,
+          "item": "compatoplenty:yellow_maple_leaf_pile"
+        }
+      }
+    }
+  ]
+}

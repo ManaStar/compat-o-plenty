@@ -3,6 +3,7 @@ package com.seleneandmana.compatoplenty.core.data.client;
 import biomesoplenty.api.block.BOPBlocks;
 import com.seleneandmana.compatoplenty.core.CompatOPlenty;
 import com.seleneandmana.compatoplenty.core.registry.CompatBlocks;
+import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.mehvahdjukaar.vsc.temp.TempVerticalSlabBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,6 +20,7 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ModelBuilder;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 import org.violetmoon.quark.content.building.block.HedgeBlock;
 import org.violetmoon.quark.content.building.block.VerticalSlabBlock;
 import org.violetmoon.quark.content.building.block.WoodPostBlock;
@@ -32,7 +34,7 @@ import static com.seleneandmana.compatoplenty.core.CompatOPlenty.BOP_ID;
 import static com.seleneandmana.compatoplenty.core.CompatOPlenty.QUARK_ID;
 import static net.minecraft.world.level.block.state.properties.BlockStateProperties.AXIS;
 
-public class ModBlockModelsProvider extends BlockStateProvider {
+public class ModBlockModelsProvider extends BlueprintBlockStateProvider {
 
     public ModBlockModelsProvider(PackOutput output, ExistingFileHelper fileHelper) {
         super(output, CompatOPlenty.MOD_ID, fileHelper);
@@ -49,9 +51,9 @@ public class ModBlockModelsProvider extends BlockStateProvider {
         leafCarpet(CompatBlocks.RAINBOW_BIRCH.leafCarpet().get(), blockTexture(Blocks.BIRCH_LEAVES));
         leafPile(CompatBlocks.RAINBOW_BIRCH.leafPile().get(), blockTexture(Blocks.BIRCH_LEAVES));
 
-        hedgePostModel(itemModels(), name(CompatBlocks.RAINBOW_BIRCH.hedge().get()), blockTexture(Blocks.BIRCH_LOG), blockTexture(BOPBlocks.RAINBOW_BIRCH_LEAVES.get()));
-        leafCarpetModel(itemModels(), name(CompatBlocks.RAINBOW_BIRCH.leafCarpet().get()), blockTexture(BOPBlocks.RAINBOW_BIRCH_LEAVES.get()));
-        leafPileModel(itemModels(), name(CompatBlocks.RAINBOW_BIRCH.leafPile().get()), blockTexture(BOPBlocks.RAINBOW_BIRCH_LEAVES.get()));
+        hedgePostModel(itemModels(), name(CompatBlocks.RAINBOW_BIRCH.hedge().get()), blockTexture(Blocks.BIRCH_LOG), blockTexture(BOPBlocks.RAINBOW_BIRCH_LEAVES));
+        leafCarpetModel(itemModels(), name(CompatBlocks.RAINBOW_BIRCH.leafCarpet().get()), blockTexture(BOPBlocks.RAINBOW_BIRCH_LEAVES));
+        leafPileModel(itemModels(), name(CompatBlocks.RAINBOW_BIRCH.leafPile().get()), blockTexture(BOPBlocks.RAINBOW_BIRCH_LEAVES));
     }
 
     private void registerStatesAndModels(CompatBlocks.LeafSet set) {
@@ -78,7 +80,7 @@ public class ModBlockModelsProvider extends BlockStateProvider {
         post(set.strippedPost().get(), strippedLog);
         verticalSlab(set.verticalSlab().get(), planks);
         verticalPlanks(set.verticalPlanks().get(), planks);
-        boards(set.boards().get());
+        boardsBlock((RegistryObject<Block>) set.boards());
         cabinet(set.cabinet().get());
         bookshelf(set.bookshelf().get(), planks);
         table(set.table().get());
@@ -99,10 +101,6 @@ public class ModBlockModelsProvider extends BlockStateProvider {
 
     private ResourceLocation key(Block block) {
         return BuiltInRegistries.BLOCK.getKey(block);
-    }
-
-    private String name(Block block) {
-        return key(block).getPath();
     }
 
     private ItemModelBuilder itemModel(Block block) {
@@ -185,6 +183,7 @@ public class ModBlockModelsProvider extends BlockStateProvider {
     }
 
     private void leafCarpet(Block block, ResourceLocation texture) {
+        CompatOPlenty.LOGGER.info(block.toString());
         simpleBlock(block, leafCarpetModel(models(), name(block), texture));
         itemModel(block);
     }
@@ -192,15 +191,6 @@ public class ModBlockModelsProvider extends BlockStateProvider {
     private void verticalPlanks(Block block, ResourceLocation texture) {
         var name = name(block);
         simpleBlock(block, models().singleTexture(name, new ResourceLocation(QUARK_ID, "block/vertical_planks"), "all", texture));
-        itemModel(block);
-    }
-
-    private void boards(RotatedPillarBlock block) {
-        var name = name(block);
-        var texture = blockTexture(block);
-        var model = models().singleTexture(name, new ResourceLocation(BLUEPRINT_ID, "block/template_boards"), "all", texture);
-        var modelHorizontal = models().singleTexture(name + "_horizontal", new ResourceLocation(BLUEPRINT_ID, "block/template_boards_horizontal"), "all", texture);
-        axisBlock(block, model, modelHorizontal);
         itemModel(block);
     }
 
